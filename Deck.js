@@ -1,15 +1,9 @@
-// class Player {
-//   constructor(hand, mileage) {
-//     this.name = "Player1"; 
-//     this.width = width;
-//     this.mileage = 0 || mileage; 
-//     this.hand = new Hand();
-//   }
-// }
+const uniqueID = require('unique-string');
 
 class MileageCard {
   constructor(value){
-    this.name = "miles"; 
+    this._id = uniqueID();
+    this.name = "Light Years"; 
     this.value = value;
     this.inHand = false;
     this.discarded = false;
@@ -18,6 +12,7 @@ class MileageCard {
 
 class SpecialCard {
   constructor(name, group, isHazard){
+    this._id = uniqueID();
     this.name = name; 
     this.group = group;
     this.isHazard = isHazard;
@@ -28,7 +23,11 @@ class SpecialCard {
 
 class Deck {
   constructor(){
-    this.deck = []; 
+    this.deck = {
+      deckId: uniqueID(), 
+      length: 0,
+      deck: []
+    }; 
   }
 
   makeMilesCard(value, cb){
@@ -43,7 +42,7 @@ class Deck {
 
   pushNewCard(quantity, card){
     for (let i = 0; i < quantity; quantity--) {
-      this.deck.push(card);
+      this.deck.deck.push(card);
     }
   }
 
@@ -56,14 +55,22 @@ class Deck {
     this.makeMilesCard(50, card => this.pushNewCard(miles50, card));
     this.makeMilesCard(100, card => this.pushNewCard(miles100, card));
     this.makeMilesCard(200, card => this.pushNewCard(miles200, card));
-    this.makeSpecialCard("Out of Gas", "gas", true, card => this.pushNewCard(specialCards, card));
-    this.makeSpecialCard("Refill!", "gas", false, card => this.pushNewCard(specialCards, card));
 
+    this.makeSpecialCard("Out of JetFuel", "fuel", true, card => this.pushNewCard(specialCards, card));
+    this.makeSpecialCard("JetFuel Ship!", "fuel", false, card => this.pushNewCard(specialCards, card));
+
+    this.makeSpecialCard("Engine Failure", "engine", true, card => this.pushNewCard(specialCards, card));
+    this.makeSpecialCard("Engine Repairs", "engine", false, card => this.pushNewCard(specialCards, card));
+
+    this.makeSpecialCard("Lost in Space", "lost", true, card => this.pushNewCard(specialCards, card));
+    this.makeSpecialCard("Search Party", "lost", false, card => this.pushNewCard(specialCards, card));
+
+    this.makeSpecialCard("Utopian Planet", "delay", true, card => this.pushNewCard(specialCards, card));
+    this.makeSpecialCard("Introduction of Capitalism", "delay", false, card => this.pushNewCard(specialCards, card));
+
+    this.deck.length = this.deck.deck.length;
     return this.deck;
   }
 }
 
-const deck = new Deck().createDeck();
-console.log(deck);
-
-module.exports = deck;
+module.exports = new Deck().createDeck();

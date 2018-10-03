@@ -3,12 +3,13 @@ const app = express();
 
 
 const deck = require('./Deck');
+const game = require('./Game');
 
 app.use(express.json()); 
 
 
 app.get('/', (req, res) => {
-  res.json(deck);
+  res.json(game);
 });
 
 app.use(function(req, res, next){

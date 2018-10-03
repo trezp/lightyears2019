@@ -9,6 +9,7 @@
   "author": "Treasure Porth",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "unique-string": "^1.0.0"
   }
 }
