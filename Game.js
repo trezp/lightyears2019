@@ -11,12 +11,17 @@ class Game {
       active: true
     }
   }
-  makeHand(){
+  dealHand(){
     this.game.players.forEach((player)=>{
-      for(let i = 7; i > 0; i-- ) {
-        let randNum = helpers.getRandomNum(deck.length);
-        player.hand.push(deck.deck[randNum]);
-        console.log(this.hand)
+      if(!player.inHand){
+        for(let i = 7; i > 0; i-- ) {
+          let randNum = helpers.getRandomNum(deck.length);
+          let card = deck.deck[randNum];
+
+          card.inHand = true;
+          player.hand.push(card);
+          
+        }
       }
     });
   }
@@ -24,7 +29,7 @@ class Game {
   startGame(){
     this.game.players.push(player);
     this.game.players.push(player);
-    this.makeHand();
+    this.dealHand();
     return this.game
   }
 }

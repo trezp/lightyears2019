@@ -66,7 +66,7 @@ class Deck {
     this.makeSpecialCard("Search Party", "lost", false, card => this.pushNewCard(specialCards, card));
 
     this.makeSpecialCard("Utopian Planet", "delay", true, card => this.pushNewCard(specialCards, card));
-    this.makeSpecialCard("Introduction of Capitalism", "delay", false, card => this.pushNewCard(specialCards, card));
+    this.makeSpecialCard("Bored with Perfection", "delay", false, card => this.pushNewCard(specialCards, card));
 
     this.deck.length = this.deck.deck.length;
     return this.deck;

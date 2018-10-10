@@ -1,6 +1,5 @@
-const deck = require('./Deck');
+
 const uniqueID = require('unique-string');
-const helpers = require('./helpers');
 
 class Player {
   constructor(name) {
