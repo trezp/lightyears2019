@@ -1,25 +1,5 @@
 const uniqueID = require('unique-string');
-
-class MileageCard {
-  constructor(value){
-    this._id = uniqueID();
-    this.name = "Light Years"; 
-    this.value = value;
-    this.inHand = false;
-    this.discarded = false;
-  }
-}
-
-class SpecialCard {
-  constructor(name, group, isHazard){
-    this._id = uniqueID();
-    this.name = name; 
-    this.group = group;
-    this.isHazard = isHazard;
-    this.inHand = false;
-    this.discarded = false;
-  }
-}
+const cards = require('./Cards');
 
 class Deck {
   constructor(){
@@ -31,12 +11,12 @@ class Deck {
   }
 
   makeMilesCard(value, cb){
-    let card = new MileageCard(value);
+    let card = new cards.MileageCard(value);
     return cb(card);
   }
 
   makeSpecialCard(name, group, isHazard, cb){
-    let card = new SpecialCard(name, group, isHazard);
+    let card = new cards.SpecialCard(name, group, isHazard);
     return cb(card);
   }
 

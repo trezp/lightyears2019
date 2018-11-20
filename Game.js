@@ -3,12 +3,14 @@ const deck = require('./Deck');
 const uniqueID = require('unique-string');
 const helpers = require('./helpers');
 
+
 class Game {
   constructor(){
     this.game = {
       gameId: uniqueID(),
       players: [],
-      active: true
+      active: true,
+      deck: deck
     }
   }
   dealHand(){
@@ -17,10 +19,8 @@ class Game {
         for(let i = 7; i > 0; i-- ) {
           let randNum = helpers.getRandomNum(deck.length);
           let card = deck.deck[randNum];
-
           card.inHand = true;
           player.hand.push(card);
-          
         }
       }
     });
