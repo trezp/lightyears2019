@@ -1,27 +1,33 @@
 const uniqueID = require('unique-string');
 
-class MileageCard {
-  constructor(value){
+class Card {
+  constructor(value, name){
     this._id = uniqueID();
-    this.name = "Light Years"; 
-    this.value = value;
-    this.inHand = false;
+    this.name = name;
+    this.inHand = false; 
     this.discarded = false;
+    this.value = value
+  }
+
+  makeNewCard(){
+    return new Card(value, "Light Years");
   }
 }
 
-class SpecialCard {
-  constructor(name, group, isHazard){
-    this._id = uniqueID();
-    this.name = name; 
+class SpecialCard extends Card {
+  constructor(description, group, ...args){
+    super(...args);
+    this.description = description; 
+    this.isHazard = false;
     this.group = group;
-    this.isHazard = isHazard;
-    this.inHand = false;
-    this.discarded = false;
   }
 }
+
+const card = new SpecialCard("This is a card", "No gas", 0, "Out of Gas");
+console.log(card)
 
 module.exports = {
+  Card,
   MileageCard, 
   SpecialCard
 }
