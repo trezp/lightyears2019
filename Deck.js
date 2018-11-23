@@ -6,51 +6,42 @@ class Deck {
     this.deck = {
       deckId: uniqueID(), 
       length: 0,
-      deck: []
+      deck: [], 
     }; 
+    this.lightyears50 = 10,
+    this.lightyears100 = 7, 
+    this.lightyears150 = 5, 
+    this.lightyears200 = 4
   }
 
-  makeMilesCard(value, cb){
-    let card = new cards.MileageCard(value);
-    return cb(card);
-  }
-
-  makeSpecialCard(name, group, isHazard, cb){
-    let card = new cards.SpecialCard(name, group, isHazard);
-    return cb(card);
-  }
-
-  pushNewCard(quantity, card){
-    for (let i = 0; i < quantity; quantity--) {
+  makeNewCard(quantity, value){
+    for (let i = 0; i < quantity; i++) {
+      let card = new cards.Card(value);
       this.deck.deck.push(card);
     }
   }
 
+  makeSpecialCards(){
+    for (let i = 0; i < 6; i++) {
+      cards.specialDescriptions.forEach((des)=>{
+        let card = new cards.SpecialCard(des, 0, des.name);
+        this.deck.deck.push(card);
+      });
+    }
+    
+  }
   createDeck(){
-    const miles50 = 10;
-    const miles100 = 7; 
-    const miles200 = 5;
-    const specialCards = 4;
-
-    this.makeMilesCard(50, card => this.pushNewCard(miles50, card));
-    this.makeMilesCard(100, card => this.pushNewCard(miles100, card));
-    this.makeMilesCard(200, card => this.pushNewCard(miles200, card));
-
-    this.makeSpecialCard("Out of JetFuel", "fuel", true, card => this.pushNewCard(specialCards, card));
-    this.makeSpecialCard("JetFuel Ship!", "fuel", false, card => this.pushNewCard(specialCards, card));
-
-    this.makeSpecialCard("Engine Failure", "engine", true, card => this.pushNewCard(specialCards, card));
-    this.makeSpecialCard("Engine Repairs", "engine", false, card => this.pushNewCard(specialCards, card));
-
-    this.makeSpecialCard("Lost in Space", "lost", true, card => this.pushNewCard(specialCards, card));
-    this.makeSpecialCard("Search Party", "lost", false, card => this.pushNewCard(specialCards, card));
-
-    this.makeSpecialCard("Utopian Planet", "delay", true, card => this.pushNewCard(specialCards, card));
-    this.makeSpecialCard("Bored with Perfection", "delay", false, card => this.pushNewCard(specialCards, card));
+    this.makeNewCard(this.lightyears50, 50);
+    this.makeNewCard(this.lightyears100, 100);
+    this.makeNewCard(this.lightyears150, 150);
+    this.makeNewCard(this.lightyears200, 200);
+    this.makeSpecialCards();
 
     this.deck.length = this.deck.deck.length;
     return this.deck;
   }
 }
 
+const deck = new Deck();
+console.log(deck.createDeck())
 module.exports = new Deck().createDeck();
