@@ -21,49 +21,26 @@ class SpecialCard extends Card {
   }
 }
 
+class GoCard extends Card {
+  constructor(...args){
+    super(...args); 
+    this.description = "Go!"
+    this.name = "Go!"
+  } 
+}
 
-const specialDescriptions = [
-  {
-    name: "Out of Jet Fuel",
-    description: "Oops, you've run out of gas! You'll need a refueling ship", 
-    isHazard: true, 
-    group: "fuel"
-  },
-  {
-    name: "Refueling ship",
-    description: "Oops, you've run out of gas! You'll need a refueling ship", 
-    isHazard: false, 
-    group: "fuel"
-  },
-  {
-    name: "Lost in Space",
-    description: "Oh no! You're lost in the ether! You'll have to wait for a search party", 
-    isHazard: true, 
-    group: "lost"
-  },
-  {
-    name: "Search Party!",
-    description: "You've been located by the  Global Lost Persons Federation", 
-    isHazard: false, 
-    group: "lost"
-  }, 
-  {
-    name: "Black Hole",
-    description: "Oh crap, you've been sucked into the event horizon. You'll need a physics miracle to escape!", 
-    isHazard: true, 
-    group: "black hole"
-  },
-  {
-    name: "Cosmic Miracle",
-    description: "Oh Man, somehow you've escaped the black hole. I'd thank my lucky stars if I were you.", 
-    isHazard: false, 
-    group: "lost"
-  }
-]
+class StopCard extends Card {
+  constructor(...args){
+    super(...args); 
+    this.description = "Stop! You cannot proceed without a Go card."
+    this.name = "Stop!"
+  } 
+}
 
 
 module.exports = {
   Card,
   SpecialCard,
-  specialDescriptions
+  GoCard,
+  StopCard
 }
