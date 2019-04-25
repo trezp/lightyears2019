@@ -20,4 +20,4 @@ class Player {
   }
 }
 
-module.exports = new Player().makePlayer();
+module.exports = new Player().makePlayer("Player One");

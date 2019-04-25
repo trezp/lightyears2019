@@ -10559,7 +10559,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
 var _default = _vue.default.extend({
   data: function data() {
     return {
@@ -10597,30 +10596,27 @@ exports.default = _default;
       _c("h1", [_vm._v("Players")]),
       _vm._v(" "),
       _vm._l(_vm.players, function(player) {
-        return _c("ul", [
-          _c("li", [_vm._v("Name: " + _vm._s(player.name))]),
+        return _c("div", [
+          _c("h1", { staticClass: "title" }, [
+            _vm._v("Name: " + _vm._s(player.name))
+          ]),
           _vm._v(" "),
-          _c("li", [_vm._v("Score: " + _vm._s(player.score))]),
+          _c("h2", { staticClass: "subtitle" }, [
+            _vm._v("Score: " + _vm._s(player.score))
+          ]),
           _vm._v(" "),
           _c(
-            "li",
-            [
-              _vm._v("Hand: \n    "),
-              _vm._l(player.hand, function(card) {
-                return _c("ul", [
-                  _c("li", [
-                    _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
-                    _vm._v(" "),
-                    card.value
-                      ? _c("span", [_vm._v(" Value: " + _vm._s(card.value))])
-                      : _vm._e()
-                  ])
-                ])
-              })
-            ],
-            2
-          ),
-          _c("li")
+            "ul",
+            { staticClass: "hand" },
+            _vm._l(player.hand, function(card) {
+              return _c("li", { staticClass: "card" }, [
+                _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
+                _vm._v(" "),
+                card.value ? _c("span", [_vm._v(_vm._s(card.value))]) : _vm._e()
+              ])
+            }),
+            0
+          )
         ])
       })
     ],
@@ -10634,7 +10630,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: "data-v-6a1a9b",
+            _scopeId: null,
             functional: undefined
           };
         })());
