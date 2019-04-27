@@ -10559,6 +10559,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
 var _default = _vue.default.extend({
   data: function data() {
     return {
@@ -10567,11 +10570,41 @@ var _default = _vue.default.extend({
       deck: null
     };
   },
+  methods: {
+    getRandomNum: function getRandomNum(length) {
+      return Math.floor(Math.random() * length);
+    },
+    dealHand: function dealHand() {
+      for (var i = 7; i > 0; i--) {
+        var randNum = this.getRandomNum(this.deck.length);
+        var card = this.deck.deck[randNum];
+        card.inHand = true;
+        this.players[0].hand.push(card.id);
+      }
+    }
+  },
+  computed: {
+    hand: function hand() {
+      var hand = [];
+      this.deck.deck.forEach(function (card) {
+        if (card.inHand) {
+          hand.push(card);
+        }
+      });
+      return hand;
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
-    _axios.default.get('http://localhost:3000').then(function (response) {
-      _this.gameId = response.data.gameId, _this.players = response.data.players, _this.deck = response.data.deck;
+    _axios.default.get("http://localhost:3000").then(function (response) {
+      _this.gameId = response.data.gameId;
+      _this.players = response.data.players;
+      _this.deck = response.data.deck;
+    }).then(function () {
+      return _this.dealHand();
+    }).catch(function (err) {
+      return console.log(err);
     });
   }
 });
@@ -10592,11 +10625,11 @@ exports.default = _default;
   return _c(
     "div",
     [
-      _vm._v("\nGame: " + _vm._s(_vm.gameId) + "\n  "),
+      _vm._v("\n  Game: " + _vm._s(_vm.gameId) + "\n  "),
       _c("h1", [_vm._v("Players")]),
       _vm._v(" "),
       _vm._l(_vm.players, function(player) {
-        return _c("div", [
+        return _c("div", { key: player.id }, [
           _c("h1", { staticClass: "title" }, [
             _vm._v("Name: " + _vm._s(player.name))
           ]),
@@ -10608,11 +10641,17 @@ exports.default = _default;
           _c(
             "ul",
             { staticClass: "hand" },
-            _vm._l(player.hand, function(card) {
-              return _c("li", { staticClass: "card" }, [
+            _vm._l(_vm.hand, function(card) {
+              return _c("li", { key: card.id, staticClass: "card" }, [
                 _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
                 _vm._v(" "),
-                card.value ? _c("span", [_vm._v(_vm._s(card.value))]) : _vm._e()
+                card.value
+                  ? _c("span", [_vm._v(_vm._s(card.value))])
+                  : _vm._e(),
+                _vm._v(" "),
+                card.special
+                  ? _c("h5", [_vm._v(_vm._s(card.special.description))])
+                  : _vm._e()
               ])
             }),
             0

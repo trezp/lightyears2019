@@ -1,36 +1,35 @@
-const player = require('./Player');
-const deck = require('./Deck');
-const uniqueID = require('unique-string');
-const helpers = require('./helpers');
-
+const player = require("./Player");
+const deck = require("./Deck");
+const uniqueID = require("unique-string");
+const helpers = require("./helpers");
 
 class Game {
-  constructor(){
+  constructor() {
     this.game = {
       gameId: uniqueID(),
       players: [],
       active: true,
       deck: deck
-    }
+    };
   }
-  dealHand(){
-    this.game.players.forEach((player)=>{
-      if(!player.inHand){
-        for(let i = 7; i > 0; i-- ) {
-          let randNum = helpers.getRandomNum(deck.length);
-          let card = deck.deck[randNum];
-          card.inHand = true;
-          player.hand.push(card);
-        }
-      }
-    });
-  }
+  // dealHand() {
+  //   this.game.players.forEach(player => {
+  //     if (!player.inHand) {
+  //       for (let i = 7; i > 0; i--) {
+  //         let randNum = helpers.getRandomNum(deck.length);
+  //         let card = deck.deck[randNum];
+  //         card.inHand = true;
+  //         player.hand.push(card);
+  //       }
+  //     }
+  //   });
+  // }
 
-  startGame(){
+  startGame() {
     this.game.players.push(player);
     //this.game.players.push(player);
-    this.dealHand();
-    return this.game
+    //this.dealHand();
+    return this.game;
   }
 }
 

@@ -14,11 +14,11 @@ ul {
 }
 .hand .card {
   border: 1px solid black;
-  padding: 4%;
+  padding: 1%;
   margin: 1%;
   font-size: 1.5em;
   text-align: center;
-  min-width: 20%;
+  flex-basis: 20%;
 }
 .hand .card span {
   font-weight: bold;
