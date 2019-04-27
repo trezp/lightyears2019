@@ -13,7 +13,12 @@
       </p>
       <button @click="drawCard">Draw a card</button>
       <ul class="hand">
-        <li :key="card.id" class="card" v-for="card in hand" @click="updateScore(card.value)">
+        <li
+          :key="card._id"
+          class="card"
+          v-for="card in hand"
+          @click="playCard(card.value, card._id)"
+        >
           <div>
             <strong>{{card.name}}</strong>
           </div>
@@ -46,8 +51,19 @@ export default Vue.extend({
     drawCard() {
       this.dealCard(1);
     },
-    updateScore(score) {
-      this.players[0].score += score;
+    discard(id) {
+      this.deck.deck.forEach(card => {
+        if (card._id === id) {
+          card.inHand = false;
+        }
+      });
+    },
+    playCard(score, id) {
+      if (event.target.innerHTML === "Play") {
+        this.players[0].score += score;
+      } else if (event.target.innerHTML === "Discard") {
+        this.discard(id);
+      }
     },
     throwHazard() {},
     getRandomNum(length) {

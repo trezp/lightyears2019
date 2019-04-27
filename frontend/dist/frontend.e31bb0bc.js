@@ -10570,6 +10570,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
 var _default = _vue.default.extend({
   data: function data() {
     return {
@@ -10585,8 +10590,19 @@ var _default = _vue.default.extend({
     drawCard: function drawCard() {
       this.dealCard(1);
     },
-    updateScore: function updateScore(score) {
-      this.players[0].score += score;
+    discard: function discard(id) {
+      this.deck.deck.forEach(function (card) {
+        if (card._id === id) {
+          card.inHand = false;
+        }
+      });
+    },
+    playCard: function playCard(score, id) {
+      if (event.target.innerHTML === "Play") {
+        this.players[0].score += score;
+      } else if (event.target.innerHTML === "Discard") {
+        this.discard(id);
+      }
     },
     throwHazard: function throwHazard() {},
     getRandomNum: function getRandomNum(length) {
@@ -10677,11 +10693,11 @@ exports.default = _default;
               return _c(
                 "li",
                 {
-                  key: card.id,
+                  key: card._id,
                   staticClass: "card",
                   on: {
                     click: function($event) {
-                      return _vm.updateScore(card.value)
+                      return _vm.playCard(card.value, card._id)
                     }
                   }
                 },
