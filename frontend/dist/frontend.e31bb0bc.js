@@ -10562,20 +10562,38 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = _vue.default.extend({
   data: function data() {
     return {
       gameId: "",
+      gameHasStarted: false,
       players: null,
       deck: null
     };
   },
   methods: {
+    go: function go() {},
+    stop: function stop() {},
+    drawCard: function drawCard() {
+      this.dealCard(1);
+    },
+    updateScore: function updateScore(score) {
+      this.players[0].score += score;
+    },
+    throwHazard: function throwHazard() {},
     getRandomNum: function getRandomNum(length) {
       return Math.floor(Math.random() * length);
     },
-    dealHand: function dealHand() {
-      for (var i = 7; i > 0; i--) {
+    dealCard: function dealCard(num) {
+      for (var i = num; i > 0; i--) {
         var randNum = this.getRandomNum(this.deck.length);
         var card = this.deck.deck[randNum];
         card.inHand = true;
@@ -10602,7 +10620,7 @@ var _default = _vue.default.extend({
       _this.players = response.data.players;
       _this.deck = response.data.deck;
     }).then(function () {
-      return _this.dealHand();
+      return _this.dealCard(6);
     }).catch(function (err) {
       return console.log(err);
     });
@@ -10638,21 +10656,51 @@ exports.default = _default;
             _vm._v("Score: " + _vm._s(player.score))
           ]),
           _vm._v(" "),
+          !_vm.gameHasStarted
+            ? _c("p", [
+                _vm._v(
+                  "\n      Welcome, " +
+                    _vm._s(player.name) +
+                    "! Let's get this show on the road.\n      Your goal is to navigate your spaceship 1,000 light years through space.\n      Many perils will befall you along the way! Good luck!\n    "
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("button", { on: { click: _vm.drawCard } }, [
+            _vm._v("Draw a card")
+          ]),
+          _vm._v(" "),
           _c(
             "ul",
             { staticClass: "hand" },
             _vm._l(_vm.hand, function(card) {
-              return _c("li", { key: card.id, staticClass: "card" }, [
-                _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
-                _vm._v(" "),
-                card.value
-                  ? _c("span", [_vm._v(_vm._s(card.value))])
-                  : _vm._e(),
-                _vm._v(" "),
-                card.special
-                  ? _c("h5", [_vm._v(_vm._s(card.special.description))])
-                  : _vm._e()
-              ])
+              return _c(
+                "li",
+                {
+                  key: card.id,
+                  staticClass: "card",
+                  on: {
+                    click: function($event) {
+                      return _vm.updateScore(card.value)
+                    }
+                  }
+                },
+                [
+                  _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
+                  _vm._v(" "),
+                  card.value
+                    ? _c("span", [_vm._v(_vm._s(card.value))])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.special
+                    ? _c("h5", [_vm._v(_vm._s(card.special.description))])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("button", [_vm._v("Play")]),
+                  _vm._v(" "),
+                  _c("button", [_vm._v("Discard")])
+                ]
+              )
             }),
             0
           )

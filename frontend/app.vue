@@ -6,13 +6,21 @@
     <div :key="player.id" v-for="player in players">
       <h1 class="title">Name: {{player.name}}</h1>
       <h2 class="subtitle">Score: {{player.score}}</h2>
+      <p v-if="!gameHasStarted">
+        Welcome, {{player.name}}! Let's get this show on the road.
+        Your goal is to navigate your spaceship 1,000 light years through space.
+        Many perils will befall you along the way! Good luck!
+      </p>
+      <button @click="drawCard">Draw a card</button>
       <ul class="hand">
-        <li :key="card.id" class="card" v-for="card in hand">
+        <li :key="card.id" class="card" v-for="card in hand" @click="updateScore(card.value)">
           <div>
             <strong>{{card.name}}</strong>
           </div>
           <span v-if="card.value">{{card.value}}</span>
           <h5 v-if="card.special">{{card.special.description}}</h5>
+          <button>Play</button>
+          <button>Discard</button>
         </li>
       </ul>
     </div>
@@ -27,16 +35,26 @@ export default Vue.extend({
   data() {
     return {
       gameId: "",
+      gameHasStarted: false,
       players: null,
       deck: null
     };
   },
   methods: {
+    go() {},
+    stop() {},
+    drawCard() {
+      this.dealCard(1);
+    },
+    updateScore(score) {
+      this.players[0].score += score;
+    },
+    throwHazard() {},
     getRandomNum(length) {
       return Math.floor(Math.random() * length);
     },
-    dealHand() {
-      for (let i = 7; i > 0; i--) {
+    dealCard(num) {
+      for (let i = num; i > 0; i--) {
         let randNum = this.getRandomNum(this.deck.length);
         let card = this.deck.deck[randNum];
         card.inHand = true;
@@ -63,7 +81,7 @@ export default Vue.extend({
         this.players = response.data.players;
         this.deck = response.data.deck;
       })
-      .then(() => this.dealHand())
+      .then(() => this.dealCard(6))
       .catch(err => console.log(err));
   }
 });
