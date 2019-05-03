@@ -2,16 +2,16 @@
 <template>
   <div>
     Game: {{gameId}}
-    <h1>Players</h1>
+    <h1>Light Years</h1>
     <div :key="player.id" v-for="player in players">
       <h1 class="title">Name: {{player.name}}</h1>
-      <h2 class="subtitle">Score: {{player.score}}</h2>
-      <p v-if="!gameHasStarted">
-        Welcome, {{player.name}}! Let's get this show on the road.
-        Your goal is to navigate your spaceship 1,000 light years through space.
-        Many perils will befall you along the way! Good luck!
+      <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
+      <p>
+        <span v-if="!gameHasStarted">Hello, {{player.name}}!</span>
+        {{message}}
       </p>
-      <button @click="drawCard">Draw a card</button>
+      <button v-if="!gameHasStarted" @click="startGame()">Start Game</button>
+      <button v-if="gameHasStarted" @click="drawCard">Draw a card</button>
       <ul class="hand">
         <li
           :key="card._id"
@@ -35,7 +35,8 @@
 <script>
 import Vue from "vue";
 import axios from "axios";
-import game from "./Deck/Game";
+import game from "./Game/Game";
+import message from "./Game/gameMessages";
 
 export default Vue.extend({
   data() {
@@ -43,20 +44,30 @@ export default Vue.extend({
       gameId: game.deck.deckId,
       gameHasStarted: false,
       players: game.players,
-      deck: game.deck
+      deck: game.deck,
+      message: null
     };
   },
   methods: {
-    go() {},
+    startGame() {
+      this.message = message.startMessage;
+      this.dealCard(6);
+      this.gameHasStarted = true;
+    },
+    go(id) {
+      if (card._id === id && card) {
+      }
+    },
     stop() {},
     drawCard() {
-      this.gameHasStarted = true;
       this.dealCard(1);
+      this.gameHasStarted = true;
     },
     discard(id) {
       this.deck.deck.forEach(card => {
         if (card._id === id) {
           card.inHand = false;
+          card.discarded = true;
         }
       });
     },
@@ -92,9 +103,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    console.log(this.deck);
-    this.dealCard(6);
-    console.log(game.players);
+    console.log(this.message);
   }
 });
 </script>
@@ -118,7 +127,7 @@ ul {
   .card {
     display: flex;
     border: 1px solid black;
-    padding: 1%;
+    padding: 1.5em;
     justify-content: center;
     align-items: center;
     flex-direction: column;

@@ -17,7 +17,7 @@ ul {
 .hand .card {
   display: flex;
   border: 1px solid black;
-  padding: 1%;
+  padding: 1.5em;
   justify-content: center;
   align-items: center;
   flex-direction: column;

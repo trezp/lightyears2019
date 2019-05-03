@@ -32279,7 +32279,7 @@ var cryptoRandomString = require('crypto-random-string');
 module.exports = function () {
   return cryptoRandomString(32);
 };
-},{"crypto-random-string":"node_modules/crypto-random-string/index.js"}],"Deck/Player.js":[function(require,module,exports) {
+},{"crypto-random-string":"node_modules/crypto-random-string/index.js"}],"Game/Player.js":[function(require,module,exports) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -32319,7 +32319,7 @@ function () {
 }();
 
 module.exports = new Player().makePlayer("Player One");
-},{"unique-string":"node_modules/unique-string/index.js"}],"Deck/Cards.js":[function(require,module,exports) {
+},{"unique-string":"node_modules/unique-string/index.js"}],"Game/Cards.js":[function(require,module,exports) {
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -32430,7 +32430,7 @@ module.exports = {
   GoCard: GoCard,
   StopCard: StopCard
 };
-},{"unique-string":"node_modules/unique-string/index.js"}],"Deck/hazards.js":[function(require,module,exports) {
+},{"unique-string":"node_modules/unique-string/index.js"}],"Game/hazards.js":[function(require,module,exports) {
 module.exports = [{
   name: "Out of Jet Fuel",
   description: "Oops, you've run out of gas! You'll need a refueling ship",
@@ -32452,7 +32452,7 @@ module.exports = [{
   isHazard: true,
   group: "travel"
 }];
-},{}],"Deck/remedies.js":[function(require,module,exports) {
+},{}],"Game/remedies.js":[function(require,module,exports) {
 module.exports = [{
   name: "Refueling ship",
   description: "Oops, you've run out of gas! You'll need a refueling ship",
@@ -32474,7 +32474,7 @@ module.exports = [{
   isHazard: false,
   group: "travel"
 }];
-},{}],"Deck/Deck.js":[function(require,module,exports) {
+},{}],"Game/Deck.js":[function(require,module,exports) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -32555,7 +32555,7 @@ function () {
 
 
 module.exports = new Deck().createDeck();
-},{"unique-string":"node_modules/unique-string/index.js","./Cards":"Deck/Cards.js","./hazards":"Deck/hazards.js","./remedies":"Deck/remedies.js"}],"Deck/helpers.js":[function(require,module,exports) {
+},{"unique-string":"node_modules/unique-string/index.js","./Cards":"Game/Cards.js","./hazards":"Game/hazards.js","./remedies":"Game/remedies.js"}],"Game/helpers.js":[function(require,module,exports) {
 function getRandomNum(length) {
   return Math.floor(Math.random() * length);
 }
@@ -32563,7 +32563,7 @@ function getRandomNum(length) {
 module.exports = {
   getRandomNum: getRandomNum
 };
-},{}],"Deck/Game.js":[function(require,module,exports) {
+},{}],"Game/Game.js":[function(require,module,exports) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -32605,7 +32605,20 @@ function () {
 }();
 
 module.exports = new Game().startGame();
-},{"./Player":"Deck/Player.js","./Deck":"Deck/Deck.js","unique-string":"node_modules/unique-string/index.js","./helpers":"Deck/helpers.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./Player":"Game/Player.js","./Deck":"Game/Deck.js","unique-string":"node_modules/unique-string/index.js","./helpers":"Game/helpers.js"}],"Game/gameMessages.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var messages = {
+  startMessage: "Let's get this show on the road. Your goal is to navigate your spaceship 1,000 light years through space. Many perils will befall you along the way! Good luck!",
+  goError: "You can't get started until you find a go card. Please select a card to discard."
+};
+var _default = messages;
+exports.default = _default;
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -32957,7 +32970,9 @@ var _vue = _interopRequireDefault(require("vue"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var _Game = _interopRequireDefault(require("./Deck/Game"));
+var _Game = _interopRequireDefault(require("./Game/Game"));
+
+var _gameMessages = _interopRequireDefault(require("./Game/gameMessages"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33001,20 +33016,29 @@ var _default = _vue.default.extend({
       gameId: _Game.default.deck.deckId,
       gameHasStarted: false,
       players: _Game.default.players,
-      deck: _Game.default.deck
+      deck: _Game.default.deck,
+      message: null
     };
   },
   methods: {
-    go: function go() {},
+    startGame: function startGame() {
+      this.message = _gameMessages.default.startMessage;
+      this.dealCard(6);
+      this.gameHasStarted = true;
+    },
+    go: function go(id) {
+      if (card._id === id && card) {}
+    },
     stop: function stop() {},
     drawCard: function drawCard() {
-      this.gameHasStarted = true;
       this.dealCard(1);
+      this.gameHasStarted = true;
     },
     discard: function discard(id) {
       this.deck.deck.forEach(function (card) {
         if (card._id === id) {
           card.inHand = false;
+          card.discarded = true;
         }
       });
     },
@@ -33032,9 +33056,9 @@ var _default = _vue.default.extend({
     dealCard: function dealCard(num) {
       for (var i = num; i > 0; i--) {
         var randNum = this.getRandomNum(this.deck.length);
-        var card = this.deck.deck[randNum];
-        card.inHand = true;
-        this.players[0].hand.push(card.id);
+        var _card = this.deck.deck[randNum];
+        _card.inHand = true;
+        this.players[0].hand.push(_card.id);
       }
     }
   },
@@ -33050,9 +33074,7 @@ var _default = _vue.default.extend({
     }
   },
   mounted: function mounted() {
-    console.log(this.deck);
-    this.dealCard(6);
-    console.log(_Game.default.players);
+    console.log(this.message);
   }
 });
 
@@ -33073,7 +33095,7 @@ exports.default = _default;
     "div",
     [
       _vm._v("\n  Game: " + _vm._s(_vm.gameId) + "\n  "),
-      _c("h1", [_vm._v("Players")]),
+      _c("h1", [_vm._v("Light Years")]),
       _vm._v(" "),
       _vm._l(_vm.players, function(player) {
         return _c("div", { key: player.id }, [
@@ -33082,22 +33104,35 @@ exports.default = _default;
           ]),
           _vm._v(" "),
           _c("h2", { staticClass: "subtitle" }, [
-            _vm._v("Score: " + _vm._s(player.score))
+            _vm._v("Light Years Traveled: " + _vm._s(player.score))
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            !_vm.gameHasStarted
+              ? _c("span", [_vm._v("Hello, " + _vm._s(player.name) + "!")])
+              : _vm._e(),
+            _vm._v("\n      " + _vm._s(_vm.message) + "\n    ")
           ]),
           _vm._v(" "),
           !_vm.gameHasStarted
-            ? _c("p", [
-                _vm._v(
-                  "\n      Welcome, " +
-                    _vm._s(player.name) +
-                    "! Let's get this show on the road.\n      Your goal is to navigate your spaceship 1,000 light years through space.\n      Many perils will befall you along the way! Good luck!\n    "
-                )
-              ])
+            ? _c(
+                "button",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.startGame()
+                    }
+                  }
+                },
+                [_vm._v("Start Game")]
+              )
             : _vm._e(),
           _vm._v(" "),
-          _c("button", { on: { click: _vm.drawCard } }, [
-            _vm._v("Draw a card")
-          ]),
+          _vm.gameHasStarted
+            ? _c("button", { on: { click: _vm.drawCard } }, [
+                _vm._v("Draw a card")
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c(
             "ul",
@@ -33172,7 +33207,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","axios":"node_modules/axios/index.js","./Deck/Game":"Deck/Game.js","_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"index.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","axios":"node_modules/axios/index.js","./Game/Game":"Game/Game.js","./Game/gameMessages":"Game/gameMessages.js","_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
@@ -33181,7 +33216,7 @@ var _app = _interopRequireDefault(require("./app.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-new _vue.default(_app.default).$mount('#app');
+new _vue.default(_app.default).$mount("#app");
 },{"vue":"node_modules/vue/dist/vue.runtime.esm.js","./app.vue":"app.vue"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -33210,7 +33245,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64241" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63812" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
