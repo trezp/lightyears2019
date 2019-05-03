@@ -1,21 +1,21 @@
-
-const uniqueID = require('unique-string');
+const uniqueID = require("unique-string");
 
 class Player {
   constructor(name) {
-    this.playerID = uniqueID(),
-    this.name = name || "Player" + this.playerID; 
-    this.score = 0,
-    this.isTurn = false,
+    this.playerID = uniqueID();
+    this.name = name || "Player" + this.playerID;
+    this.score = 0;
+    this.isTurn = false;
+    this.canPlay = false;
     this.hand = [];
   }
 
-  makePlayer(name){
+  makePlayer(name) {
     const player = new Player(name);
-    return player
+    return player;
   }
 
-  updateScore(score){
+  updateScore(score) {
     this.score = score;
   }
 }

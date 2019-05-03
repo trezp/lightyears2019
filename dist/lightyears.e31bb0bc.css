@@ -8,19 +8,28 @@ ul {
 }
 
 .hand {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(6, 15%);
+  grid-template-rows: 200px;
+  grid-column-gap: 1%;
+  grid-row-gap: 1%;
 }
 .hand .card {
+  display: flex;
   border: 1px solid black;
   padding: 1%;
-  margin: 1%;
-  font-size: 1.5em;
-  text-align: center;
-  flex-basis: 20%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .hand .card span {
   font-weight: bold;
   font-size: 2em;
+}
+.hand .card button {
+  border: none;
+  border: 1px solid black;
+  margin-bottom: 0.5em;
+  width: 80%;
+  padding: 2%;
 }
