@@ -20,9 +20,16 @@ module.exports = [
     group: "black hole"
   },
   {
-    name: "Stop",
-    description: "You cannot gain miles until you get another Go card.",
+    name: "Abducted By Aliens",
+    description:
+      "You've been whisked away by hyperintelligent race of fish from Jupiter.",
     isHazard: true,
-    group: "travel"
+    group: "aliens"
+  },
+  {
+    name: "Flew too Close to the Sun",
+    description: "Like a moth to a flame, you were engulfed.",
+    isHazard: true,
+    group: "heat"
   }
 ];

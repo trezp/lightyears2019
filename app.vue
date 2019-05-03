@@ -3,31 +3,29 @@
   <div>
     Game: {{gameId}}
     <h1>Light Years</h1>
+
     <div :key="player.id" v-for="player in players">
-      <h1 class="title">Name: {{player.name}}</h1>
-      <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
-      <p>
-        <span v-if="!gameHasStarted">Hello, {{player.name}}!</span>
-        {{message}}
-      </p>
+      <h2 v-if="!gameHasStarted">
+        <span>Hello, {{player.name}}! Let your journey begin!</span>
+      </h2>
       <button v-if="!gameHasStarted" @click="startGame()">Start Game</button>
-      <button v-if="gameHasStarted" @click="drawCard">Draw a card</button>
-      <ul class="hand">
-        <li
-          :key="card._id"
-          class="card"
-          v-for="card in hand"
-          @click="playCard(card.value, card._id)"
-        >
-          <div>
-            <strong>{{card.name}}</strong>
-          </div>
-          <span v-if="card.value">{{card.value}}</span>
-          <h5 v-if="card.special">{{card.special.description}}</h5>
-          <button>Play</button>
-          <button>Discard</button>
-        </li>
-      </ul>
+      <div v-if="gameHasStarted">
+        <h3 class="title">Name: {{player.name}}</h3>
+        <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
+        <h2>{{message}}</h2>
+        <button @click="drawCard">Draw a card</button>
+        <ul class="hand">
+          <li :key="card._id" class="card" v-for="card in hand">
+            <div>
+              <strong>{{card.name}}</strong>
+            </div>
+            <span v-if="card.value">{{card.value}}</span>
+            <h5 v-if="card.special">{{card.special.description}}</h5>
+            <button @click="playCard(card)">Play</button>
+            <button @click="discard(card._id)">Discard</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -44,21 +42,44 @@ export default Vue.extend({
       gameId: game.deck.deckId,
       gameHasStarted: false,
       players: game.players,
+      player: game.players[0],
       deck: game.deck,
+      activeDeck: [],
       message: null
     };
   },
   methods: {
     startGame() {
       this.message = message.startMessage;
+      this.updateActiveDeck();
       this.dealCard(6);
       this.gameHasStarted = true;
     },
-    go(id) {
-      if (card._id === id && card) {
+    updateActiveDeck() {
+      this.message = "Shuffling the deck...";
+      if (this.activeDeck.length < 1) {
+        this.activeDeck = this.deck;
+      } else {
+        this.activeDeck = [];
+        this.deck.deck.forEach(card => {
+          if (card.discarded === false) {
+            this.activeDeck.push(card);
+          }
+        });
       }
     },
-    stop() {},
+    playCard(card) {
+      if (card.value && this.player) {
+        this.player.score += card.value;
+        this.discard(card._id);
+        card.discarded = true;
+        this.message = `You just traveled ${
+          card.value
+        } light years. Keep going!`;
+        this.updateActiveDeck();
+      } else {
+      }
+    },
     drawCard() {
       this.dealCard(1);
       this.gameHasStarted = true;
@@ -70,31 +91,34 @@ export default Vue.extend({
           card.discarded = true;
         }
       });
+      this.updateActiveDeck();
     },
-    playCard(score, id) {
-      if (event.target.innerHTML === "Play") {
-        this.players[0].score += score;
-      } else if (event.target.innerHTML === "Discard") {
-        this.discard(id);
-      }
-    },
-    throwHazard() {},
     getRandomNum(length) {
       return Math.floor(Math.random() * length);
     },
+    getRandomCard() {
+      let randNum = this.getRandomNum(this.activeDeck.length);
+      let card = this.activeDeck[randNum];
+      return card;
+    },
     dealCard(num) {
       for (let i = num; i > 0; i--) {
-        let randNum = this.getRandomNum(this.deck.length);
-        let card = this.deck.deck[randNum];
+        let card = this.getRandomCard();
         card.inHand = true;
-        this.players[0].hand.push(card.id);
+        console.log(card._id);
+        this.player.hand.push(card);
+        //console.log(this.player.hand);
       }
     }
   },
   computed: {
     hand: function() {
       const hand = [];
+
+      console.log(this.deck.deck);
+
       this.deck.deck.forEach(card => {
+        console.log(card);
         if (card.inHand) {
           hand.push(card);
         }
@@ -102,9 +126,7 @@ export default Vue.extend({
       return hand;
     }
   },
-  mounted() {
-    console.log(this.message);
-  }
+  mounted() {}
 });
 </script>
 

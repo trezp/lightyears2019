@@ -32334,12 +32334,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var uniqueID = require('unique-string');
+var uniqueID = require("unique-string");
 
 var Card = function Card(value, name) {
   _classCallCheck(this, Card);
 
-  this._id = uniqueID();
   this.name = name || "Light Years";
   this.inHand = false;
   this.discarded = false;
@@ -32447,10 +32446,15 @@ module.exports = [{
   isHazard: true,
   group: "black hole"
 }, {
-  name: "Stop",
-  description: "You cannot gain miles until you get another Go card.",
+  name: "Abducted By Aliens",
+  description: "You've been whisked away by hyperintelligent race of fish from Jupiter.",
   isHazard: true,
-  group: "travel"
+  group: "aliens"
+}, {
+  name: "Flew too Close to the Sun",
+  description: "Like a moth to a flame, you were engulfed.",
+  isHazard: true,
+  group: "heat"
 }];
 },{}],"Game/remedies.js":[function(require,module,exports) {
 module.exports = [{
@@ -32467,12 +32471,17 @@ module.exports = [{
   name: "Cosmic Miracle",
   description: "Oh Man, somehow you've escaped the black hole. I'd thank my lucky stars if I were you. You may now travel at full speed.",
   isHazard: false,
-  group: "lost"
+  group: "black hole"
 }, {
-  name: "Go",
-  description: "You may proceed.",
+  name: "Escaped!",
+  description: "You're embarassed to admit that you had a lovely time. But it's time to go!",
   isHazard: false,
-  group: "travel"
+  group: "aliens"
+}, {
+  name: "Heat resistant suit",
+  description: "Ah, but your heat resistant suit saves your ass!",
+  isHazard: false,
+  group: "head"
 }];
 },{}],"Game/Deck.js":[function(require,module,exports) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32508,8 +32517,8 @@ function () {
     this.ly200 = 4;
     this.go = 14;
     this.stop = 5;
-    this.hazardsCards = 6;
-    this.remedyCards = 6;
+    this.hazardCards = 6;
+    this.remedyCards = 2;
   }
 
   _createClass(Deck, [{
@@ -32525,25 +32534,29 @@ function () {
     value: function makeSpecialCard(quantity, description) {
       var _this = this;
 
-      for (var i = 0; i < quantity; i++) {
-        description.forEach(function (des) {
-          var card = new cards.SpecialCard(des, 0, des.name);
+      var id = "";
+      description.forEach(function (des) {
+        var card = new cards.SpecialCard(des, 0, des.name);
 
+        for (var i = 0; i < quantity; i++) {
           _this.deck.deck.push(card);
-        });
-      }
+        }
+      });
+      this.deck.deck.forEach(function (card) {
+        card._id = uniqueID();
+      });
     }
   }, {
     key: "createDeck",
     value: function createDeck() {
-      this.makeNewCard(cards.Card, this.ly25, 25);
-      this.makeNewCard(cards.Card, this.ly50, 50);
-      this.makeNewCard(cards.Card, this.ly75, 75);
-      this.makeNewCard(cards.Card, this.ly100, 100);
-      this.makeNewCard(cards.GoCard, this.go, 0);
-      this.makeNewCard(cards.StopCard, this.stop, 0);
-      this.makeNewCard(cards.Card, this.ly200, 200);
-      this.makeSpecialCard(this.hazardCards, hazards);
+      // this.makeNewCard(cards.Card, this.ly25, 25);
+      // this.makeNewCard(cards.Card, this.ly50, 50);
+      // this.makeNewCard(cards.Card, this.ly75, 75);
+      // this.makeNewCard(cards.Card, this.ly100, 100);
+      // this.makeNewCard(cards.GoCard, this.go, 0);
+      // this.makeNewCard(cards.StopCard, this.stop, 0);
+      //this.makeNewCard(cards.Card, this.ly200, 200);
+      // this.makeSpecialCard(this.hazardCards, hazards);
       this.makeSpecialCard(this.remedyCards, remedies);
       this.deck.length = this.deck.deck.length;
       return this.deck;
@@ -33008,28 +33021,50 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
 var _default = _vue.default.extend({
   data: function data() {
     return {
       gameId: _Game.default.deck.deckId,
       gameHasStarted: false,
       players: _Game.default.players,
+      player: _Game.default.players[0],
       deck: _Game.default.deck,
+      activeDeck: [],
       message: null
     };
   },
   methods: {
     startGame: function startGame() {
       this.message = _gameMessages.default.startMessage;
+      this.updateActiveDeck();
       this.dealCard(6);
       this.gameHasStarted = true;
     },
-    go: function go(id) {
-      if (card._id === id && card) {}
+    updateActiveDeck: function updateActiveDeck() {
+      var _this = this;
+
+      this.message = "Shuffling the deck...";
+
+      if (this.activeDeck.length < 1) {
+        this.activeDeck = this.deck;
+      } else {
+        this.activeDeck = [];
+        this.deck.deck.forEach(function (card) {
+          if (card.discarded === false) {
+            _this.activeDeck.push(card);
+          }
+        });
+      }
     },
-    stop: function stop() {},
+    playCard: function playCard(card) {
+      if (card.value && this.player) {
+        this.player.score += card.value;
+        this.discard(card._id);
+        card.discarded = true;
+        this.message = "You just traveled ".concat(card.value, " light years. Keep going!");
+        this.updateActiveDeck();
+      } else {}
+    },
     drawCard: function drawCard() {
       this.dealCard(1);
       this.gameHasStarted = true;
@@ -33041,31 +33076,32 @@ var _default = _vue.default.extend({
           card.discarded = true;
         }
       });
+      this.updateActiveDeck();
     },
-    playCard: function playCard(score, id) {
-      if (event.target.innerHTML === "Play") {
-        this.players[0].score += score;
-      } else if (event.target.innerHTML === "Discard") {
-        this.discard(id);
-      }
-    },
-    throwHazard: function throwHazard() {},
     getRandomNum: function getRandomNum(length) {
       return Math.floor(Math.random() * length);
     },
+    getRandomCard: function getRandomCard() {
+      var randNum = this.getRandomNum(this.activeDeck.length);
+      var card = this.activeDeck[randNum];
+      return card;
+    },
     dealCard: function dealCard(num) {
       for (var i = num; i > 0; i--) {
-        var randNum = this.getRandomNum(this.deck.length);
-        var _card = this.deck.deck[randNum];
-        _card.inHand = true;
-        this.players[0].hand.push(_card.id);
+        var card = this.getRandomCard();
+        card.inHand = true;
+        console.log(card._id);
+        this.player.hand.push(card); //console.log(this.player.hand);
       }
     }
   },
   computed: {
     hand: function hand() {
       var hand = [];
+      console.log(this.deck.deck);
       this.deck.deck.forEach(function (card) {
+        console.log(card);
+
         if (card.inHand) {
           hand.push(card);
         }
@@ -33073,9 +33109,7 @@ var _default = _vue.default.extend({
       return hand;
     }
   },
-  mounted: function mounted() {
-    console.log(this.message);
-  }
+  mounted: function mounted() {}
 });
 
 exports.default = _default;
@@ -33099,20 +33133,17 @@ exports.default = _default;
       _vm._v(" "),
       _vm._l(_vm.players, function(player) {
         return _c("div", { key: player.id }, [
-          _c("h1", { staticClass: "title" }, [
-            _vm._v("Name: " + _vm._s(player.name))
-          ]),
-          _vm._v(" "),
-          _c("h2", { staticClass: "subtitle" }, [
-            _vm._v("Light Years Traveled: " + _vm._s(player.score))
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            !_vm.gameHasStarted
-              ? _c("span", [_vm._v("Hello, " + _vm._s(player.name) + "!")])
-              : _vm._e(),
-            _vm._v("\n      " + _vm._s(_vm.message) + "\n    ")
-          ]),
+          !_vm.gameHasStarted
+            ? _c("h2", [
+                _c("span", [
+                  _vm._v(
+                    "Hello, " +
+                      _vm._s(player.name) +
+                      "! Let your journey begin!"
+                  )
+                ])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           !_vm.gameHasStarted
             ? _c(
@@ -33129,45 +33160,65 @@ exports.default = _default;
             : _vm._e(),
           _vm._v(" "),
           _vm.gameHasStarted
-            ? _c("button", { on: { click: _vm.drawCard } }, [
-                _vm._v("Draw a card")
+            ? _c("div", [
+                _c("h3", { staticClass: "title" }, [
+                  _vm._v("Name: " + _vm._s(player.name))
+                ]),
+                _vm._v(" "),
+                _c("h2", { staticClass: "subtitle" }, [
+                  _vm._v("Light Years Traveled: " + _vm._s(player.score))
+                ]),
+                _vm._v(" "),
+                _c("h2", [_vm._v(_vm._s(_vm.message))]),
+                _vm._v(" "),
+                _c("button", { on: { click: _vm.drawCard } }, [
+                  _vm._v("Draw a card")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  { staticClass: "hand" },
+                  _vm._l(_vm.hand, function(card) {
+                    return _c("li", { key: card._id, staticClass: "card" }, [
+                      _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
+                      _vm._v(" "),
+                      card.value
+                        ? _c("span", [_vm._v(_vm._s(card.value))])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      card.special
+                        ? _c("h5", [_vm._v(_vm._s(card.special.description))])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          on: {
+                            click: function($event) {
+                              return _vm.playCard(card)
+                            }
+                          }
+                        },
+                        [_vm._v("Play")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          on: {
+                            click: function($event) {
+                              return _vm.discard(card._id)
+                            }
+                          }
+                        },
+                        [_vm._v("Discard")]
+                      )
+                    ])
+                  }),
+                  0
+                )
               ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "hand" },
-            _vm._l(_vm.hand, function(card) {
-              return _c(
-                "li",
-                {
-                  key: card._id,
-                  staticClass: "card",
-                  on: {
-                    click: function($event) {
-                      return _vm.playCard(card.value, card._id)
-                    }
-                  }
-                },
-                [
-                  _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
-                  _vm._v(" "),
-                  card.value
-                    ? _c("span", [_vm._v(_vm._s(card.value))])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  card.special
-                    ? _c("h5", [_vm._v(_vm._s(card.special.description))])
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("button", [_vm._v("Play")]),
-                  _vm._v(" "),
-                  _c("button", [_vm._v("Discard")])
-                ]
-              )
-            }),
-            0
-          )
+            : _vm._e()
         ])
       })
     ],
