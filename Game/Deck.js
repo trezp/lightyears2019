@@ -30,8 +30,6 @@ class Deck {
   }
 
   makeSpecialCard(quantity, description) {
-    let id = "";
-
     description.forEach(des => {
       let card = new cards.SpecialCard(des, 0, des.name);
 
@@ -45,20 +43,20 @@ class Deck {
   }
 
   createDeck() {
-    // this.makeNewCard(cards.Card, this.ly25, 25);
-    // this.makeNewCard(cards.Card, this.ly50, 50);
-    // this.makeNewCard(cards.Card, this.ly75, 75);
-    // this.makeNewCard(cards.Card, this.ly100, 100);
+    this.makeNewCard(cards.Card, this.ly25, 25);
+    this.makeNewCard(cards.Card, this.ly50, 50);
+    this.makeNewCard(cards.Card, this.ly75, 75);
+    this.makeNewCard(cards.Card, this.ly100, 100);
 
-    // this.makeNewCard(cards.GoCard, this.go, 0);
-    // this.makeNewCard(cards.StopCard, this.stop, 0);
-    //this.makeNewCard(cards.Card, this.ly200, 200);
-    // this.makeSpecialCard(this.hazardCards, hazards);
+    this.makeNewCard(cards.GoCard, this.go, 0);
+    this.makeNewCard(cards.StopCard, this.stop, 0);
+    this.makeNewCard(cards.Card, this.ly200, 200);
+    this.makeSpecialCard(this.hazardCards, hazards);
     this.makeSpecialCard(this.remedyCards, remedies);
     this.deck.length = this.deck.deck.length;
+
     return this.deck;
   }
 }
 
-//const deck = new Deck();
 module.exports = new Deck().createDeck();

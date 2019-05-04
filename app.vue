@@ -1,10 +1,9 @@
 
 <template>
   <div>
-    Game: {{gameId}}
     <h1>Light Years</h1>
 
-    <div :key="player.id" v-for="player in players">
+    <div>
       <h2 v-if="!gameHasStarted">
         <span>Hello, {{player.name}}! Let your journey begin!</span>
       </h2>
@@ -15,7 +14,7 @@
         <h2>{{message}}</h2>
         <button @click="drawCard">Draw a card</button>
         <ul class="hand">
-          <li :key="card._id" class="card" v-for="card in hand">
+          <li :key="i+10" class="card" v-for="(card, i) in computedHand">
             <div>
               <strong>{{card.name}}</strong>
             </div>
@@ -33,42 +32,28 @@
 <script>
 import Vue from "vue";
 import axios from "axios";
-import game from "./Game/Game";
+import deck from "./Game/Deck";
+import player from "./Game/Player";
 import message from "./Game/gameMessages";
 
 export default Vue.extend({
   data() {
     return {
-      gameId: game.deck.deckId,
       gameHasStarted: false,
-      players: game.players,
-      player: game.players[0],
-      deck: game.deck,
-      activeDeck: [],
+      player: player,
+      deck: deck,
+      activeDeckLength: 0,
       message: null
     };
   },
   methods: {
     startGame() {
       this.message = message.startMessage;
-      this.updateActiveDeck();
       this.dealCard(6);
       this.gameHasStarted = true;
     },
-    updateActiveDeck() {
-      this.message = "Shuffling the deck...";
-      if (this.activeDeck.length < 1) {
-        this.activeDeck = this.deck;
-      } else {
-        this.activeDeck = [];
-        this.deck.deck.forEach(card => {
-          if (card.discarded === false) {
-            this.activeDeck.push(card);
-          }
-        });
-      }
-    },
     playCard(card) {
+      console.log(this.activeDeckLength);
       if (card.value && this.player) {
         this.player.score += card.value;
         this.discard(card._id);
@@ -76,57 +61,67 @@ export default Vue.extend({
         this.message = `You just traveled ${
           card.value
         } light years. Keep going!`;
-        this.updateActiveDeck();
       } else {
       }
     },
     drawCard() {
+      console.log(this.activeDeckLength);
       this.dealCard(1);
       this.gameHasStarted = true;
     },
     discard(id) {
+      console.log(this.activeDeckLength);
       this.deck.deck.forEach(card => {
         if (card._id === id) {
           card.inHand = false;
           card.discarded = true;
         }
       });
-      this.updateActiveDeck();
     },
-    getRandomNum(length) {
+    getRandomNumber(length) {
       return Math.floor(Math.random() * length);
     },
     getRandomCard() {
-      let randNum = this.getRandomNum(this.activeDeck.length);
-      let card = this.activeDeck[randNum];
-      return card;
+      const length = this.getActiveDeckLength();
+      console.log(length);
+      const randNum = this.getRandomNumber(length);
+      const card = this.deck.deck[randNum];
+
+      if (!card.inHand && !card.discarded) {
+        return card;
+      } else {
+        this.getRandomCard();
+      }
     },
     dealCard(num) {
-      for (let i = num; i > 0; i--) {
+      for (let i = 0; i < num; i++) {
         let card = this.getRandomCard();
         card.inHand = true;
-        console.log(card._id);
         this.player.hand.push(card);
-        //console.log(this.player.hand);
       }
+    },
+    getActiveDeckLength() {
+      let count = 0;
+      this.deck.deck.forEach(card => {
+        if (!card.inHand && !card.discarded) {
+          count++;
+        }
+      });
+      this.activeDeckLength = count;
+      return count;
     }
   },
   computed: {
-    hand: function() {
-      const hand = [];
-
-      console.log(this.deck.deck);
-
-      this.deck.deck.forEach(card => {
-        console.log(card);
-        if (card.inHand) {
+    computedHand: function() {
+      let hand = [];
+      this.player.hand.forEach(card => {
+        if (card.inHand && !card.discarded) {
           hand.push(card);
         }
       });
       return hand;
     }
-  },
-  mounted() {}
+  }
 });
 </script>
 

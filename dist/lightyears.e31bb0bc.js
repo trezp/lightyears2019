@@ -32279,47 +32279,7 @@ var cryptoRandomString = require('crypto-random-string');
 module.exports = function () {
   return cryptoRandomString(32);
 };
-},{"crypto-random-string":"node_modules/crypto-random-string/index.js"}],"Game/Player.js":[function(require,module,exports) {
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var uniqueID = require("unique-string");
-
-var Player =
-/*#__PURE__*/
-function () {
-  function Player(name) {
-    _classCallCheck(this, Player);
-
-    this.playerID = uniqueID();
-    this.name = name || "Player" + this.playerID;
-    this.score = 0;
-    this.isTurn = false;
-    this.canPlay = false;
-    this.hand = [];
-  }
-
-  _createClass(Player, [{
-    key: "makePlayer",
-    value: function makePlayer(name) {
-      var player = new Player(name);
-      return player;
-    }
-  }, {
-    key: "updateScore",
-    value: function updateScore(score) {
-      this.score = score;
-    }
-  }]);
-
-  return Player;
-}();
-
-module.exports = new Player().makePlayer("Player One");
-},{"unique-string":"node_modules/unique-string/index.js"}],"Game/Cards.js":[function(require,module,exports) {
+},{"crypto-random-string":"node_modules/crypto-random-string/index.js"}],"Game/Cards.js":[function(require,module,exports) {
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -32534,7 +32494,6 @@ function () {
     value: function makeSpecialCard(quantity, description) {
       var _this = this;
 
-      var id = "";
       description.forEach(function (des) {
         var card = new cards.SpecialCard(des, 0, des.name);
 
@@ -32549,14 +32508,14 @@ function () {
   }, {
     key: "createDeck",
     value: function createDeck() {
-      // this.makeNewCard(cards.Card, this.ly25, 25);
-      // this.makeNewCard(cards.Card, this.ly50, 50);
-      // this.makeNewCard(cards.Card, this.ly75, 75);
-      // this.makeNewCard(cards.Card, this.ly100, 100);
-      // this.makeNewCard(cards.GoCard, this.go, 0);
-      // this.makeNewCard(cards.StopCard, this.stop, 0);
-      //this.makeNewCard(cards.Card, this.ly200, 200);
-      // this.makeSpecialCard(this.hazardCards, hazards);
+      this.makeNewCard(cards.Card, this.ly25, 25);
+      this.makeNewCard(cards.Card, this.ly50, 50);
+      this.makeNewCard(cards.Card, this.ly75, 75);
+      this.makeNewCard(cards.Card, this.ly100, 100);
+      this.makeNewCard(cards.GoCard, this.go, 0);
+      this.makeNewCard(cards.StopCard, this.stop, 0);
+      this.makeNewCard(cards.Card, this.ly200, 200);
+      this.makeSpecialCard(this.hazardCards, hazards);
       this.makeSpecialCard(this.remedyCards, remedies);
       this.deck.length = this.deck.deck.length;
       return this.deck;
@@ -32564,61 +32523,50 @@ function () {
   }]);
 
   return Deck;
-}(); //const deck = new Deck();
-
+}();
 
 module.exports = new Deck().createDeck();
-},{"unique-string":"node_modules/unique-string/index.js","./Cards":"Game/Cards.js","./hazards":"Game/hazards.js","./remedies":"Game/remedies.js"}],"Game/helpers.js":[function(require,module,exports) {
-function getRandomNum(length) {
-  return Math.floor(Math.random() * length);
-}
-
-module.exports = {
-  getRandomNum: getRandomNum
-};
-},{}],"Game/Game.js":[function(require,module,exports) {
+},{"unique-string":"node_modules/unique-string/index.js","./Cards":"Game/Cards.js","./hazards":"Game/hazards.js","./remedies":"Game/remedies.js"}],"Game/Player.js":[function(require,module,exports) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var player = require("./Player");
-
-var deck = require("./Deck");
-
 var uniqueID = require("unique-string");
 
-var helpers = require("./helpers");
-
-var Game =
+var Player =
 /*#__PURE__*/
 function () {
-  function Game() {
-    _classCallCheck(this, Game);
+  function Player(name) {
+    _classCallCheck(this, Player);
 
-    this.game = {
-      gameId: uniqueID(),
-      players: [],
-      active: true,
-      deck: deck
-    };
+    this.playerID = uniqueID();
+    this.name = name || "Player" + this.playerID;
+    this.score = 0;
+    this.isTurn = false;
+    this.canPlay = false;
+    this.hand = [];
   }
 
-  _createClass(Game, [{
-    key: "startGame",
-    value: function startGame() {
-      this.game.players.push(player); //this.game.players.push(player);
-
-      return this.game;
+  _createClass(Player, [{
+    key: "makePlayer",
+    value: function makePlayer(name) {
+      var player = new Player(name);
+      return player;
+    }
+  }, {
+    key: "updateScore",
+    value: function updateScore(score) {
+      this.score = score;
     }
   }]);
 
-  return Game;
+  return Player;
 }();
 
-module.exports = new Game().startGame();
-},{"./Player":"Game/Player.js","./Deck":"Game/Deck.js","unique-string":"node_modules/unique-string/index.js","./helpers":"Game/helpers.js"}],"Game/gameMessages.js":[function(require,module,exports) {
+module.exports = new Player().makePlayer("Player One");
+},{"unique-string":"node_modules/unique-string/index.js"}],"Game/gameMessages.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32983,7 +32931,9 @@ var _vue = _interopRequireDefault(require("vue"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var _Game = _interopRequireDefault(require("./Game/Game"));
+var _Deck = _interopRequireDefault(require("./Game/Deck"));
+
+var _Player = _interopRequireDefault(require("./Game/Player"));
 
 var _gameMessages = _interopRequireDefault(require("./Game/gameMessages"));
 
@@ -33020,96 +32970,90 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
 var _default = _vue.default.extend({
   data: function data() {
     return {
-      gameId: _Game.default.deck.deckId,
       gameHasStarted: false,
-      players: _Game.default.players,
-      player: _Game.default.players[0],
-      deck: _Game.default.deck,
-      activeDeck: [],
+      player: _Player.default,
+      deck: _Deck.default,
+      activeDeckLength: 0,
       message: null
     };
   },
   methods: {
     startGame: function startGame() {
       this.message = _gameMessages.default.startMessage;
-      this.updateActiveDeck();
       this.dealCard(6);
       this.gameHasStarted = true;
     },
-    updateActiveDeck: function updateActiveDeck() {
-      var _this = this;
-
-      this.message = "Shuffling the deck...";
-
-      if (this.activeDeck.length < 1) {
-        this.activeDeck = this.deck;
-      } else {
-        this.activeDeck = [];
-        this.deck.deck.forEach(function (card) {
-          if (card.discarded === false) {
-            _this.activeDeck.push(card);
-          }
-        });
-      }
-    },
     playCard: function playCard(card) {
+      console.log(this.activeDeckLength);
+
       if (card.value && this.player) {
         this.player.score += card.value;
         this.discard(card._id);
         card.discarded = true;
         this.message = "You just traveled ".concat(card.value, " light years. Keep going!");
-        this.updateActiveDeck();
       } else {}
     },
     drawCard: function drawCard() {
+      console.log(this.activeDeckLength);
       this.dealCard(1);
       this.gameHasStarted = true;
     },
     discard: function discard(id) {
+      console.log(this.activeDeckLength);
       this.deck.deck.forEach(function (card) {
         if (card._id === id) {
           card.inHand = false;
           card.discarded = true;
         }
       });
-      this.updateActiveDeck();
     },
-    getRandomNum: function getRandomNum(length) {
+    getRandomNumber: function getRandomNumber(length) {
       return Math.floor(Math.random() * length);
     },
     getRandomCard: function getRandomCard() {
-      var randNum = this.getRandomNum(this.activeDeck.length);
-      var card = this.activeDeck[randNum];
-      return card;
+      var length = this.getActiveDeckLength();
+      console.log(length);
+      var randNum = this.getRandomNumber(length);
+      var card = this.deck.deck[randNum];
+
+      if (!card.inHand && !card.discarded) {
+        return card;
+      } else {
+        this.getRandomCard();
+      }
     },
     dealCard: function dealCard(num) {
-      for (var i = num; i > 0; i--) {
+      for (var i = 0; i < num; i++) {
         var card = this.getRandomCard();
         card.inHand = true;
-        console.log(card._id);
-        this.player.hand.push(card); //console.log(this.player.hand);
+        this.player.hand.push(card);
       }
+    },
+    getActiveDeckLength: function getActiveDeckLength() {
+      var count = 0;
+      this.deck.deck.forEach(function (card) {
+        if (!card.inHand && !card.discarded) {
+          count++;
+        }
+      });
+      this.activeDeckLength = count;
+      return count;
     }
   },
   computed: {
-    hand: function hand() {
+    computedHand: function computedHand() {
       var hand = [];
-      console.log(this.deck.deck);
-      this.deck.deck.forEach(function (card) {
-        console.log(card);
-
-        if (card.inHand) {
+      this.player.hand.forEach(function (card) {
+        if (card.inHand && !card.discarded) {
           hand.push(card);
         }
       });
       return hand;
     }
-  },
-  mounted: function mounted() {}
+  }
 });
 
 exports.default = _default;
@@ -33125,105 +33069,98 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _vm._v("\n  Game: " + _vm._s(_vm.gameId) + "\n  "),
-      _c("h1", [_vm._v("Light Years")]),
+  return _c("div", [
+    _c("h1", [_vm._v("Light Years")]),
+    _vm._v(" "),
+    _c("div", [
+      !_vm.gameHasStarted
+        ? _c("h2", [
+            _c("span", [
+              _vm._v(
+                "Hello, " +
+                  _vm._s(_vm.player.name) +
+                  "! Let your journey begin!"
+              )
+            ])
+          ])
+        : _vm._e(),
       _vm._v(" "),
-      _vm._l(_vm.players, function(player) {
-        return _c("div", { key: player.id }, [
-          !_vm.gameHasStarted
-            ? _c("h2", [
-                _c("span", [
-                  _vm._v(
-                    "Hello, " +
-                      _vm._s(player.name) +
-                      "! Let your journey begin!"
+      !_vm.gameHasStarted
+        ? _c(
+            "button",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.startGame()
+                }
+              }
+            },
+            [_vm._v("Start Game")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.gameHasStarted
+        ? _c("div", [
+            _c("h3", { staticClass: "title" }, [
+              _vm._v("Name: " + _vm._s(_vm.player.name))
+            ]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "subtitle" }, [
+              _vm._v("Light Years Traveled: " + _vm._s(_vm.player.score))
+            ]),
+            _vm._v(" "),
+            _c("h2", [_vm._v(_vm._s(_vm.message))]),
+            _vm._v(" "),
+            _c("button", { on: { click: _vm.drawCard } }, [
+              _vm._v("Draw a card")
+            ]),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "hand" },
+              _vm._l(_vm.computedHand, function(card, i) {
+                return _c("li", { key: i + 10, staticClass: "card" }, [
+                  _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
+                  _vm._v(" "),
+                  card.value
+                    ? _c("span", [_vm._v(_vm._s(card.value))])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  card.special
+                    ? _c("h5", [_vm._v(_vm._s(card.special.description))])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.playCard(card)
+                        }
+                      }
+                    },
+                    [_vm._v("Play")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.discard(card._id)
+                        }
+                      }
+                    },
+                    [_vm._v("Discard")]
                   )
                 ])
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          !_vm.gameHasStarted
-            ? _c(
-                "button",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.startGame()
-                    }
-                  }
-                },
-                [_vm._v("Start Game")]
-              )
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.gameHasStarted
-            ? _c("div", [
-                _c("h3", { staticClass: "title" }, [
-                  _vm._v("Name: " + _vm._s(player.name))
-                ]),
-                _vm._v(" "),
-                _c("h2", { staticClass: "subtitle" }, [
-                  _vm._v("Light Years Traveled: " + _vm._s(player.score))
-                ]),
-                _vm._v(" "),
-                _c("h2", [_vm._v(_vm._s(_vm.message))]),
-                _vm._v(" "),
-                _c("button", { on: { click: _vm.drawCard } }, [
-                  _vm._v("Draw a card")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "hand" },
-                  _vm._l(_vm.hand, function(card) {
-                    return _c("li", { key: card._id, staticClass: "card" }, [
-                      _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
-                      _vm._v(" "),
-                      card.value
-                        ? _c("span", [_vm._v(_vm._s(card.value))])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      card.special
-                        ? _c("h5", [_vm._v(_vm._s(card.special.description))])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function($event) {
-                              return _vm.playCard(card)
-                            }
-                          }
-                        },
-                        [_vm._v("Play")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          on: {
-                            click: function($event) {
-                              return _vm.discard(card._id)
-                            }
-                          }
-                        },
-                        [_vm._v("Discard")]
-                      )
-                    ])
-                  }),
-                  0
-                )
-              ])
-            : _vm._e()
-        ])
-      })
-    ],
-    2
-  )
+              }),
+              0
+            )
+          ])
+        : _vm._e()
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -33258,7 +33195,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","axios":"node_modules/axios/index.js","./Game/Game":"Game/Game.js","./Game/gameMessages":"Game/gameMessages.js","_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"index.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","axios":"node_modules/axios/index.js","./Game/Deck":"Game/Deck.js","./Game/Player":"Game/Player.js","./Game/gameMessages":"Game/gameMessages.js","_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
