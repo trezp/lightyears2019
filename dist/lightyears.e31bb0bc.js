@@ -32331,63 +32331,27 @@ function (_Card) {
   }
 
   return SpecialCard;
-}(Card);
+}(Card); // class GoCard extends Card {
+//   constructor(...args) {
+//     super(...args);
+//     this.description = "Go!";
+//     this.name = "Go!";
+//   }
+// }
+// class StopCard extends Card {
+//   constructor(...args) {
+//     super(...args);
+//     this.description = "Stop! You cannot proceed without a Go card.";
+//     this.name = "Stop!";
+//   }
+// }
 
-var GoCard =
-/*#__PURE__*/
-function (_Card2) {
-  _inherits(GoCard, _Card2);
-
-  function GoCard() {
-    var _getPrototypeOf3;
-
-    var _this2;
-
-    _classCallCheck(this, GoCard);
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    _this2 = _possibleConstructorReturn(this, (_getPrototypeOf3 = _getPrototypeOf(GoCard)).call.apply(_getPrototypeOf3, [this].concat(args)));
-    _this2.description = "Go!";
-    _this2.name = "Go!";
-    return _this2;
-  }
-
-  return GoCard;
-}(Card);
-
-var StopCard =
-/*#__PURE__*/
-function (_Card3) {
-  _inherits(StopCard, _Card3);
-
-  function StopCard() {
-    var _getPrototypeOf4;
-
-    var _this3;
-
-    _classCallCheck(this, StopCard);
-
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    _this3 = _possibleConstructorReturn(this, (_getPrototypeOf4 = _getPrototypeOf(StopCard)).call.apply(_getPrototypeOf4, [this].concat(args)));
-    _this3.description = "Stop! You cannot proceed without a Go card.";
-    _this3.name = "Stop!";
-    return _this3;
-  }
-
-  return StopCard;
-}(Card);
 
 module.exports = {
   Card: Card,
-  SpecialCard: SpecialCard,
-  GoCard: GoCard,
-  StopCard: StopCard
+  SpecialCard: SpecialCard // GoCard,
+  // StopCard
+
 };
 },{"unique-string":"node_modules/unique-string/index.js"}],"Game/hazards.js":[function(require,module,exports) {
 module.exports = [{
@@ -32466,7 +32430,6 @@ function () {
 
     this.deck = {
       deckId: uniqueID(),
-      length: 0,
       deck: []
     };
     this.ly25 = 10;
@@ -32517,7 +32480,6 @@ function () {
       // this.makeSpecialCard(this.hazardCards, hazards);
 
       this.makeSpecialCard(this.remedyCards, remedies);
-      this.deck.length = this.deck.deck.length;
       return this.deck;
     }
   }]);
@@ -32979,12 +32941,11 @@ var _default = _vue.default.extend({
       player: _Player.default,
       deck: _Deck.default,
       discardedDeck: [],
-      hand: [],
-      activeDeckLength: 0,
       message: null
     };
   },
   methods: {
+    examineDeck: function examineDeck() {},
     startGame: function startGame() {
       this.message = _gameMessages.default.startMessage;
       this.gameHasStarted = true;
@@ -32993,16 +32954,39 @@ var _default = _vue.default.extend({
         this.dealCard();
       }
     },
-    getRandomNumber: function getRandomNumber() {
-      return Math.floor(Math.random() * this.deck.deck.length);
+    getRandomNumber: function getRandomNumber(length) {
+      return Math.floor(Math.random() * length);
     },
     getRandomCard: function getRandomCard() {
-      return this.deck.deck[this.getRandomNumber()];
+      return this.deck.deck[this.getRandomNumber(this.deck.deck.length)];
     },
     dealCard: function dealCard() {
-      var card = this.getRandomCard(); // If less than one card in the deck, refill deck
+      this.updateDeck();
+      var card = this.getRandomCard();
+      card.inHand = true;
+      this.player.hand.push(card);
+    },
+    playCard: function playCard(card) {
+      this.updateDeck();
 
-      if (this.deck.deck.length <= 1) {
+      if (card.value) {
+        this.player.score += card.value;
+        this.message = "You just traveled ".concat(card.value, " light years. Keep going!");
+      }
+
+      this.player.hand.push(card);
+      this.discard(card);
+    },
+    discard: function discard(card) {
+      card.inHand = false;
+      card.discarded = true;
+      this.discardedDeck.push(card);
+      this.player.hand = this.player.hand.filter(function (used) {
+        return used._id !== card._id;
+      });
+    },
+    updateDeck: function updateDeck() {
+      if (this.deck.deck.length < 2) {
         this.deck.deck = this.discardedDeck;
         this.deck.deck.forEach(function (card) {
           return card.discarded = false;
@@ -33010,36 +32994,9 @@ var _default = _vue.default.extend({
         this.discarded.deck = [];
       }
 
-      card.inHand = true;
-      this.player.hand.push(card);
-    },
-    playCard: function playCard(card, index) {
-      if (card.value) {
-        this.player.score += card.value;
-        this.message = "You just traveled ".concat(card.value, " light years. Keep going!");
-      }
-
-      card.discarded = true;
-      card.inHand = false;
-      this.discard(card, index);
-    },
-    discard: function discard(card, index) {
-      card.inHand = false;
-      card.discarded = true;
-      this.discardedDeck.push(card);
-      this.deck.deck.splice(index, 1);
-    }
-  },
-  computed: {
-    computedHand: function computedHand() {
-      var hand = [];
-      this.player.hand.forEach(function (card) {
-        if (card.inHand) {
-          hand.push(card);
-        }
+      this.deck.deck = this.deck.deck.filter(function (card) {
+        return !card.inHand;
       });
-      this.hand = hand;
-      return hand;
     }
   }
 });
@@ -33107,7 +33064,7 @@ exports.default = _default;
               "ul",
               { staticClass: "hand" },
               _vm._l(_vm.player.hand, function(card, index) {
-                return _c("li", { key: card._id, staticClass: "card" }, [
+                return _c("li", { key: index, staticClass: "card" }, [
                   _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
                   _vm._v(" "),
                   card.value
@@ -33123,7 +33080,7 @@ exports.default = _default;
                     {
                       on: {
                         click: function($event) {
-                          return _vm.playCard(card, index)
+                          return _vm.playCard(card)
                         }
                       }
                     },
@@ -33135,7 +33092,7 @@ exports.default = _default;
                     {
                       on: {
                         click: function($event) {
-                          return _vm.discard(card, index)
+                          return _vm.discard(card)
                         }
                       }
                     },
@@ -33221,7 +33178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64254" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62459" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

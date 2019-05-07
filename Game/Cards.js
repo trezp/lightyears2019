@@ -20,25 +20,25 @@ class SpecialCard extends Card {
   }
 }
 
-class GoCard extends Card {
-  constructor(...args) {
-    super(...args);
-    this.description = "Go!";
-    this.name = "Go!";
-  }
-}
+// class GoCard extends Card {
+//   constructor(...args) {
+//     super(...args);
+//     this.description = "Go!";
+//     this.name = "Go!";
+//   }
+// }
 
-class StopCard extends Card {
-  constructor(...args) {
-    super(...args);
-    this.description = "Stop! You cannot proceed without a Go card.";
-    this.name = "Stop!";
-  }
-}
+// class StopCard extends Card {
+//   constructor(...args) {
+//     super(...args);
+//     this.description = "Stop! You cannot proceed without a Go card.";
+//     this.name = "Stop!";
+//   }
+// }
 
 module.exports = {
   Card,
-  SpecialCard,
-  GoCard,
-  StopCard
+  SpecialCard
+  // GoCard,
+  // StopCard
 };

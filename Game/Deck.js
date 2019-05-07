@@ -7,7 +7,6 @@ class Deck {
   constructor() {
     this.deck = {
       deckId: uniqueID(),
-      length: 0,
       deck: []
     };
     this.ly25 = 10;
@@ -53,8 +52,6 @@ class Deck {
     // this.makeNewCard(cards.Card, this.ly200, 200);
     // this.makeSpecialCard(this.hazardCards, hazards);
     this.makeSpecialCard(this.remedyCards, remedies);
-    this.deck.length = this.deck.deck.length;
-
     return this.deck;
   }
 }

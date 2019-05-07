@@ -16,14 +16,14 @@
         <h2>{{message}}</h2>
         <button @click="dealCard">Draw a card</button>
         <ul class="hand">
-          <li :key="card._id" class="card" v-for="(card, index) in player.hand">
+          <li :key="index" v-for="(card, index) in player.hand" class="card">
             <div>
               <strong>{{card.name}}</strong>
             </div>
             <span v-if="card.value">{{card.value}}</span>
             <h5 v-if="card.special">{{card.special.description}}</h5>
-            <button @click="playCard(card, index)">Play</button>
-            <button @click="discard(card, index)">Discard</button>
+            <button @click="playCard(card)">Play</button>
+            <button @click="discard(card)">Discard</button>
           </li>
         </ul>
       </div>
@@ -45,12 +45,11 @@ export default Vue.extend({
       player: player,
       deck: deck,
       discardedDeck: [],
-      hand: [],
-      activeDeckLength: 0,
       message: null
     };
   },
   methods: {
+    examineDeck() {},
     startGame() {
       this.message = message.startMessage;
       this.gameHasStarted = true;
@@ -59,24 +58,22 @@ export default Vue.extend({
         this.dealCard();
       }
     },
-    getRandomNumber() {
-      return Math.floor(Math.random() * this.deck.deck.length);
+    getRandomNumber(length) {
+      return Math.floor(Math.random() * length);
     },
     getRandomCard() {
-      return this.deck.deck[this.getRandomNumber()];
+      return this.deck.deck[this.getRandomNumber(this.deck.deck.length)];
     },
     dealCard() {
+      this.updateDeck();
+
       let card = this.getRandomCard();
-      // If less than one card in the deck, refill deck
-      if (this.deck.deck.length <= 1) {
-        this.deck.deck = this.discardedDeck;
-        this.deck.deck.forEach(card => (card.discarded = false));
-        this.discarded.deck = [];
-      }
+
       card.inHand = true;
       this.player.hand.push(card);
     },
-    playCard(card, index) {
+    playCard(card) {
+      this.updateDeck();
       if (card.value) {
         this.player.score += card.value;
 
@@ -84,27 +81,22 @@ export default Vue.extend({
           card.value
         } light years. Keep going!`;
       }
-      card.discarded = true;
-      card.inHand = false;
-      this.discard(card, index);
+      this.player.hand.push(card);
+      this.discard(card);
     },
-    discard(card, index) {
+    discard(card) {
       card.inHand = false;
       card.discarded = true;
       this.discardedDeck.push(card);
-      this.deck.deck.splice(index, 1);
-    }
-  },
-  computed: {
-    computedHand: function() {
-      const hand = [];
-      this.player.hand.forEach(card => {
-        if (card.inHand) {
-          hand.push(card);
-        }
-      });
-      this.hand = hand;
-      return hand;
+      this.player.hand = this.player.hand.filter(used => used._id !== card._id);
+    },
+    updateDeck() {
+      if (this.deck.deck.length < 2) {
+        this.deck.deck = this.discardedDeck;
+        this.deck.deck.forEach(card => (card.discarded = false));
+        this.discarded.deck = [];
+      }
+      this.deck.deck = this.deck.deck.filter(card => !card.inHand);
     }
   }
 });
