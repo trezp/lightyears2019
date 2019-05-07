@@ -1,4 +1,6 @@
 
+//TO DO 
+// use player.hand instead of computed property for now
 <template>
   <div>
     <h1>Light Years</h1>
@@ -12,9 +14,9 @@
         <h3 class="title">Name: {{player.name}}</h3>
         <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
         <h2>{{message}}</h2>
-        <button @click="drawCard">Draw a card</button>
+        <button @click="dealCard">Draw a card</button>
         <ul class="hand">
-          <li :key="index+10" class="card" v-for="(card, index) in computedHand">
+          <li :key="card._id" class="card" v-for="(card, index) in player.hand">
             <div>
               <strong>{{card.name}}</strong>
             </div>
@@ -43,6 +45,7 @@ export default Vue.extend({
       player: player,
       deck: deck,
       discardedDeck: [],
+      hand: [],
       activeDeckLength: 0,
       message: null
     };
@@ -50,81 +53,57 @@ export default Vue.extend({
   methods: {
     startGame() {
       this.message = message.startMessage;
-      this.dealCard(6);
       this.gameHasStarted = true;
-      this.getActiveDeckLength();
+
+      for (let i = 0; i < 6; i++) {
+        this.dealCard();
+      }
+    },
+    getRandomNumber() {
+      return Math.floor(Math.random() * this.deck.deck.length);
+    },
+    getRandomCard() {
+      return this.deck.deck[this.getRandomNumber()];
+    },
+    dealCard() {
+      let card = this.getRandomCard();
+      // If less than one card in the deck, refill deck
+      if (this.deck.deck.length <= 1) {
+        this.deck.deck = this.discardedDeck;
+        this.deck.deck.forEach(card => (card.discarded = false));
+        this.discarded.deck = [];
+      }
+      card.inHand = true;
+      this.player.hand.push(card);
     },
     playCard(card, index) {
       if (card.value) {
         this.player.score += card.value;
-        this.discard(card, index);
-        card.discarded = true;
+
         this.message = `You just traveled ${
           card.value
         } light years. Keep going!`;
-      } else {
       }
-    },
-    drawCard() {
-      this.dealCard(1);
-      this.gameHasStarted = true;
+      card.discarded = true;
+      card.inHand = false;
+      this.discard(card, index);
     },
     discard(card, index) {
       card.inHand = false;
-      card.discarded - true;
+      card.discarded = true;
       this.discardedDeck.push(card);
       this.deck.deck.splice(index, 1);
-
-      // this.deck.deck.forEach(card => {
-      //   if (card._id === id) {
-      //     card.inHand = false;
-      //     card.discarded = true;
-      //   }
-      // });
-      // this.getActiveDeckLength();
-      // console.log(this.activeDeckLength);
-    },
-    getRandomNumber(length) {
-      return Math.floor(Math.random() * length);
-    },
-    getRandomCard() {
-      const length = this.getActiveDeckLength();
-      const randNum = this.getRandomNumber(length);
-      const card = this.deck.deck[randNum];
-
-      if (!card.inHand && !card.discarded) {
-        return card;
-      } else {
-        this.getRandomCard();
-      }
-    },
-    dealCard(num) {
-      for (let i = 0; i < num; i++) {
-        let card = this.getRandomCard();
-        card.inHand = true;
-
-        this.player.hand.push(card);
-      }
-    },
-    getActiveDeckLength() {
-      let count = 0;
-      this.deck.deck.forEach(card => {
-        if (!card.inHand && !card.discarded) {
-          count++;
-        }
-      });
-      this.activeDeckLength = count;
-      return count;
     }
   },
   computed: {
     computedHand: function() {
-      let hand = [];
+      const hand = [];
       this.player.hand.forEach(card => {
-        if (card.inHand && !card.discarded) {
+        if (card.inHand) {
           hand.push(card);
         }
       });
+      this.hand = hand;
       return hand;
     }
   }

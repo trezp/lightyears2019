@@ -32508,14 +32508,14 @@ function () {
   }, {
     key: "createDeck",
     value: function createDeck() {
-      this.makeNewCard(cards.Card, this.ly25, 25);
-      this.makeNewCard(cards.Card, this.ly50, 50);
-      this.makeNewCard(cards.Card, this.ly75, 75);
-      this.makeNewCard(cards.Card, this.ly100, 100);
-      this.makeNewCard(cards.GoCard, this.go, 0);
-      this.makeNewCard(cards.StopCard, this.stop, 0);
-      this.makeNewCard(cards.Card, this.ly200, 200);
-      this.makeSpecialCard(this.hazardCards, hazards);
+      this.makeNewCard(cards.Card, this.ly25, 25); // this.makeNewCard(cards.Card, this.ly50, 50);
+      // this.makeNewCard(cards.Card, this.ly75, 75);
+      // this.makeNewCard(cards.Card, this.ly100, 100);
+      // this.makeNewCard(cards.GoCard, this.go, 0);
+      // this.makeNewCard(cards.StopCard, this.stop, 0);
+      // this.makeNewCard(cards.Card, this.ly200, 200);
+      // this.makeSpecialCard(this.hazardCards, hazards);
+
       this.makeSpecialCard(this.remedyCards, remedies);
       this.deck.length = this.deck.deck.length;
       return this.deck;
@@ -32970,6 +32970,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
 var _default = _vue.default.extend({
   data: function data() {
     return {
@@ -32977,6 +32979,7 @@ var _default = _vue.default.extend({
       player: _Player.default,
       deck: _Deck.default,
       discardedDeck: [],
+      hand: [],
       activeDeckLength: 0,
       message: null
     };
@@ -32984,75 +32987,58 @@ var _default = _vue.default.extend({
   methods: {
     startGame: function startGame() {
       this.message = _gameMessages.default.startMessage;
-      this.dealCard(6);
       this.gameHasStarted = true;
-      this.getActiveDeckLength();
+
+      for (var i = 0; i < 6; i++) {
+        this.dealCard();
+      }
+    },
+    getRandomNumber: function getRandomNumber() {
+      return Math.floor(Math.random() * this.deck.deck.length);
+    },
+    getRandomCard: function getRandomCard() {
+      return this.deck.deck[this.getRandomNumber()];
+    },
+    dealCard: function dealCard() {
+      var card = this.getRandomCard(); // If less than one card in the deck, refill deck
+
+      if (this.deck.deck.length <= 1) {
+        this.deck.deck = this.discardedDeck;
+        this.deck.deck.forEach(function (card) {
+          return card.discarded = false;
+        });
+        this.discarded.deck = [];
+      }
+
+      card.inHand = true;
+      this.player.hand.push(card);
     },
     playCard: function playCard(card, index) {
       if (card.value) {
         this.player.score += card.value;
-        this.discard(card, index);
-        card.discarded = true;
         this.message = "You just traveled ".concat(card.value, " light years. Keep going!");
-      } else {}
-    },
-    drawCard: function drawCard() {
-      this.dealCard(1);
-      this.gameHasStarted = true;
+      }
+
+      card.discarded = true;
+      card.inHand = false;
+      this.discard(card, index);
     },
     discard: function discard(card, index) {
       card.inHand = false;
-      card.discarded - true;
+      card.discarded = true;
       this.discardedDeck.push(card);
-      this.deck.deck.splice(index, 1); // this.deck.deck.forEach(card => {
-      //   if (card._id === id) {
-      //     card.inHand = false;
-      //     card.discarded = true;
-      //   }
-      // });
-      // this.getActiveDeckLength();
-      // console.log(this.activeDeckLength);
-    },
-    getRandomNumber: function getRandomNumber(length) {
-      return Math.floor(Math.random() * length);
-    },
-    getRandomCard: function getRandomCard() {
-      var length = this.getActiveDeckLength();
-      var randNum = this.getRandomNumber(length);
-      var card = this.deck.deck[randNum];
-
-      if (!card.inHand && !card.discarded) {
-        return card;
-      } else {
-        this.getRandomCard();
-      }
-    },
-    dealCard: function dealCard(num) {
-      for (var i = 0; i < num; i++) {
-        var card = this.getRandomCard();
-        card.inHand = true;
-        this.player.hand.push(card);
-      }
-    },
-    getActiveDeckLength: function getActiveDeckLength() {
-      var count = 0;
-      this.deck.deck.forEach(function (card) {
-        if (!card.inHand && !card.discarded) {
-          count++;
-        }
-      });
-      this.activeDeckLength = count;
-      return count;
+      this.deck.deck.splice(index, 1);
     }
   },
   computed: {
     computedHand: function computedHand() {
       var hand = [];
       this.player.hand.forEach(function (card) {
-        if (card.inHand && !card.discarded) {
+        if (card.inHand) {
           hand.push(card);
         }
       });
+      this.hand = hand;
       return hand;
     }
   }
@@ -33113,15 +33099,15 @@ exports.default = _default;
             _vm._v(" "),
             _c("h2", [_vm._v(_vm._s(_vm.message))]),
             _vm._v(" "),
-            _c("button", { on: { click: _vm.drawCard } }, [
+            _c("button", { on: { click: _vm.dealCard } }, [
               _vm._v("Draw a card")
             ]),
             _vm._v(" "),
             _c(
               "ul",
               { staticClass: "hand" },
-              _vm._l(_vm.computedHand, function(card, index) {
-                return _c("li", { key: index + 10, staticClass: "card" }, [
+              _vm._l(_vm.player.hand, function(card, index) {
+                return _c("li", { key: card._id, staticClass: "card" }, [
                   _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
                   _vm._v(" "),
                   card.value
@@ -33235,7 +33221,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54858" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64254" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
