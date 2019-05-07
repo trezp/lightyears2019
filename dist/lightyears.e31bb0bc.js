@@ -32976,6 +32976,7 @@ var _default = _vue.default.extend({
       gameHasStarted: false,
       player: _Player.default,
       deck: _Deck.default,
+      discardedDeck: [],
       activeDeckLength: 0,
       message: null
     };
@@ -32985,37 +32986,38 @@ var _default = _vue.default.extend({
       this.message = _gameMessages.default.startMessage;
       this.dealCard(6);
       this.gameHasStarted = true;
+      this.getActiveDeckLength();
     },
-    playCard: function playCard(card) {
-      console.log(this.activeDeckLength);
-
-      if (card.value && this.player) {
+    playCard: function playCard(card, index) {
+      if (card.value) {
         this.player.score += card.value;
-        this.discard(card._id);
+        this.discard(card, index);
         card.discarded = true;
         this.message = "You just traveled ".concat(card.value, " light years. Keep going!");
       } else {}
     },
     drawCard: function drawCard() {
-      console.log(this.activeDeckLength);
       this.dealCard(1);
       this.gameHasStarted = true;
     },
-    discard: function discard(id) {
-      console.log(this.activeDeckLength);
-      this.deck.deck.forEach(function (card) {
-        if (card._id === id) {
-          card.inHand = false;
-          card.discarded = true;
-        }
-      });
+    discard: function discard(card, index) {
+      card.inHand = false;
+      card.discarded - true;
+      this.discardedDeck.push(card);
+      this.deck.deck.splice(index, 1); // this.deck.deck.forEach(card => {
+      //   if (card._id === id) {
+      //     card.inHand = false;
+      //     card.discarded = true;
+      //   }
+      // });
+      // this.getActiveDeckLength();
+      // console.log(this.activeDeckLength);
     },
     getRandomNumber: function getRandomNumber(length) {
       return Math.floor(Math.random() * length);
     },
     getRandomCard: function getRandomCard() {
       var length = this.getActiveDeckLength();
-      console.log(length);
       var randNum = this.getRandomNumber(length);
       var card = this.deck.deck[randNum];
 
@@ -33118,8 +33120,8 @@ exports.default = _default;
             _c(
               "ul",
               { staticClass: "hand" },
-              _vm._l(_vm.computedHand, function(card, i) {
-                return _c("li", { key: i + 10, staticClass: "card" }, [
+              _vm._l(_vm.computedHand, function(card, index) {
+                return _c("li", { key: index + 10, staticClass: "card" }, [
                   _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
                   _vm._v(" "),
                   card.value
@@ -33135,7 +33137,7 @@ exports.default = _default;
                     {
                       on: {
                         click: function($event) {
-                          return _vm.playCard(card)
+                          return _vm.playCard(card, index)
                         }
                       }
                     },
@@ -33147,7 +33149,7 @@ exports.default = _default;
                     {
                       on: {
                         click: function($event) {
-                          return _vm.discard(card._id)
+                          return _vm.discard(card, index)
                         }
                       }
                     },
@@ -33233,7 +33235,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63812" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54858" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

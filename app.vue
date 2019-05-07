@@ -14,14 +14,14 @@
         <h2>{{message}}</h2>
         <button @click="drawCard">Draw a card</button>
         <ul class="hand">
-          <li :key="i+10" class="card" v-for="(card, i) in computedHand">
+          <li :key="index+10" class="card" v-for="(card, index) in computedHand">
             <div>
               <strong>{{card.name}}</strong>
             </div>
             <span v-if="card.value">{{card.value}}</span>
             <h5 v-if="card.special">{{card.special.description}}</h5>
-            <button @click="playCard(card)">Play</button>
-            <button @click="discard(card._id)">Discard</button>
+            <button @click="playCard(card, index)">Play</button>
+            <button @click="discard(card, index)">Discard</button>
           </li>
         </ul>
       </div>
@@ -42,6 +42,7 @@ export default Vue.extend({
       gameHasStarted: false,
       player: player,
       deck: deck,
+      discardedDeck: [],
       activeDeckLength: 0,
       message: null
     };
@@ -51,12 +52,12 @@ export default Vue.extend({
       this.message = message.startMessage;
       this.dealCard(6);
       this.gameHasStarted = true;
+      this.getActiveDeckLength();
     },
-    playCard(card) {
-      console.log(this.activeDeckLength);
-      if (card.value && this.player) {
+    playCard(card, index) {
+      if (card.value) {
         this.player.score += card.value;
-        this.discard(card._id);
+        this.discard(card, index);
         card.discarded = true;
         this.message = `You just traveled ${
           card.value
@@ -65,25 +66,29 @@ export default Vue.extend({
       }
     },
     drawCard() {
-      console.log(this.activeDeckLength);
       this.dealCard(1);
       this.gameHasStarted = true;
     },
-    discard(id) {
-      console.log(this.activeDeckLength);
-      this.deck.deck.forEach(card => {
-        if (card._id === id) {
-          card.inHand = false;
-          card.discarded = true;
-        }
-      });
+    discard(card, index) {
+      card.inHand = false;
+      card.discarded - true;
+      this.discardedDeck.push(card);
+      this.deck.deck.splice(index, 1);
+
+      // this.deck.deck.forEach(card => {
+      //   if (card._id === id) {
+      //     card.inHand = false;
+      //     card.discarded = true;
+      //   }
+      // });
+      // this.getActiveDeckLength();
+      // console.log(this.activeDeckLength);
     },
     getRandomNumber(length) {
       return Math.floor(Math.random() * length);
     },
     getRandomCard() {
       const length = this.getActiveDeckLength();
-      console.log(length);
       const randNum = this.getRandomNumber(length);
       const card = this.deck.deck[randNum];
 
@@ -97,6 +102,7 @@ export default Vue.extend({
       for (let i = 0; i < num; i++) {
         let card = this.getRandomCard();
         card.inHand = true;
+
         this.player.hand.push(card);
       }
     },
