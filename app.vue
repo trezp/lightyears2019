@@ -33,23 +33,26 @@
 
 <script>
 import Vue from "vue";
-import axios from "axios";
 import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
+import _ from "lodash";
 
 export default Vue.extend({
   data() {
     return {
       gameHasStarted: false,
       player: player,
-      deck: deck.deck,
+      deck: _.shuffle(deck.deck),
+      shuffledDeck: [],
       discardedDeck: [],
       message: null
     };
   },
   methods: {
-    examineDeck() {},
+    examineDeck() {
+      this.deck.forEach(card => console.log(card.name, card.value));
+    },
     startGame() {
       this.message = message.startMessage;
       this.gameHasStarted = true;
@@ -58,8 +61,8 @@ export default Vue.extend({
         this.dealCard();
       }
     },
-    getRandomNumber(length) {
-      return Math.floor(Math.random() * length);
+    getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     },
     getRandomCard() {
       return this.deck[this.getRandomNumber(this.deck.length)];
@@ -98,6 +101,9 @@ export default Vue.extend({
       }
       this.deck = this.deck.filter(card => !card.inHand);
     }
+  },
+  mounted() {
+    this.examineDeck();
   }
 });
 </script>
