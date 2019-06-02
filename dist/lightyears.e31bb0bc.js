@@ -32939,7 +32939,7 @@ var _default = _vue.default.extend({
     return {
       gameHasStarted: false,
       player: _Player.default,
-      deck: _Deck.default,
+      deck: _Deck.default.deck,
       discardedDeck: [],
       message: null
     };
@@ -32958,7 +32958,7 @@ var _default = _vue.default.extend({
       return Math.floor(Math.random() * length);
     },
     getRandomCard: function getRandomCard() {
-      return this.deck.deck[this.getRandomNumber(this.deck.deck.length)];
+      return this.deck[this.getRandomNumber(this.deck.length)];
     },
     dealCard: function dealCard() {
       this.updateDeck();
@@ -32986,15 +32986,15 @@ var _default = _vue.default.extend({
       });
     },
     updateDeck: function updateDeck() {
-      if (this.deck.deck.length < 2) {
-        this.deck.deck = this.discardedDeck;
-        this.deck.deck.forEach(function (card) {
+      if (this.deck.length < 2) {
+        this.deck = this.discardedDeck;
+        this.deck.forEach(function (card) {
           return card.discarded = false;
         });
         this.discarded.deck = [];
       }
 
-      this.deck.deck = this.deck.deck.filter(function (card) {
+      this.deck = this.deck.filter(function (card) {
         return !card.inHand;
       });
     }
@@ -33178,7 +33178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62459" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

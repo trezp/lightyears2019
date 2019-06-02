@@ -9430,7 +9430,7 @@ module.exports = function xhrAdapter(config) {
     request.send(requestData);
   });
 };
-},{"./../utils":"node_modules/axios/lib/utils.js","./../core/settle":"node_modules/axios/lib/core/settle.js","./../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","./../helpers/parseHeaders":"node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"node_modules/axios/lib/core/createError.js","./../helpers/btoa":"node_modules/axios/lib/helpers/btoa.js","./../helpers/cookies":"node_modules/axios/lib/helpers/cookies.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{"./../utils":"node_modules/axios/lib/utils.js","./../core/settle":"node_modules/axios/lib/core/settle.js","./../helpers/buildURL":"node_modules/axios/lib/helpers/buildURL.js","./../helpers/parseHeaders":"node_modules/axios/lib/helpers/parseHeaders.js","./../helpers/isURLSameOrigin":"node_modules/axios/lib/helpers/isURLSameOrigin.js","../core/createError":"node_modules/axios/lib/core/createError.js","./../helpers/btoa":"node_modules/axios/lib/helpers/btoa.js","./../helpers/cookies":"node_modules/axios/lib/helpers/cookies.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -9738,7 +9738,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"node_modules/axios/lib/core/InterceptorManager.js":[function(require,module,exports) {
+},{"./utils":"node_modules/axios/lib/utils.js","./helpers/normalizeHeaderName":"node_modules/axios/lib/helpers/normalizeHeaderName.js","./adapters/xhr":"node_modules/axios/lib/adapters/xhr.js","./adapters/http":"node_modules/axios/lib/adapters/xhr.js","process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"node_modules/axios/lib/core/InterceptorManager.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./../utils');
@@ -10187,7 +10187,7 @@ module.exports.default = axios;
 
 },{"./utils":"node_modules/axios/lib/utils.js","./helpers/bind":"node_modules/axios/lib/helpers/bind.js","./core/Axios":"node_modules/axios/lib/core/Axios.js","./defaults":"node_modules/axios/lib/defaults.js","./cancel/Cancel":"node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"node_modules/axios/lib/helpers/spread.js"}],"node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
+},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.byteLength = byteLength
@@ -10340,7 +10340,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js":[function(require,module,exports) {
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = (nBytes * 8) - mLen - 1
@@ -10426,14 +10426,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js":[function(require,module,exports) {
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js":[function(require,module,exports) {
 
 var global = arguments[3];
 /*!
@@ -12226,7 +12226,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js","ieee754":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js","isarray":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js":[function(require,module,exports) {
+},{"base64-js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/base64-js/index.js","ieee754":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ieee754/index.js","isarray":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js":[function(require,module,exports) {
 
 /* eslint-disable node/no-deprecated-api */
 var buffer = require('buffer')
@@ -12291,7 +12291,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
   return buffer.SlowBuffer(size)
 }
 
-},{"buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js":[function(require,module,exports) {
+},{"buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js":[function(require,module,exports) {
 
 var global = arguments[3];
 var process = require("process");
@@ -12346,7 +12346,7 @@ function randomBytes (size, cb) {
   return bytes
 }
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js":[function(require,module,exports) {
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -12371,7 +12371,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -12789,7 +12789,7 @@ function unwrapListeners(arr) {
 
   return ret;
 }
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js":[function(require,module,exports) {
 var process = require("process");
 'use strict';
 
@@ -12836,10 +12836,10 @@ function nextTick(fn, arg1, arg2, arg3) {
 }
 
 
-},{"process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/stream-browser.js":[function(require,module,exports) {
+},{"process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/stream-browser.js":[function(require,module,exports) {
 module.exports = require('events').EventEmitter;
 
-},{"events":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js":[function(require,module,exports) {
+},{"events":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -12949,9 +12949,9 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-},{"buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js":[function(require,module,exports) {
+},{"buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js":[function(require,module,exports) {
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/BufferList.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/BufferList.js":[function(require,module,exports) {
 
 'use strict';
 
@@ -13032,7 +13032,7 @@ if (util && util.inspect && util.inspect.custom) {
     return this.constructor.name + ' ' + obj;
   };
 }
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","util":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/destroy.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","util":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/destroy.js":[function(require,module,exports) {
 'use strict';
 
 /*<replacement>*/
@@ -13107,7 +13107,7 @@ module.exports = {
   destroy: destroy,
   undestroy: undestroy
 };
-},{"process-nextick-args":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/util-deprecate/browser.js":[function(require,module,exports) {
+},{"process-nextick-args":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/util-deprecate/browser.js":[function(require,module,exports) {
 var global = arguments[3];
 
 /**
@@ -13177,7 +13177,7 @@ function config (name) {
   return String(val).toLowerCase() === 'true';
 }
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js":[function(require,module,exports) {
 var process = require("process");
 
 var global = arguments[3];
@@ -13857,7 +13857,7 @@ Writable.prototype._destroy = function (err, cb) {
   this.end();
   cb(err);
 };
-},{"process-nextick-args":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js","core-util-is":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","util-deprecate":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/util-deprecate/browser.js","./internal/streams/stream":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/stream-browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","./internal/streams/destroy":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/destroy.js","./_stream_duplex":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js":[function(require,module,exports) {
+},{"process-nextick-args":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js","core-util-is":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","util-deprecate":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/util-deprecate/browser.js","./internal/streams/stream":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/stream-browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","./internal/streams/destroy":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/destroy.js","./_stream_duplex":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -13989,7 +13989,7 @@ Duplex.prototype._destroy = function (err, cb) {
 
   pna.nextTick(cb, err);
 };
-},{"process-nextick-args":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js","core-util-is":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./_stream_readable":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_readable.js","./_stream_writable":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/string_decoder/lib/string_decoder.js":[function(require,module,exports) {
+},{"process-nextick-args":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js","core-util-is":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./_stream_readable":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_readable.js","./_stream_writable":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/string_decoder/lib/string_decoder.js":[function(require,module,exports) {
 
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -14287,7 +14287,7 @@ function simpleWrite(buf) {
 function simpleEnd(buf) {
   return buf && buf.length ? this.write(buf) : '';
 }
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_readable.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_readable.js":[function(require,module,exports) {
 
 var global = arguments[3];
 var process = require("process");
@@ -15310,7 +15310,7 @@ function indexOf(xs, x) {
   }
   return -1;
 }
-},{"process-nextick-args":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js","isarray":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","events":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js","./internal/streams/stream":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/stream-browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","core-util-is":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","util":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js","./internal/streams/BufferList":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/BufferList.js","./internal/streams/destroy":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/destroy.js","./_stream_duplex":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","string_decoder/":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/string_decoder/lib/string_decoder.js","process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_transform.js":[function(require,module,exports) {
+},{"process-nextick-args":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process-nextick-args/index.js","isarray":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/isarray/index.js","events":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js","./internal/streams/stream":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/stream-browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","core-util-is":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","util":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js","./internal/streams/BufferList":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/BufferList.js","./internal/streams/destroy":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/internal/streams/destroy.js","./_stream_duplex":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","string_decoder/":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/string_decoder/lib/string_decoder.js","process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_transform.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -15525,7 +15525,7 @@ function done(stream, er, data) {
 
   return stream.push(null);
 }
-},{"./_stream_duplex":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","core-util-is":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_passthrough.js":[function(require,module,exports) {
+},{"./_stream_duplex":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","core-util-is":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_passthrough.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -15573,7 +15573,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_transform.js","core-util-is":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js":[function(require,module,exports) {
+},{"./_stream_transform":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_transform.js","core-util-is":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/core-util-is/lib/util.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js":[function(require,module,exports) {
 exports = module.exports = require('./lib/_stream_readable.js');
 exports.Stream = exports;
 exports.Readable = exports;
@@ -15582,19 +15582,19 @@ exports.Duplex = require('./lib/_stream_duplex.js');
 exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
-},{"./lib/_stream_readable.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_readable.js","./lib/_stream_writable.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js","./lib/_stream_duplex.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","./lib/_stream_transform.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_transform.js","./lib/_stream_passthrough.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_passthrough.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/writable-browser.js":[function(require,module,exports) {
+},{"./lib/_stream_readable.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_readable.js","./lib/_stream_writable.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js","./lib/_stream_duplex.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js","./lib/_stream_transform.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_transform.js","./lib/_stream_passthrough.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_passthrough.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/writable-browser.js":[function(require,module,exports) {
 module.exports = require('./lib/_stream_writable.js');
 
-},{"./lib/_stream_writable.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/duplex-browser.js":[function(require,module,exports) {
+},{"./lib/_stream_writable.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_writable.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/duplex-browser.js":[function(require,module,exports) {
 module.exports = require('./lib/_stream_duplex.js');
 
-},{"./lib/_stream_duplex.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/transform.js":[function(require,module,exports) {
+},{"./lib/_stream_duplex.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/lib/_stream_duplex.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/transform.js":[function(require,module,exports) {
 module.exports = require('./readable').Transform
 
-},{"./readable":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/passthrough.js":[function(require,module,exports) {
+},{"./readable":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/passthrough.js":[function(require,module,exports) {
 module.exports = require('./readable').PassThrough
 
-},{"./readable":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js":[function(require,module,exports) {
+},{"./readable":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -15723,7 +15723,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","readable-stream/readable.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js","readable-stream/writable.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/writable-browser.js","readable-stream/duplex.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/duplex-browser.js","readable-stream/transform.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/transform.js","readable-stream/passthrough.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/passthrough.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash-base/index.js":[function(require,module,exports) {
+},{"events":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/events/events.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","readable-stream/readable.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/readable-browser.js","readable-stream/writable.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/writable-browser.js","readable-stream/duplex.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/duplex-browser.js","readable-stream/transform.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/transform.js","readable-stream/passthrough.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/readable-stream/passthrough.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash-base/index.js":[function(require,module,exports) {
 
 'use strict';
 
@@ -15828,7 +15828,7 @@ HashBase.prototype._digest = function () {
 };
 
 module.exports = HashBase;
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","stream":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","stream":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js":[function(require,module,exports) {
 
 'use strict'
 var inherits = require('inherits')
@@ -15977,7 +15977,7 @@ function fnI (a, b, c, d, m, k, s) {
 
 module.exports = MD5
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","hash-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash-base/index.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","hash-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash-base/index.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js":[function(require,module,exports) {
 
 'use strict'
 var Buffer = require('buffer').Buffer
@@ -16143,7 +16143,7 @@ function fn5 (a, b, c, d, e, m, k, s) {
 
 module.exports = RIPEMD160
 
-},{"buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","hash-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash-base/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js":[function(require,module,exports) {
+},{"buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","hash-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash-base/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js":[function(require,module,exports) {
 
 var Buffer = require('safe-buffer').Buffer
 
@@ -16227,7 +16227,7 @@ Hash.prototype._update = function () {
 
 module.exports = Hash
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha.js":[function(require,module,exports) {
 
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-0, as defined
@@ -16324,7 +16324,7 @@ Sha.prototype._hash = function () {
 
 module.exports = Sha
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha1.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha1.js":[function(require,module,exports) {
 
 /*
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
@@ -16426,7 +16426,7 @@ Sha1.prototype._hash = function () {
 
 module.exports = Sha1
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha256.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha256.js":[function(require,module,exports) {
 
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
@@ -16564,7 +16564,7 @@ Sha256.prototype._hash = function () {
 
 module.exports = Sha256
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha224.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha224.js":[function(require,module,exports) {
 
 /**
  * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
@@ -16620,7 +16620,7 @@ Sha224.prototype._hash = function () {
 
 module.exports = Sha224
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./sha256":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha256.js","./hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha512.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./sha256":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha256.js","./hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha512.js":[function(require,module,exports) {
 
 var inherits = require('inherits')
 var Hash = require('./hash')
@@ -16883,7 +16883,7 @@ Sha512.prototype._hash = function () {
 
 module.exports = Sha512
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha384.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha384.js":[function(require,module,exports) {
 
 var inherits = require('inherits')
 var SHA512 = require('./sha512')
@@ -16943,7 +16943,7 @@ Sha384.prototype._hash = function () {
 
 module.exports = Sha384
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./sha512":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha512.js","./hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./sha512":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha512.js","./hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/hash.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js":[function(require,module,exports) {
 var exports = module.exports = function SHA (algorithm) {
   algorithm = algorithm.toLowerCase()
 
@@ -16960,7 +16960,7 @@ exports.sha256 = require('./sha256')
 exports.sha384 = require('./sha384')
 exports.sha512 = require('./sha512')
 
-},{"./sha":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha.js","./sha1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha1.js","./sha224":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha224.js","./sha256":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha256.js","./sha384":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha384.js","./sha512":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha512.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js":[function(require,module,exports) {
+},{"./sha":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha.js","./sha1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha1.js","./sha224":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha224.js","./sha256":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha256.js","./sha384":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha384.js","./sha512":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/sha512.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js":[function(require,module,exports) {
 
 var Buffer = require('safe-buffer').Buffer
 var Transform = require('stream').Transform
@@ -17062,7 +17062,7 @@ CipherBase.prototype._toString = function (value, enc, fin) {
 
 module.exports = CipherBase
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","stream":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js","string_decoder":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/string_decoder/lib/string_decoder.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","stream":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js","string_decoder":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/string_decoder/lib/string_decoder.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js":[function(require,module,exports) {
 'use strict'
 var inherits = require('inherits')
 var MD5 = require('md5.js')
@@ -17094,7 +17094,7 @@ module.exports = function createHash (alg) {
   return new Hash(sha(alg))
 }
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","md5.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js","ripemd160":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js","sha.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js","cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/legacy.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","md5.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js","ripemd160":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js","sha.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js","cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/legacy.js":[function(require,module,exports) {
 
 'use strict'
 var inherits = require('inherits')
@@ -17143,14 +17143,14 @@ Hmac.prototype._final = function () {
 }
 module.exports = Hmac
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/md5.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/md5.js":[function(require,module,exports) {
 var MD5 = require('md5.js')
 
 module.exports = function (buffer) {
   return new MD5().update(buffer).digest()
 }
 
-},{"md5.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/browser.js":[function(require,module,exports) {
+},{"md5.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/browser.js":[function(require,module,exports) {
 
 'use strict'
 var inherits = require('inherits')
@@ -17215,7 +17215,7 @@ module.exports = function createHmac (alg, key) {
   return new Hmac(alg, key)
 }
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./legacy":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/legacy.js","cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","create-hash/md5":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/md5.js","ripemd160":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js","sha.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/algorithms.json":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./legacy":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/legacy.js","cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","create-hash/md5":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/md5.js","ripemd160":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js","sha.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/algorithms.json":[function(require,module,exports) {
 module.exports = {
   "sha224WithRSAEncryption": {
     "sign": "rsa",
@@ -17369,10 +17369,10 @@ module.exports = {
   }
 }
 ;
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/algos.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/algos.js":[function(require,module,exports) {
 module.exports = require('./browser/algorithms.json')
 
-},{"./browser/algorithms.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/algorithms.json"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/precondition.js":[function(require,module,exports) {
+},{"./browser/algorithms.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/algorithms.json"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/precondition.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var MAX_ALLOC = Math.pow(2, 30) - 1; // default in iojs
 
@@ -17403,7 +17403,7 @@ module.exports = function (password, salt, iterations, keylen) {
     throw new TypeError('Bad key length');
   }
 };
-},{"buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/default-encoding.js":[function(require,module,exports) {
+},{"buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/default-encoding.js":[function(require,module,exports) {
 var process = require("process");
 var defaultEncoding;
 /* istanbul ignore next */
@@ -17416,7 +17416,7 @@ if (true) {
 }
 
 module.exports = defaultEncoding;
-},{"process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/sync-browser.js":[function(require,module,exports) {
+},{"process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/sync-browser.js":[function(require,module,exports) {
 
 var md5 = require('create-hash/md5');
 
@@ -17524,7 +17524,7 @@ function pbkdf2(password, salt, iterations, keylen, digest) {
 }
 
 module.exports = pbkdf2;
-},{"create-hash/md5":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/md5.js","ripemd160":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js","sha.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js","./precondition":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/precondition.js","./default-encoding":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/default-encoding.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/async.js":[function(require,module,exports) {
+},{"create-hash/md5":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/md5.js","ripemd160":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/ripemd160/index.js","sha.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/sha.js/index.js","./precondition":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/precondition.js","./default-encoding":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/default-encoding.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/async.js":[function(require,module,exports) {
 
 var global = arguments[3];
 var process = require("process");
@@ -17635,10 +17635,10 @@ module.exports = function (password, salt, iterations, keylen, digest, callback)
     return sync(password, salt, iterations, keylen, digest);
   }), callback);
 };
-},{"./precondition":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/precondition.js","./default-encoding":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/default-encoding.js","./sync":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/sync-browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/browser.js":[function(require,module,exports) {
+},{"./precondition":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/precondition.js","./default-encoding":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/default-encoding.js","./sync":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/sync-browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/browser.js":[function(require,module,exports) {
 exports.pbkdf2 = require('./lib/async');
 exports.pbkdf2Sync = require('./lib/sync');
-},{"./lib/async":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/async.js","./lib/sync":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/sync-browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/utils.js":[function(require,module,exports) {
+},{"./lib/async":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/async.js","./lib/sync":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/lib/sync-browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/utils.js":[function(require,module,exports) {
 'use strict';
 
 exports.readUInt32BE = function readUInt32BE(bytes, off) {
@@ -17896,7 +17896,7 @@ exports.padSplit = function padSplit(num, size, group) {
   return out.join(' ');
 };
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js":[function(require,module,exports) {
 module.exports = assert;
 
 function assert(val, msg) {
@@ -17909,7 +17909,7 @@ assert.equal = function assertEqual(l, r, msg) {
     throw new Error(msg || ('Assertion failed: ' + l + ' != ' + r));
 };
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cipher.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cipher.js":[function(require,module,exports) {
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -18052,7 +18052,7 @@ Cipher.prototype._finalDecrypt = function _finalDecrypt() {
   return this._unpad(out);
 };
 
-},{"minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/des.js":[function(require,module,exports) {
+},{"minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/des.js":[function(require,module,exports) {
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -18197,7 +18197,7 @@ DES.prototype._decrypt = function _decrypt(state, lStart, rStart, out, off) {
   utils.rip(l, r, out, off);
 };
 
-},{"minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../des":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cbc.js":[function(require,module,exports) {
+},{"minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../des":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cbc.js":[function(require,module,exports) {
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -18264,7 +18264,7 @@ proto._update = function _update(inp, inOff, out, outOff) {
   }
 };
 
-},{"minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/ede.js":[function(require,module,exports) {
+},{"minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/ede.js":[function(require,module,exports) {
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -18321,7 +18321,7 @@ EDE.prototype._update = function _update(inp, inOff, out, outOff) {
 EDE.prototype._pad = DES.prototype._pad;
 EDE.prototype._unpad = DES.prototype._unpad;
 
-},{"minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../des":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js":[function(require,module,exports) {
+},{"minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../des":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js":[function(require,module,exports) {
 'use strict';
 
 exports.utils = require('./des/utils');
@@ -18330,7 +18330,7 @@ exports.DES = require('./des/des');
 exports.CBC = require('./des/cbc');
 exports.EDE = require('./des/ede');
 
-},{"./des/utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/utils.js","./des/cipher":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cipher.js","./des/des":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/des.js","./des/cbc":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cbc.js","./des/ede":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/ede.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/index.js":[function(require,module,exports) {
+},{"./des/utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/utils.js","./des/cipher":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cipher.js","./des/des":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/des.js","./des/cbc":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/cbc.js","./des/ede":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des/ede.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/index.js":[function(require,module,exports) {
 
 var CipherBase = require('cipher-base')
 var des = require('des.js')
@@ -18383,7 +18383,7 @@ DES.prototype._final = function () {
   return Buffer.from(this._des.final())
 }
 
-},{"cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","des.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ecb.js":[function(require,module,exports) {
+},{"cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","des.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/des.js/lib/des.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ecb.js":[function(require,module,exports) {
 exports.encrypt = function (self, block) {
   return self._cipher.encryptBlock(block)
 }
@@ -18392,7 +18392,7 @@ exports.decrypt = function (self, block) {
   return self._cipher.decryptBlock(block)
 }
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 module.exports = function xor (a, b) {
   var length = Math.min(a.length, b.length)
@@ -18405,7 +18405,7 @@ module.exports = function xor (a, b) {
   return buffer
 }
 
-},{"buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cbc.js":[function(require,module,exports) {
+},{"buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cbc.js":[function(require,module,exports) {
 var xor = require('buffer-xor')
 
 exports.encrypt = function (self, block) {
@@ -18424,7 +18424,7 @@ exports.decrypt = function (self, block) {
   return xor(out, pad)
 }
 
-},{"buffer-xor":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb.js":[function(require,module,exports) {
+},{"buffer-xor":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb.js":[function(require,module,exports) {
 
 var Buffer = require('safe-buffer').Buffer
 var xor = require('buffer-xor')
@@ -18460,7 +18460,7 @@ exports.encrypt = function (self, data, decrypt) {
   return out
 }
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","buffer-xor":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb8.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","buffer-xor":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb8.js":[function(require,module,exports) {
 
 var Buffer = require('safe-buffer').Buffer
 
@@ -18488,7 +18488,7 @@ exports.encrypt = function (self, chunk, decrypt) {
   return out
 }
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb1.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb1.js":[function(require,module,exports) {
 
 var Buffer = require('safe-buffer').Buffer
 
@@ -18533,7 +18533,7 @@ exports.encrypt = function (self, chunk, decrypt) {
   return out
 }
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ofb.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ofb.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var xor = require('buffer-xor')
 
@@ -18552,7 +18552,7 @@ exports.encrypt = function (self, chunk) {
   return xor(chunk, pad)
 }
 
-},{"buffer-xor":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/incr32.js":[function(require,module,exports) {
+},{"buffer-xor":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/incr32.js":[function(require,module,exports) {
 function incr32 (iv) {
   var len = iv.length
   var item
@@ -18569,7 +18569,7 @@ function incr32 (iv) {
 }
 module.exports = incr32
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ctr.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ctr.js":[function(require,module,exports) {
 
 var xor = require('buffer-xor')
 var Buffer = require('safe-buffer').Buffer
@@ -18602,7 +18602,7 @@ exports.encrypt = function (self, chunk) {
   return xor(chunk, pad)
 }
 
-},{"buffer-xor":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","../incr32":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/incr32.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/list.json":[function(require,module,exports) {
+},{"buffer-xor":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","../incr32":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/incr32.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/list.json":[function(require,module,exports) {
 module.exports = {
   "aes-128-ecb": {
     "cipher": "AES",
@@ -18795,7 +18795,7 @@ module.exports = {
   }
 }
 ;
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js":[function(require,module,exports) {
 var modeModules = {
   ECB: require('./ecb'),
   CBC: require('./cbc'),
@@ -18815,7 +18815,7 @@ for (var key in modes) {
 
 module.exports = modes
 
-},{"./ecb":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ecb.js","./cbc":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cbc.js","./cfb":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb.js","./cfb8":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb8.js","./cfb1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb1.js","./ofb":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ofb.js","./ctr":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ctr.js","./list.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/list.json"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js":[function(require,module,exports) {
+},{"./ecb":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ecb.js","./cbc":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cbc.js","./cfb":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb.js","./cfb8":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb8.js","./cfb1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/cfb1.js","./ofb":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ofb.js","./ctr":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/ctr.js","./list.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/list.json"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js":[function(require,module,exports) {
 
 // based on the aes implimentation in triple sec
 // https://github.com/keybase/triplesec
@@ -19046,7 +19046,7 @@ AES.prototype.scrub = function () {
 
 module.exports.AES = AES
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/ghash.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/ghash.js":[function(require,module,exports) {
 
 var Buffer = require('safe-buffer').Buffer
 var ZEROES = Buffer.alloc(16, 0)
@@ -19138,7 +19138,7 @@ GHASH.prototype.final = function (abl, bl) {
 
 module.exports = GHASH
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/authCipher.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/authCipher.js":[function(require,module,exports) {
 
 var aes = require('./aes')
 var Buffer = require('safe-buffer').Buffer
@@ -19258,7 +19258,7 @@ StreamCipher.prototype.setAAD = function setAAD (buf) {
 
 module.exports = StreamCipher
 
-},{"./aes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./ghash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/ghash.js","buffer-xor":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js","./incr32":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/incr32.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/streamCipher.js":[function(require,module,exports) {
+},{"./aes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./ghash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/ghash.js","buffer-xor":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer-xor/index.js","./incr32":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/incr32.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/streamCipher.js":[function(require,module,exports) {
 
 var aes = require('./aes')
 var Buffer = require('safe-buffer').Buffer
@@ -19288,7 +19288,7 @@ StreamCipher.prototype._final = function () {
 
 module.exports = StreamCipher
 
-},{"./aes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js":[function(require,module,exports) {
+},{"./aes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js":[function(require,module,exports) {
 
 var Buffer = require('safe-buffer').Buffer
 var MD5 = require('md5.js')
@@ -19336,7 +19336,7 @@ function EVP_BytesToKey (password, salt, keyBits, ivLen) {
 
 module.exports = EVP_BytesToKey
 
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","md5.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/encrypter.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","md5.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/md5.js/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/encrypter.js":[function(require,module,exports) {
 
 var MODES = require('./modes')
 var AuthCipher = require('./authCipher')
@@ -19453,7 +19453,7 @@ function createCipher (suite, password) {
 exports.createCipheriv = createCipheriv
 exports.createCipher = createCipher
 
-},{"./modes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js","./authCipher":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/authCipher.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","./streamCipher":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/streamCipher.js","cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","./aes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","evp_bytestokey":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/decrypter.js":[function(require,module,exports) {
+},{"./modes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js","./authCipher":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/authCipher.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","./streamCipher":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/streamCipher.js","cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","./aes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","evp_bytestokey":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/decrypter.js":[function(require,module,exports) {
 
 var AuthCipher = require('./authCipher')
 var Buffer = require('safe-buffer').Buffer
@@ -19580,7 +19580,7 @@ function createDecipher (suite, password) {
 exports.createDecipher = createDecipher
 exports.createDecipheriv = createDecipheriv
 
-},{"./authCipher":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/authCipher.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","./modes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js","./streamCipher":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/streamCipher.js","cipher-base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","./aes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","evp_bytestokey":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js":[function(require,module,exports) {
+},{"./authCipher":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/authCipher.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","./modes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js","./streamCipher":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/streamCipher.js","cipher-base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/cipher-base/index.js","./aes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/aes.js","evp_bytestokey":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js":[function(require,module,exports) {
 var ciphers = require('./encrypter')
 var deciphers = require('./decrypter')
 var modes = require('./modes/list.json')
@@ -19595,7 +19595,7 @@ exports.createDecipher = exports.Decipher = deciphers.createDecipher
 exports.createDecipheriv = exports.Decipheriv = deciphers.createDecipheriv
 exports.listCiphers = exports.getCiphers = getCiphers
 
-},{"./encrypter":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/encrypter.js","./decrypter":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/decrypter.js","./modes/list.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/list.json"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/modes.js":[function(require,module,exports) {
+},{"./encrypter":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/encrypter.js","./decrypter":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/decrypter.js","./modes/list.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/list.json"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/modes.js":[function(require,module,exports) {
 exports['des-ecb'] = {
   key: 8,
   iv: 0
@@ -19621,7 +19621,7 @@ exports['des-ede'] = {
   iv: 0
 }
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-cipher/browser.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-cipher/browser.js":[function(require,module,exports) {
 var DES = require('browserify-des')
 var aes = require('browserify-aes/browser')
 var aesModes = require('browserify-aes/modes')
@@ -19690,7 +19690,7 @@ exports.createDecipher = exports.Decipher = createDecipher
 exports.createDecipheriv = exports.Decipheriv = createDecipheriv
 exports.listCiphers = exports.getCiphers = getCiphers
 
-},{"browserify-des":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/index.js","browserify-aes/browser":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js","browserify-aes/modes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js","browserify-des/modes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/modes.js","evp_bytestokey":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js":[function(require,module,exports) {
+},{"browserify-des":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/index.js","browserify-aes/browser":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js","browserify-aes/modes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/modes/index.js","browserify-des/modes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-des/modes.js","evp_bytestokey":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 (function (module, exports) {
   'use strict';
@@ -23120,7 +23120,7 @@ var Buffer = require("buffer").Buffer;
   };
 })(typeof module === 'undefined' || module, this);
 
-},{"buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/brorand/index.js":[function(require,module,exports) {
+},{"buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/brorand/index.js":[function(require,module,exports) {
 var r;
 
 module.exports = function rand(len) {
@@ -23187,7 +23187,7 @@ if (typeof self === 'object') {
   }
 }
 
-},{"crypto":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/miller-rabin/lib/mr.js":[function(require,module,exports) {
+},{"crypto":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/_empty.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/miller-rabin/lib/mr.js":[function(require,module,exports) {
 var bn = require('bn.js');
 var brorand = require('brorand');
 
@@ -23304,7 +23304,7 @@ MillerRabin.prototype.getDivisor = function getDivisor(n, k) {
   return false;
 };
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","brorand":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/brorand/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/generatePrime.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","brorand":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/brorand/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/generatePrime.js":[function(require,module,exports) {
 var randomBytes = require('randombytes');
 module.exports = findPrime;
 findPrime.simpleSieve = simpleSieve;
@@ -23411,7 +23411,7 @@ function findPrime(bits, gen) {
 
 }
 
-},{"randombytes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","miller-rabin":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/miller-rabin/lib/mr.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/primes.json":[function(require,module,exports) {
+},{"randombytes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","miller-rabin":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/miller-rabin/lib/mr.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/primes.json":[function(require,module,exports) {
 module.exports = {
     "modp1": {
         "gen": "02",
@@ -23446,7 +23446,7 @@ module.exports = {
         "prime": "ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dbe115974a3926f12fee5e438777cb6a932df8cd8bec4d073b931ba3bc832b68d9dd300741fa7bf8afc47ed2576f6936ba424663aab639c5ae4f5683423b4742bf1c978238f16cbe39d652de3fdb8befc848ad922222e04a4037c0713eb57a81a23f0c73473fc646cea306b4bcbc8862f8385ddfa9d4b7fa2c087e879683303ed5bdd3a062b3cf5b3a278a66d2a13f83f44f82ddf310ee074ab6a364597e899a0255dc164f31cc50846851df9ab48195ded7ea1b1d510bd7ee74d73faf36bc31ecfa268359046f4eb879f924009438b481c6cd7889a002ed5ee382bc9190da6fc026e479558e4475677e9aa9e3050e2765694dfc81f56e880b96e7160c980dd98edd3dfffffffffffffffff"
     }
 };
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/dh.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/dh.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var BN = require('bn.js');
 var MillerRabin = require('miller-rabin');
@@ -23613,7 +23613,7 @@ function formatReturnValue(bn, enc) {
   }
 }
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","miller-rabin":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/miller-rabin/lib/mr.js","./generatePrime":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/generatePrime.js","randombytes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/browser.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","miller-rabin":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/miller-rabin/lib/mr.js","./generatePrime":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/generatePrime.js","randombytes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/browser.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var generatePrime = require('./lib/generatePrime')
 var primes = require('./lib/primes.json')
@@ -23658,7 +23658,7 @@ function createDiffieHellman (prime, enc, generator, genc) {
 exports.DiffieHellmanGroup = exports.createDiffieHellmanGroup = exports.getDiffieHellman = getDiffieHellman
 exports.createDiffieHellman = exports.DiffieHellman = createDiffieHellman
 
-},{"./lib/generatePrime":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/generatePrime.js","./lib/primes.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/primes.json","./lib/dh":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/dh.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js":[function(require,module,exports) {
+},{"./lib/generatePrime":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/generatePrime.js","./lib/primes.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/primes.json","./lib/dh":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/lib/dh.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var bn = require('bn.js');
 var randomBytes = require('randombytes');
@@ -23701,7 +23701,7 @@ function getr(priv) {
   return r;
 }
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","randombytes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/package.json":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","randombytes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/package.json":[function(require,module,exports) {
 module.exports = {
   "_from": "elliptic@^6.0.0",
   "_id": "elliptic@6.4.1",
@@ -23790,7 +23790,7 @@ module.exports = {
   "version": "6.4.1"
 }
 ;
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-crypto-utils/lib/utils.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-crypto-utils/lib/utils.js":[function(require,module,exports) {
 'use strict';
 
 var utils = exports;
@@ -23850,7 +23850,7 @@ utils.encode = function encode(arr, enc) {
     return arr;
 };
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/utils.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/utils.js":[function(require,module,exports) {
 'use strict';
 
 var utils = exports;
@@ -23972,7 +23972,7 @@ function intFromLE(bytes) {
 utils.intFromLE = intFromLE;
 
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","minimalistic-crypto-utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-crypto-utils/lib/utils.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/base.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","minimalistic-crypto-utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-crypto-utils/lib/utils.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/base.js":[function(require,module,exports) {
 'use strict';
 
 var BN = require('bn.js');
@@ -24349,7 +24349,7 @@ BasePoint.prototype.dblp = function dblp(k) {
   return r;
 };
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/short.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/short.js":[function(require,module,exports) {
 'use strict';
 
 var curve = require('../curve');
@@ -25288,7 +25288,7 @@ JPoint.prototype.isInfinity = function isInfinity() {
   return this.z.cmpn(0) === 0;
 };
 
-},{"../curve":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/mont.js":[function(require,module,exports) {
+},{"../curve":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/mont.js":[function(require,module,exports) {
 'use strict';
 
 var curve = require('../curve');
@@ -25470,7 +25470,7 @@ Point.prototype.getX = function getX() {
   return this.x.fromRed();
 };
 
-},{"../curve":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/edwards.js":[function(require,module,exports) {
+},{"../curve":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/edwards.js":[function(require,module,exports) {
 'use strict';
 
 var curve = require('../curve');
@@ -25905,7 +25905,7 @@ Point.prototype.eqXToP = function eqXToP(x) {
 Point.prototype.toP = Point.prototype.normalize;
 Point.prototype.mixedAdd = Point.prototype.add;
 
-},{"../curve":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js":[function(require,module,exports) {
+},{"../curve":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js":[function(require,module,exports) {
 'use strict';
 
 var curve = exports;
@@ -25915,7 +25915,7 @@ curve.short = require('./short');
 curve.mont = require('./mont');
 curve.edwards = require('./edwards');
 
-},{"./base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/base.js","./short":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/short.js","./mont":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/mont.js","./edwards":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/edwards.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js":[function(require,module,exports) {
+},{"./base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/base.js","./short":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/short.js","./mont":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/mont.js","./edwards":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/edwards.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js":[function(require,module,exports) {
 'use strict';
 
 var assert = require('minimalistic-assert');
@@ -26195,7 +26195,7 @@ function shr64_lo(ah, al, num) {
 }
 exports.shr64_lo = shr64_lo;
 
-},{"minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js":[function(require,module,exports) {
+},{"minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./utils');
@@ -26289,7 +26289,7 @@ BlockHash.prototype._pad = function pad() {
   return res;
 };
 
-},{"./utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/common.js":[function(require,module,exports) {
+},{"./utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/common.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -26340,7 +26340,7 @@ function g1_256(x) {
 }
 exports.g1_256 = g1_256;
 
-},{"../utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/1.js":[function(require,module,exports) {
+},{"../utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/1.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -26416,7 +26416,7 @@ SHA1.prototype._digest = function digest(enc) {
     return utils.split32(this.h, 'big');
 };
 
-},{"../utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","../common":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","./common":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/common.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/256.js":[function(require,module,exports) {
+},{"../utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","../common":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","./common":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/common.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/256.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -26523,7 +26523,7 @@ SHA256.prototype._digest = function digest(enc) {
     return utils.split32(this.h, 'big');
 };
 
-},{"../utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","../common":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","./common":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/common.js","minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/224.js":[function(require,module,exports) {
+},{"../utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","../common":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","./common":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/common.js","minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/224.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -26555,7 +26555,7 @@ SHA224.prototype._digest = function digest(enc) {
 };
 
 
-},{"../utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./256":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/256.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/512.js":[function(require,module,exports) {
+},{"../utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./256":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/256.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/512.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -26887,7 +26887,7 @@ function g1_512_lo(xh, xl) {
   return r;
 }
 
-},{"../utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","../common":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/384.js":[function(require,module,exports) {
+},{"../utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","../common":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/384.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('../utils');
@@ -26924,7 +26924,7 @@ SHA384.prototype._digest = function digest(enc) {
     return utils.split32(this.h.slice(0, 12), 'big');
 };
 
-},{"../utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./512":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/512.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha.js":[function(require,module,exports) {
+},{"../utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./512":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/512.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha.js":[function(require,module,exports) {
 'use strict';
 
 exports.sha1 = require('./sha/1');
@@ -26933,7 +26933,7 @@ exports.sha256 = require('./sha/256');
 exports.sha384 = require('./sha/384');
 exports.sha512 = require('./sha/512');
 
-},{"./sha/1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/1.js","./sha/224":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/224.js","./sha/256":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/256.js","./sha/384":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/384.js","./sha/512":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/512.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/ripemd.js":[function(require,module,exports) {
+},{"./sha/1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/1.js","./sha/224":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/224.js","./sha/256":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/256.js","./sha/384":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/384.js","./sha/512":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha/512.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/ripemd.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./utils');
@@ -27081,7 +27081,7 @@ var sh = [
   8, 5, 12, 9, 12, 5, 14, 6, 8, 13, 6, 5, 15, 13, 11, 11
 ];
 
-},{"./utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./common":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/hmac.js":[function(require,module,exports) {
+},{"./utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./common":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/hmac.js":[function(require,module,exports) {
 'use strict';
 
 var utils = require('./utils');
@@ -27130,7 +27130,7 @@ Hmac.prototype.digest = function digest(enc) {
   return this.outer.digest(enc);
 };
 
-},{"./utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js":[function(require,module,exports) {
+},{"./utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js":[function(require,module,exports) {
 var hash = exports;
 
 hash.utils = require('./hash/utils');
@@ -27147,7 +27147,7 @@ hash.sha384 = hash.sha.sha384;
 hash.sha512 = hash.sha.sha512;
 hash.ripemd160 = hash.ripemd.ripemd160;
 
-},{"./hash/utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./hash/common":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","./hash/sha":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha.js","./hash/ripemd":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/ripemd.js","./hash/hmac":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/hmac.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/precomputed/secp256k1.js":[function(require,module,exports) {
+},{"./hash/utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/utils.js","./hash/common":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/common.js","./hash/sha":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/sha.js","./hash/ripemd":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/ripemd.js","./hash/hmac":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash/hmac.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/precomputed/secp256k1.js":[function(require,module,exports) {
 module.exports = {
   doubles: {
     step: 4,
@@ -27929,7 +27929,7 @@ module.exports = {
   }
 };
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curves.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curves.js":[function(require,module,exports) {
 'use strict';
 
 var curves = exports;
@@ -28136,7 +28136,7 @@ defineCurve('secp256k1', {
   ]
 });
 
-},{"hash.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js","../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","./precomputed/secp256k1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/precomputed/secp256k1.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hmac-drbg/lib/hmac-drbg.js":[function(require,module,exports) {
+},{"hash.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js","../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","./precomputed/secp256k1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/precomputed/secp256k1.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hmac-drbg/lib/hmac-drbg.js":[function(require,module,exports) {
 'use strict';
 
 var hash = require('hash.js');
@@ -28251,7 +28251,7 @@ HmacDRBG.prototype.generate = function generate(len, enc, add, addEnc) {
   return utils.encode(res, enc);
 };
 
-},{"hash.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js","minimalistic-crypto-utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-crypto-utils/lib/utils.js","minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/key.js":[function(require,module,exports) {
+},{"hash.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js","minimalistic-crypto-utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-crypto-utils/lib/utils.js","minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/key.js":[function(require,module,exports) {
 'use strict';
 
 var BN = require('bn.js');
@@ -28372,7 +28372,7 @@ KeyPair.prototype.inspect = function inspect() {
          ' pub: ' + (this.pub && this.pub.inspect()) + ' >';
 };
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/signature.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/signature.js":[function(require,module,exports) {
 'use strict';
 
 var BN = require('bn.js');
@@ -28509,7 +28509,7 @@ Signature.prototype.toDER = function toDER(enc) {
   return utils.encode(res, enc);
 };
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/index.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/index.js":[function(require,module,exports) {
 'use strict';
 
 var BN = require('bn.js');
@@ -28751,7 +28751,7 @@ EC.prototype.getKeyRecoveryParam = function(e, signature, Q, enc) {
   throw new Error('Unable to find valid recovery factor');
 };
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","hmac-drbg":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hmac-drbg/lib/hmac-drbg.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","./key":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/key.js","./signature":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/signature.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/key.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","hmac-drbg":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hmac-drbg/lib/hmac-drbg.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","./key":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/key.js","./signature":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/signature.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/key.js":[function(require,module,exports) {
 'use strict';
 
 var elliptic = require('../../elliptic');
@@ -28849,7 +28849,7 @@ KeyPair.prototype.getPublic = function getPublic(enc) {
 
 module.exports = KeyPair;
 
-},{"../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/signature.js":[function(require,module,exports) {
+},{"../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/signature.js":[function(require,module,exports) {
 'use strict';
 
 var BN = require('bn.js');
@@ -28917,7 +28917,7 @@ Signature.prototype.toHex = function toHex() {
 
 module.exports = Signature;
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/index.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/index.js":[function(require,module,exports) {
 'use strict';
 
 var hash = require('hash.js');
@@ -29037,7 +29037,7 @@ EDDSA.prototype.isPoint = function isPoint(val) {
   return val instanceof this.pointClass;
 };
 
-},{"hash.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js","../../elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","./key":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/key.js","./signature":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/signature.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js":[function(require,module,exports) {
+},{"hash.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/hash.js/lib/hash.js","../../elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","./key":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/key.js","./signature":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/signature.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js":[function(require,module,exports) {
 'use strict';
 
 var elliptic = exports;
@@ -29052,7 +29052,7 @@ elliptic.curves = require('./elliptic/curves');
 elliptic.ec = require('./elliptic/ec');
 elliptic.eddsa = require('./elliptic/eddsa');
 
-},{"../package.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/package.json","./elliptic/utils":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/utils.js","brorand":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/brorand/index.js","./elliptic/curve":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","./elliptic/curves":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curves.js","./elliptic/ec":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/index.js","./elliptic/eddsa":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/indexof/index.js":[function(require,module,exports) {
+},{"../package.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/package.json","./elliptic/utils":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/utils.js","brorand":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/brorand/index.js","./elliptic/curve":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curve/index.js","./elliptic/curves":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/curves.js","./elliptic/ec":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/ec/index.js","./elliptic/eddsa":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic/eddsa/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/indexof/index.js":[function(require,module,exports) {
 
 var indexOf = [].indexOf;
 
@@ -29063,7 +29063,7 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/vm-browserify/index.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/vm-browserify/index.js":[function(require,module,exports) {
 var indexOf = require('indexof');
 
 var Object_keys = function (obj) {
@@ -29203,7 +29203,7 @@ exports.createContext = Script.createContext = function (context) {
     return copy;
 };
 
-},{"indexof":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/indexof/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/api.js":[function(require,module,exports) {
+},{"indexof":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/indexof/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/api.js":[function(require,module,exports) {
 var asn1 = require('../asn1');
 var inherits = require('inherits');
 
@@ -29266,7 +29266,7 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
   return this._getEncoder(enc).encode(data, reporter);
 };
 
-},{"../asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","vm":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/vm-browserify/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/reporter.js":[function(require,module,exports) {
+},{"../asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","vm":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/vm-browserify/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/reporter.js":[function(require,module,exports) {
 var inherits = require('inherits');
 
 function Reporter(options) {
@@ -29389,7 +29389,7 @@ ReporterError.prototype.rethrow = function rethrow(msg) {
   return this;
 };
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/buffer.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/buffer.js":[function(require,module,exports) {
 
 var inherits = require('inherits');
 var Reporter = require('../base').Reporter;
@@ -29508,7 +29508,7 @@ EncoderBuffer.prototype.join = function join(out, offset) {
   return out;
 };
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/node.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/node.js":[function(require,module,exports) {
 var Reporter = require('../base').Reporter;
 var EncoderBuffer = require('../base').EncoderBuffer;
 var DecoderBuffer = require('../base').DecoderBuffer;
@@ -30144,7 +30144,7 @@ Node.prototype._isPrintstr = function isPrintstr(str) {
   return /^[A-Za-z0-9 '\(\)\+,\-\.\/:=\?]*$/.test(str);
 };
 
-},{"../base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js","minimalistic-assert":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js":[function(require,module,exports) {
+},{"../base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js","minimalistic-assert":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/minimalistic-assert/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js":[function(require,module,exports) {
 var base = exports;
 
 base.Reporter = require('./reporter').Reporter;
@@ -30152,7 +30152,7 @@ base.DecoderBuffer = require('./buffer').DecoderBuffer;
 base.EncoderBuffer = require('./buffer').EncoderBuffer;
 base.Node = require('./node');
 
-},{"./reporter":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/reporter.js","./buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/buffer.js","./node":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/node.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/der.js":[function(require,module,exports) {
+},{"./reporter":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/reporter.js","./buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/buffer.js","./node":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/node.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/der.js":[function(require,module,exports) {
 var constants = require('../constants');
 
 exports.tagClass = {
@@ -30196,7 +30196,7 @@ exports.tag = {
 };
 exports.tagByName = constants._reverse(exports.tag);
 
-},{"../constants":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/index.js":[function(require,module,exports) {
+},{"../constants":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/index.js":[function(require,module,exports) {
 var constants = exports;
 
 // Helper
@@ -30217,7 +30217,7 @@ constants._reverse = function reverse(map) {
 
 constants.der = require('./der');
 
-},{"./der":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/der.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/der.js":[function(require,module,exports) {
+},{"./der":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/der.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/der.js":[function(require,module,exports) {
 var inherits = require('inherits');
 
 var asn1 = require('../../asn1');
@@ -30543,7 +30543,7 @@ function derDecodeLen(buf, primitive, fail) {
   return len;
 }
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../../asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/pem.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","../../asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/pem.js":[function(require,module,exports) {
 
 var inherits = require('inherits');
 var Buffer = require('buffer').Buffer;
@@ -30595,13 +30595,13 @@ PEMDecoder.prototype.decode = function decode(data, options) {
   return DERDecoder.prototype.decode.call(this, input, options);
 };
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js","./der":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/der.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/index.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js","./der":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/der.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/index.js":[function(require,module,exports) {
 var decoders = exports;
 
 decoders.der = require('./der');
 decoders.pem = require('./pem');
 
-},{"./der":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/der.js","./pem":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/pem.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/der.js":[function(require,module,exports) {
+},{"./der":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/der.js","./pem":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/pem.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/der.js":[function(require,module,exports) {
 
 var inherits = require('inherits');
 var Buffer = require('buffer').Buffer;
@@ -30899,7 +30899,7 @@ function encodeTag(tag, primitive, cls, reporter) {
   return res;
 }
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js","../../asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/pem.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js","../../asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/pem.js":[function(require,module,exports) {
 var inherits = require('inherits');
 
 var DEREncoder = require('./der');
@@ -30922,13 +30922,13 @@ PEMEncoder.prototype.encode = function encode(data, options) {
   return out.join('\n');
 };
 
-},{"inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./der":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/der.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/index.js":[function(require,module,exports) {
+},{"inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./der":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/der.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/index.js":[function(require,module,exports) {
 var encoders = exports;
 
 encoders.der = require('./der');
 encoders.pem = require('./pem');
 
-},{"./der":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/der.js","./pem":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/pem.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js":[function(require,module,exports) {
+},{"./der":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/der.js","./pem":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/pem.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js":[function(require,module,exports) {
 var asn1 = exports;
 
 asn1.bignum = require('bn.js');
@@ -30939,7 +30939,7 @@ asn1.constants = require('./asn1/constants');
 asn1.decoders = require('./asn1/decoders');
 asn1.encoders = require('./asn1/encoders');
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","./asn1/api":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/api.js","./asn1/base":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js","./asn1/constants":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/index.js","./asn1/decoders":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/index.js","./asn1/encoders":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/certificate.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","./asn1/api":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/api.js","./asn1/base":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/base/index.js","./asn1/constants":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/constants/index.js","./asn1/decoders":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/decoders/index.js","./asn1/encoders":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1/encoders/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/certificate.js":[function(require,module,exports) {
 // from https://github.com/Rantanen/node-dtls/blob/25a7dc861bda38cfeac93a723500eea4f0ac2e86/Certificate.js
 // thanks to @Rantanen
 
@@ -31030,7 +31030,7 @@ var X509Certificate = asn.define('X509Certificate', function () {
 
 module.exports = X509Certificate
 
-},{"asn1.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/asn1.js":[function(require,module,exports) {
+},{"asn1.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/asn1.js":[function(require,module,exports) {
 // from https://github.com/indutny/self-signed/blob/gh-pages/lib/asn1.js
 // Fedor, you are amazing.
 'use strict'
@@ -31154,7 +31154,7 @@ exports.signature = asn1.define('signature', function () {
   )
 })
 
-},{"asn1.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js","./certificate":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/certificate.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/aesid.json":[function(require,module,exports) {
+},{"asn1.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/asn1.js/lib/asn1.js","./certificate":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/certificate.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/aesid.json":[function(require,module,exports) {
 module.exports = {"2.16.840.1.101.3.4.1.1": "aes-128-ecb",
 "2.16.840.1.101.3.4.1.2": "aes-128-cbc",
 "2.16.840.1.101.3.4.1.3": "aes-128-ofb",
@@ -31168,7 +31168,7 @@ module.exports = {"2.16.840.1.101.3.4.1.1": "aes-128-ecb",
 "2.16.840.1.101.3.4.1.43": "aes-256-ofb",
 "2.16.840.1.101.3.4.1.44": "aes-256-cfb"
 };
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/fixProc.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/fixProc.js":[function(require,module,exports) {
 
 // adapted from https://github.com/apatil/pemstrip
 var findProc = /Proc-Type: 4,ENCRYPTED[\n\r]+DEK-Info: AES-((?:128)|(?:192)|(?:256))-CBC,([0-9A-H]+)[\n\r]+([0-9A-z\n\r\+\/\=]+)[\n\r]+/m
@@ -31202,7 +31202,7 @@ module.exports = function (okey, password) {
   }
 }
 
-},{"evp_bytestokey":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js","browserify-aes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js":[function(require,module,exports) {
+},{"evp_bytestokey":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/evp_bytestokey/index.js","browserify-aes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js":[function(require,module,exports) {
 
 var asn1 = require('./asn1')
 var aesid = require('./aesid.json')
@@ -31312,7 +31312,7 @@ function decrypt (data, password) {
   return Buffer.concat(out)
 }
 
-},{"./asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/asn1.js","./aesid.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/aesid.json","./fixProc":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/fixProc.js","browserify-aes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js","pbkdf2":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/curves.json":[function(require,module,exports) {
+},{"./asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/asn1.js","./aesid.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/aesid.json","./fixProc":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/fixProc.js","browserify-aes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-aes/browser.js","pbkdf2":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/curves.json":[function(require,module,exports) {
 module.exports = {
   "1.3.132.0.10": "secp256k1",
   "1.3.132.0.33": "p224",
@@ -31322,7 +31322,7 @@ module.exports = {
   "1.3.132.0.35": "p521"
 }
 ;
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/sign.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/sign.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 // much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var createHmac = require('create-hmac')
@@ -31470,7 +31470,7 @@ module.exports = sign
 module.exports.getKey = getKey
 module.exports.makeKey = makeKey
 
-},{"create-hmac":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/browser.js","browserify-rsa":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js","elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","parse-asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","./curves.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/curves.json","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/verify.js":[function(require,module,exports) {
+},{"create-hmac":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/browser.js","browserify-rsa":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js","elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","parse-asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","./curves.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/curves.json","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/verify.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 // much of this based on https://github.com/indutny/self-signed/blob/gh-pages/lib/rsa.js
 var BN = require('bn.js')
@@ -31556,7 +31556,7 @@ function checkValue (b, q) {
 
 module.exports = verify
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","parse-asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","./curves.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/curves.json","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/index.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","parse-asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","./curves.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/curves.json","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/index.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var createHash = require('create-hash')
 var stream = require('stream')
@@ -31650,7 +31650,7 @@ module.exports = {
   createVerify: createVerify
 }
 
-},{"create-hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","stream":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js","inherits":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./sign":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/sign.js","./verify":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/verify.js","./algorithms.json":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/algorithms.json","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-ecdh/browser.js":[function(require,module,exports) {
+},{"create-hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","stream":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/stream-browserify/index.js","inherits":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/inherits/inherits_browser.js","./sign":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/sign.js","./verify":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/verify.js","./algorithms.json":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/algorithms.json","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-ecdh/browser.js":[function(require,module,exports) {
 var Buffer = require("buffer").Buffer;
 var elliptic = require('elliptic')
 var BN = require('bn.js')
@@ -31777,7 +31777,7 @@ function formatReturnValue (bn, enc, len) {
   }
 }
 
-},{"elliptic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/mgf.js":[function(require,module,exports) {
+},{"elliptic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/elliptic/lib/elliptic.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/mgf.js":[function(require,module,exports) {
 
 var createHash = require('create-hash')
 var Buffer = require('safe-buffer').Buffer
@@ -31799,7 +31799,7 @@ function i2ops (c) {
   return out
 }
 
-},{"create-hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/xor.js":[function(require,module,exports) {
+},{"create-hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/xor.js":[function(require,module,exports) {
 module.exports = function xor (a, b) {
   var len = a.length
   var i = -1
@@ -31809,7 +31809,7 @@ module.exports = function xor (a, b) {
   return a
 }
 
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/withPublic.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/withPublic.js":[function(require,module,exports) {
 
 var BN = require('bn.js')
 var Buffer = require('safe-buffer').Buffer
@@ -31824,7 +31824,7 @@ function withPublic (paddedMsg, key) {
 
 module.exports = withPublic
 
-},{"bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/publicEncrypt.js":[function(require,module,exports) {
+},{"bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/publicEncrypt.js":[function(require,module,exports) {
 
 var parseKeys = require('parse-asn1')
 var randomBytes = require('randombytes')
@@ -31915,7 +31915,7 @@ function nonZero (len) {
   return out
 }
 
-},{"parse-asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","randombytes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","create-hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","./mgf":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/mgf.js","./xor":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/xor.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","./withPublic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/withPublic.js","browserify-rsa":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/privateDecrypt.js":[function(require,module,exports) {
+},{"parse-asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","randombytes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","create-hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","./mgf":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/mgf.js","./xor":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/xor.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","./withPublic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/withPublic.js","browserify-rsa":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/privateDecrypt.js":[function(require,module,exports) {
 
 var parseKeys = require('parse-asn1')
 var mgf = require('./mgf')
@@ -32023,7 +32023,7 @@ function compare (a, b) {
   return dif
 }
 
-},{"parse-asn1":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","./mgf":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/mgf.js","./xor":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/xor.js","bn.js":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","browserify-rsa":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js","create-hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","./withPublic":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/withPublic.js","safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/browser.js":[function(require,module,exports) {
+},{"parse-asn1":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/parse-asn1/index.js","./mgf":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/mgf.js","./xor":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/xor.js","bn.js":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/bn.js/lib/bn.js","browserify-rsa":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-rsa/index.js","create-hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","./withPublic":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/withPublic.js","safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/browser.js":[function(require,module,exports) {
 exports.publicEncrypt = require('./publicEncrypt')
 exports.privateDecrypt = require('./privateDecrypt')
 
@@ -32035,7 +32035,7 @@ exports.publicDecrypt = function publicDecrypt (key, buf) {
   return exports.privateDecrypt(key, buf, true)
 }
 
-},{"./publicEncrypt":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/publicEncrypt.js","./privateDecrypt":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/privateDecrypt.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randomfill/browser.js":[function(require,module,exports) {
+},{"./publicEncrypt":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/publicEncrypt.js","./privateDecrypt":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/privateDecrypt.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randomfill/browser.js":[function(require,module,exports) {
 
 var global = arguments[3];
 var process = require("process");
@@ -32160,7 +32160,7 @@ function randomFillSync(buf, offset, size) {
   assertSize(size, offset, buf.length);
   return actualFill(buf, offset, size);
 }
-},{"safe-buffer":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","randombytes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","process":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/crypto-browserify/index.js":[function(require,module,exports) {
+},{"safe-buffer":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/safe-buffer/index.js","randombytes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","process":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/crypto-browserify/index.js":[function(require,module,exports) {
 'use strict'
 
 exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = require('randombytes')
@@ -32259,7 +32259,7 @@ exports.constants = {
   'POINT_CONVERSION_HYBRID': 6
 }
 
-},{"randombytes":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","create-hash":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","create-hmac":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/browser.js","browserify-sign/algos":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/algos.js","pbkdf2":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/browser.js","browserify-cipher":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-cipher/browser.js","diffie-hellman":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/browser.js","browserify-sign":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/index.js","create-ecdh":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-ecdh/browser.js","public-encrypt":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/browser.js","randomfill":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randomfill/browser.js"}],"node_modules/crypto-random-string/index.js":[function(require,module,exports) {
+},{"randombytes":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randombytes/browser.js","create-hash":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hash/browser.js","create-hmac":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-hmac/browser.js","browserify-sign/algos":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/algos.js","pbkdf2":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/pbkdf2/browser.js","browserify-cipher":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-cipher/browser.js","diffie-hellman":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/diffie-hellman/browser.js","browserify-sign":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/browserify-sign/browser/index.js","create-ecdh":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/create-ecdh/browser.js","public-encrypt":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/public-encrypt/browser.js","randomfill":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/randomfill/browser.js"}],"node_modules/crypto-random-string/index.js":[function(require,module,exports) {
 'use strict';
 
 var crypto = require('crypto');
@@ -32271,7 +32271,7 @@ module.exports = function (length) {
 
   return crypto.randomBytes(Math.ceil(length / 2)).toString('hex').slice(0, length);
 };
-},{"crypto":"../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/crypto-browserify/index.js"}],"node_modules/unique-string/index.js":[function(require,module,exports) {
+},{"crypto":"../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/crypto-browserify/index.js"}],"node_modules/unique-string/index.js":[function(require,module,exports) {
 'use strict';
 
 var cryptoRandomString = require('crypto-random-string');
@@ -32279,43 +32279,7 @@ var cryptoRandomString = require('crypto-random-string');
 module.exports = function () {
   return cryptoRandomString(32);
 };
-},{"crypto-random-string":"node_modules/crypto-random-string/index.js"}],"Deck/Player.js":[function(require,module,exports) {
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var uniqueID = require('unique-string');
-
-var Player =
-/*#__PURE__*/
-function () {
-  function Player(name) {
-    _classCallCheck(this, Player);
-
-    this.playerID = uniqueID(), this.name = name || "Player" + this.playerID;
-    this.score = 0, this.isTurn = false, this.hand = [];
-  }
-
-  _createClass(Player, [{
-    key: "makePlayer",
-    value: function makePlayer(name) {
-      var player = new Player(name);
-      return player;
-    }
-  }, {
-    key: "updateScore",
-    value: function updateScore(score) {
-      this.score = score;
-    }
-  }]);
-
-  return Player;
-}();
-
-module.exports = new Player().makePlayer("Player One");
-},{"unique-string":"node_modules/unique-string/index.js"}],"Deck/Cards.js":[function(require,module,exports) {
+},{"crypto-random-string":"node_modules/crypto-random-string/index.js"}],"Game/Cards.js":[function(require,module,exports) {
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -32330,12 +32294,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var uniqueID = require('unique-string');
+var uniqueID = require("unique-string");
 
 var Card = function Card(value, name) {
   _classCallCheck(this, Card);
 
-  this._id = uniqueID();
   this.name = name || "Light Years";
   this.inHand = false;
   this.discarded = false;
@@ -32368,65 +32331,29 @@ function (_Card) {
   }
 
   return SpecialCard;
-}(Card);
+}(Card); // class GoCard extends Card {
+//   constructor(...args) {
+//     super(...args);
+//     this.description = "Go!";
+//     this.name = "Go!";
+//   }
+// }
+// class StopCard extends Card {
+//   constructor(...args) {
+//     super(...args);
+//     this.description = "Stop! You cannot proceed without a Go card.";
+//     this.name = "Stop!";
+//   }
+// }
 
-var GoCard =
-/*#__PURE__*/
-function (_Card2) {
-  _inherits(GoCard, _Card2);
-
-  function GoCard() {
-    var _getPrototypeOf3;
-
-    var _this2;
-
-    _classCallCheck(this, GoCard);
-
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    _this2 = _possibleConstructorReturn(this, (_getPrototypeOf3 = _getPrototypeOf(GoCard)).call.apply(_getPrototypeOf3, [this].concat(args)));
-    _this2.description = "Go!";
-    _this2.name = "Go!";
-    return _this2;
-  }
-
-  return GoCard;
-}(Card);
-
-var StopCard =
-/*#__PURE__*/
-function (_Card3) {
-  _inherits(StopCard, _Card3);
-
-  function StopCard() {
-    var _getPrototypeOf4;
-
-    var _this3;
-
-    _classCallCheck(this, StopCard);
-
-    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-      args[_key3] = arguments[_key3];
-    }
-
-    _this3 = _possibleConstructorReturn(this, (_getPrototypeOf4 = _getPrototypeOf(StopCard)).call.apply(_getPrototypeOf4, [this].concat(args)));
-    _this3.description = "Stop! You cannot proceed without a Go card.";
-    _this3.name = "Stop!";
-    return _this3;
-  }
-
-  return StopCard;
-}(Card);
 
 module.exports = {
   Card: Card,
-  SpecialCard: SpecialCard,
-  GoCard: GoCard,
-  StopCard: StopCard
+  SpecialCard: SpecialCard // GoCard,
+  // StopCard
+
 };
-},{"unique-string":"node_modules/unique-string/index.js"}],"Deck/hazards.js":[function(require,module,exports) {
+},{"unique-string":"node_modules/unique-string/index.js"}],"Game/hazards.js":[function(require,module,exports) {
 module.exports = [{
   name: "Out of Jet Fuel",
   description: "Oops, you've run out of gas! You'll need a refueling ship",
@@ -32443,12 +32370,17 @@ module.exports = [{
   isHazard: true,
   group: "black hole"
 }, {
-  name: "Stop",
-  description: "You cannot gain miles until you get another Go card.",
+  name: "Abducted By Aliens",
+  description: "You've been whisked away by hyperintelligent race of fish from Jupiter.",
   isHazard: true,
-  group: "travel"
+  group: "aliens"
+}, {
+  name: "Flew too Close to the Sun",
+  description: "Like a moth to a flame, you were engulfed.",
+  isHazard: true,
+  group: "heat"
 }];
-},{}],"Deck/remedies.js":[function(require,module,exports) {
+},{}],"Game/remedies.js":[function(require,module,exports) {
 module.exports = [{
   name: "Refueling ship",
   description: "Oops, you've run out of gas! You'll need a refueling ship",
@@ -32463,14 +32395,19 @@ module.exports = [{
   name: "Cosmic Miracle",
   description: "Oh Man, somehow you've escaped the black hole. I'd thank my lucky stars if I were you. You may now travel at full speed.",
   isHazard: false,
-  group: "lost"
+  group: "black hole"
 }, {
-  name: "Go",
-  description: "You may proceed.",
+  name: "Escaped!",
+  description: "You're embarassed to admit that you had a lovely time. But it's time to go!",
   isHazard: false,
-  group: "travel"
+  group: "aliens"
+}, {
+  name: "Heat resistant suit",
+  description: "Ah, but your heat resistant suit saves your ass!",
+  isHazard: false,
+  group: "head"
 }];
-},{}],"Deck/Deck.js":[function(require,module,exports) {
+},{}],"Game/Deck.js":[function(require,module,exports) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -32493,7 +32430,6 @@ function () {
 
     this.deck = {
       deckId: uniqueID(),
-      length: 0,
       deck: []
     };
     this.ly25 = 10;
@@ -32504,8 +32440,8 @@ function () {
     this.ly200 = 4;
     this.go = 14;
     this.stop = 5;
-    this.hazardsCards = 6;
-    this.remedyCards = 6;
+    this.hazardCards = 6;
+    this.remedyCards = 2;
   }
 
   _createClass(Deck, [{
@@ -32521,87 +32457,91 @@ function () {
     value: function makeSpecialCard(quantity, description) {
       var _this = this;
 
-      for (var i = 0; i < quantity; i++) {
-        description.forEach(function (des) {
-          var card = new cards.SpecialCard(des, 0, des.name);
+      description.forEach(function (des) {
+        var card = new cards.SpecialCard(des, 0, des.name);
 
+        for (var i = 0; i < quantity; i++) {
           _this.deck.deck.push(card);
-        });
-      }
+        }
+      });
+      this.deck.deck.forEach(function (card) {
+        card._id = uniqueID();
+      });
     }
   }, {
     key: "createDeck",
     value: function createDeck() {
-      this.makeNewCard(cards.Card, this.ly25, 25);
-      this.makeNewCard(cards.Card, this.ly50, 50);
-      this.makeNewCard(cards.Card, this.ly75, 75);
-      this.makeNewCard(cards.Card, this.ly100, 100);
-      this.makeNewCard(cards.GoCard, this.go, 0);
-      this.makeNewCard(cards.StopCard, this.stop, 0);
-      this.makeNewCard(cards.Card, this.ly200, 200);
-      this.makeSpecialCard(this.hazardCards, hazards);
+      this.makeNewCard(cards.Card, this.ly25, 25); // this.makeNewCard(cards.Card, this.ly50, 50);
+      // this.makeNewCard(cards.Card, this.ly75, 75);
+      // this.makeNewCard(cards.Card, this.ly100, 100);
+      // this.makeNewCard(cards.GoCard, this.go, 0);
+      // this.makeNewCard(cards.StopCard, this.stop, 0);
+      // this.makeNewCard(cards.Card, this.ly200, 200);
+      // this.makeSpecialCard(this.hazardCards, hazards);
+
       this.makeSpecialCard(this.remedyCards, remedies);
-      this.deck.length = this.deck.deck.length;
       return this.deck;
     }
   }]);
 
   return Deck;
-}(); //const deck = new Deck();
-
+}();
 
 module.exports = new Deck().createDeck();
-},{"unique-string":"node_modules/unique-string/index.js","./Cards":"Deck/Cards.js","./hazards":"Deck/hazards.js","./remedies":"Deck/remedies.js"}],"Deck/helpers.js":[function(require,module,exports) {
-function getRandomNum(length) {
-  return Math.floor(Math.random() * length);
-}
-
-module.exports = {
-  getRandomNum: getRandomNum
-};
-},{}],"Deck/Game.js":[function(require,module,exports) {
+},{"unique-string":"node_modules/unique-string/index.js","./Cards":"Game/Cards.js","./hazards":"Game/hazards.js","./remedies":"Game/remedies.js"}],"Game/Player.js":[function(require,module,exports) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var player = require("./Player");
-
-var deck = require("./Deck");
-
 var uniqueID = require("unique-string");
 
-var helpers = require("./helpers");
-
-var Game =
+var Player =
 /*#__PURE__*/
 function () {
-  function Game() {
-    _classCallCheck(this, Game);
+  function Player(name) {
+    _classCallCheck(this, Player);
 
-    this.game = {
-      gameId: uniqueID(),
-      players: [],
-      active: true,
-      deck: deck
-    };
+    this.playerID = uniqueID();
+    this.name = name || "Player" + this.playerID;
+    this.score = 0;
+    this.isTurn = false;
+    this.canPlay = false;
+    this.hand = [];
   }
 
-  _createClass(Game, [{
-    key: "startGame",
-    value: function startGame() {
-      this.game.players.push(player); //this.game.players.push(player);
-
-      return this.game;
+  _createClass(Player, [{
+    key: "makePlayer",
+    value: function makePlayer(name) {
+      var player = new Player(name);
+      return player;
+    }
+  }, {
+    key: "updateScore",
+    value: function updateScore(score) {
+      this.score = score;
     }
   }]);
 
-  return Game;
+  return Player;
 }();
 
-module.exports = new Game().startGame();
-},{"./Player":"Deck/Player.js","./Deck":"Deck/Deck.js","unique-string":"node_modules/unique-string/index.js","./helpers":"Deck/helpers.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+module.exports = new Player().makePlayer("Player One");
+},{"unique-string":"node_modules/unique-string/index.js"}],"Game/gameMessages.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var messages = {
+  startMessage: "Let's get this show on the road. Your goal is to navigate your spaceship 1,000 light years through space. Many perils will befall you along the way! Good luck!",
+  goError: "You can't get started until you find a go card. Please select a card to discard."
+};
+var _default = messages;
+exports.default = _default;
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -32633,7 +32573,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -32668,7 +32608,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
+},{"./bundle-url":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = Object.create(null)
@@ -32953,11 +32893,14 @@ var _vue = _interopRequireDefault(require("vue"));
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var _Game = _interopRequireDefault(require("./Deck/Game"));
+var _Deck = _interopRequireDefault(require("./Game/Deck"));
+
+var _Player = _interopRequireDefault(require("./Game/Player"));
+
+var _gameMessages = _interopRequireDefault(require("./Game/gameMessages"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
 //
 //
 //
@@ -32994,121 +32937,134 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = _vue.default.extend({
   data: function data() {
     return {
-      gameId: _Game.default.deck.deckId,
       gameHasStarted: false,
-      players: _Game.default.players,
-      deck: _Game.default.deck
+      player: _Player.default,
+      deck: _Deck.default,
+      discardedDeck: [],
+      message: null
     };
   },
   methods: {
-    go: function go() {},
-    stop: function stop() {},
-    drawCard: function drawCard() {
-      this.dealCard(1);
-    },
-    discard: function discard(id) {
-      this.deck.deck.forEach(function (card) {
-        if (card._id === id) {
-          card.inHand = false;
-        }
-      });
-    },
-    playCard: function playCard(score, id) {
-      if (event.target.innerHTML === "Play") {
-        this.players[0].score += score;
-      } else if (event.target.innerHTML === "Discard") {
-        this.discard(id);
+    examineDeck: function examineDeck() {},
+    startGame: function startGame() {
+      this.message = _gameMessages.default.startMessage;
+      this.gameHasStarted = true;
+
+      for (var i = 0; i < 6; i++) {
+        this.dealCard();
       }
     },
-    throwHazard: function throwHazard() {},
-    getRandomNum: function getRandomNum(length) {
+    getRandomNumber: function getRandomNumber(length) {
       return Math.floor(Math.random() * length);
     },
-    dealCard: function dealCard(num) {
-      for (var i = num; i > 0; i--) {
-        var randNum = this.getRandomNum(this.deck.length);
-        var card = this.deck.deck[randNum];
-        card.inHand = true;
-        this.players[0].hand.push(card.id);
+    getRandomCard: function getRandomCard() {
+      return this.deck.deck[this.getRandomNumber(this.deck.deck.length)];
+    },
+    dealCard: function dealCard() {
+      this.updateDeck();
+      var card = this.getRandomCard();
+      card.inHand = true;
+      this.player.hand.push(card);
+    },
+    playCard: function playCard(card) {
+      this.updateDeck();
+
+      if (card.value) {
+        this.player.score += card.value;
+        this.message = "You just traveled ".concat(card.value, " light years. Keep going!");
       }
-    }
-  },
-  computed: {
-    hand: function hand() {
-      var hand = [];
-      this.deck.deck.forEach(function (card) {
-        if (card.inHand) {
-          hand.push(card);
-        }
+
+      this.player.hand.push(card);
+      this.discard(card);
+    },
+    discard: function discard(card) {
+      card.inHand = false;
+      card.discarded = true;
+      this.discardedDeck.push(card);
+      this.player.hand = this.player.hand.filter(function (used) {
+        return used._id !== card._id;
       });
-      return hand;
+    },
+    updateDeck: function updateDeck() {
+      if (this.deck.deck.length < 2) {
+        this.deck.deck = this.discardedDeck;
+        this.deck.deck.forEach(function (card) {
+          return card.discarded = false;
+        });
+        this.discarded.deck = [];
+      }
+
+      this.deck.deck = this.deck.deck.filter(function (card) {
+        return !card.inHand;
+      });
     }
-  },
-  mounted: function mounted() {
-    console.log(this.deck);
-    this.dealCard(6);
   }
 });
 
 exports.default = _default;
-        var $38910e = exports.default || module.exports;
+        var $cccd6a = exports.default || module.exports;
       
-      if (typeof $38910e === 'function') {
-        $38910e = $38910e.options;
+      if (typeof $cccd6a === 'function') {
+        $cccd6a = $cccd6a.options;
       }
     
         /* template */
-        Object.assign($38910e, (function () {
+        Object.assign($cccd6a, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _vm._v("\n  Game: " + _vm._s(_vm.gameId) + "\n  "),
-      _c("h1", [_vm._v("Players")]),
+  return _c("div", [
+    _c("h1", [_vm._v("Light Years")]),
+    _vm._v(" "),
+    _c("div", [
+      !_vm.gameHasStarted
+        ? _c("h2", [
+            _c("span", [
+              _vm._v(
+                "Hello, " +
+                  _vm._s(_vm.player.name) +
+                  "! Let your journey begin!"
+              )
+            ])
+          ])
+        : _vm._e(),
       _vm._v(" "),
-      _vm._l(_vm.players, function(player) {
-        return _c("div", { key: player.id }, [
-          _c("h1", { staticClass: "title" }, [
-            _vm._v("Name: " + _vm._s(player.name))
-          ]),
-          _vm._v(" "),
-          _c("h2", { staticClass: "subtitle" }, [
-            _vm._v("Score: " + _vm._s(player.score))
-          ]),
-          _vm._v(" "),
-          !_vm.gameHasStarted
-            ? _c("p", [
-                _vm._v(
-                  "\n      Welcome, " +
-                    _vm._s(player.name) +
-                    "! Let's get this show on the road.\n      Your goal is to navigate your spaceship 1,000 light years through space.\n      Many perils will befall you along the way! Good luck!\n    "
-                )
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("button", { on: { click: _vm.drawCard } }, [
-            _vm._v("Draw a card")
-          ]),
-          _vm._v(" "),
-          _c(
-            "ul",
-            { staticClass: "hand" },
-            _vm._l(_vm.hand, function(card) {
-              return _c(
-                "li",
-                {
-                  key: card._id,
-                  staticClass: "card",
-                  on: {
-                    click: function($event) {
-                      return _vm.playCard(card.value, card._id)
-                    }
-                  }
-                },
-                [
+      !_vm.gameHasStarted
+        ? _c(
+            "button",
+            {
+              on: {
+                click: function($event) {
+                  return _vm.startGame()
+                }
+              }
+            },
+            [_vm._v("Start Game")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.gameHasStarted
+        ? _c("div", [
+            _c("h3", { staticClass: "title" }, [
+              _vm._v("Name: " + _vm._s(_vm.player.name))
+            ]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "subtitle" }, [
+              _vm._v("Light Years Traveled: " + _vm._s(_vm.player.score))
+            ]),
+            _vm._v(" "),
+            _c("h2", [_vm._v(_vm._s(_vm.message))]),
+            _vm._v(" "),
+            _c("button", { on: { click: _vm.dealCard } }, [
+              _vm._v("Draw a card")
+            ]),
+            _vm._v(" "),
+            _c(
+              "ul",
+              { staticClass: "hand" },
+              _vm._l(_vm.player.hand, function(card, index) {
+                return _c("li", { key: index, staticClass: "card" }, [
                   _c("div", [_c("strong", [_vm._v(_vm._s(card.name))])]),
                   _vm._v(" "),
                   card.value
@@ -33119,19 +33075,37 @@ exports.default = _default;
                     ? _c("h5", [_vm._v(_vm._s(card.special.description))])
                     : _vm._e(),
                   _vm._v(" "),
-                  _c("button", [_vm._v("Play")]),
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.playCard(card)
+                        }
+                      }
+                    },
+                    [_vm._v("Play")]
+                  ),
                   _vm._v(" "),
-                  _c("button", [_vm._v("Discard")])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      })
-    ],
-    2
-  )
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.discard(card)
+                        }
+                      }
+                    },
+                    [_vm._v("Discard")]
+                  )
+                ])
+              }),
+              0
+            )
+          ])
+        : _vm._e()
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -33153,9 +33127,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$38910e', $38910e);
+            api.createRecord('$cccd6a', $cccd6a);
           } else {
-            api.reload('$38910e', $38910e);
+            api.reload('$cccd6a', $cccd6a);
           }
         }
 
@@ -33166,7 +33140,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","axios":"node_modules/axios/index.js","./Deck/Game":"Deck/Game.js","_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"index.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","axios":"node_modules/axios/index.js","./Game/Deck":"Game/Deck.js","./Game/Player":"Game/Player.js","./Game/gameMessages":"Game/gameMessages.js","_css_loader":"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
@@ -33175,8 +33149,8 @@ var _app = _interopRequireDefault(require("./app.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-new _vue.default(_app.default).$mount('#app');
-},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","./app.vue":"app.vue"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+new _vue.default(_app.default).$mount("#app");
+},{"vue":"node_modules/vue/dist/vue.runtime.esm.js","./app.vue":"app.vue"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -33204,7 +33178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55788" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57683" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -33379,5 +33353,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/index.js.map

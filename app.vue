@@ -43,7 +43,7 @@ export default Vue.extend({
     return {
       gameHasStarted: false,
       player: player,
-      deck: deck,
+      deck: deck.deck,
       discardedDeck: [],
       message: null
     };
@@ -62,7 +62,7 @@ export default Vue.extend({
       return Math.floor(Math.random() * length);
     },
     getRandomCard() {
-      return this.deck.deck[this.getRandomNumber(this.deck.deck.length)];
+      return this.deck[this.getRandomNumber(this.deck.length)];
     },
     dealCard() {
       this.updateDeck();
@@ -91,12 +91,12 @@ export default Vue.extend({
       this.player.hand = this.player.hand.filter(used => used._id !== card._id);
     },
     updateDeck() {
-      if (this.deck.deck.length < 2) {
-        this.deck.deck = this.discardedDeck;
-        this.deck.deck.forEach(card => (card.discarded = false));
+      if (this.deck.length < 2) {
+        this.deck = this.discardedDeck;
+        this.deck.forEach(card => (card.discarded = false));
         this.discarded.deck = [];
       }
-      this.deck.deck = this.deck.deck.filter(card => !card.inHand);
+      this.deck = this.deck.filter(card => !card.inHand);
     }
   }
 });
