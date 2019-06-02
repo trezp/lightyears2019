@@ -61,20 +61,24 @@ export default Vue.extend({
         this.dealCard();
       }
     },
-    getRandomNumber(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    },
-    getRandomCard() {
-      return this.deck[this.getRandomNumber(this.deck.length)];
-    },
+    // getRandomNumber(min, max) {
+    //   return Math.floor(Math.random() * (max - min + 1)) + min;
+    // },
     dealCard() {
+      // return this.deck[this.getRandomNumber(this.deck.length)];
       this.updateDeck();
-
-      let card = this.getRandomCard();
-
+      let card = this.deck.pop();
       card.inHand = true;
       this.player.hand.push(card);
     },
+    // dealCard() {
+    //   this.updateDeck();
+
+    //   let card = this.getRandomCard();
+
+    //   card.inHand = true;
+    //   this.player.hand.push(card);
+    // },
     playCard(card) {
       this.updateDeck();
       if (card.value) {
@@ -95,9 +99,9 @@ export default Vue.extend({
     },
     updateDeck() {
       if (this.deck.length < 2) {
-        this.deck = this.discardedDeck;
+        this.deck = _.shuffle(this.discardedDeck);
         this.deck.forEach(card => (card.discarded = false));
-        this.discarded.deck = [];
+        this.discardedDeck = [];
       }
       this.deck = this.deck.filter(card => !card.inHand);
     }

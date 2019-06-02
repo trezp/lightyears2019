@@ -48635,18 +48635,22 @@ var _default = _vue.default.extend({
         this.dealCard();
       }
     },
-    getRandomNumber: function getRandomNumber(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    },
-    getRandomCard: function getRandomCard() {
-      return this.deck[this.getRandomNumber(this.deck.length)];
-    },
+    // getRandomNumber(min, max) {
+    //   return Math.floor(Math.random() * (max - min + 1)) + min;
+    // },
     dealCard: function dealCard() {
+      // return this.deck[this.getRandomNumber(this.deck.length)];
       this.updateDeck();
-      var card = this.getRandomCard();
+      var card = this.deck.pop();
       card.inHand = true;
       this.player.hand.push(card);
     },
+    // dealCard() {
+    //   this.updateDeck();
+    //   let card = this.getRandomCard();
+    //   card.inHand = true;
+    //   this.player.hand.push(card);
+    // },
     playCard: function playCard(card) {
       this.updateDeck();
 
@@ -48668,11 +48672,11 @@ var _default = _vue.default.extend({
     },
     updateDeck: function updateDeck() {
       if (this.deck.length < 2) {
-        this.deck = this.discardedDeck;
+        this.deck = _lodash.default.shuffle(this.discardedDeck);
         this.deck.forEach(function (card) {
           return card.discarded = false;
         });
-        this.discarded.deck = [];
+        this.discardedDeck = [];
       }
 
       this.deck = this.deck.filter(function (card) {
@@ -48862,7 +48866,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57954" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51635" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
