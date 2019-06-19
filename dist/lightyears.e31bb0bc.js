@@ -30895,27 +30895,11 @@ function (_Card) {
   }
 
   return SpecialCard;
-}(Card); // class GoCard extends Card {
-//   constructor(...args) {
-//     super(...args);
-//     this.description = "Go!";
-//     this.name = "Go!";
-//   }
-// }
-// class StopCard extends Card {
-//   constructor(...args) {
-//     super(...args);
-//     this.description = "Stop! You cannot proceed without a Go card.";
-//     this.name = "Stop!";
-//   }
-// }
-
+}(Card);
 
 module.exports = {
   Card: Card,
-  SpecialCard: SpecialCard // GoCard,
-  // StopCard
-
+  SpecialCard: SpecialCard
 };
 },{"unique-string":"node_modules/unique-string/index.js"}],"Game/hazards.js":[function(require,module,exports) {
 module.exports = [{
@@ -31038,10 +31022,8 @@ function () {
       this.makeNewCard(cards.Card, this.ly25, 25);
       this.makeNewCard(cards.Card, this.ly50, 50);
       this.makeNewCard(cards.Card, this.ly75, 75);
-      this.makeNewCard(cards.Card, this.ly100, 100); //this.makeNewCard(cards.GoCard, this.go, 0);
-      //this.makeNewCard(cards.StopCard, this.stop, 0);
-      //this.makeNewCard(cards.Card, this.ly200, 200);
-
+      this.makeNewCard(cards.Card, this.ly100, 100);
+      this.makeNewCard(cards.Card, this.ly200, 200);
       this.makeSpecialCard(this.hazardCards, hazards);
       this.makeSpecialCard(this.remedyCards, remedies);
       return this.deck;
@@ -48607,9 +48589,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
 var _default = _vue.default.extend({
   data: function data() {
     return {
@@ -48635,22 +48614,12 @@ var _default = _vue.default.extend({
         this.dealCard();
       }
     },
-    // getRandomNumber(min, max) {
-    //   return Math.floor(Math.random() * (max - min + 1)) + min;
-    // },
     dealCard: function dealCard() {
-      // return this.deck[this.getRandomNumber(this.deck.length)];
       this.updateDeck();
       var card = this.deck.pop();
       card.inHand = true;
       this.player.hand.push(card);
     },
-    // dealCard() {
-    //   this.updateDeck();
-    //   let card = this.getRandomCard();
-    //   card.inHand = true;
-    //   this.player.hand.push(card);
-    // },
     playCard: function playCard(card) {
       this.updateDeck();
 
@@ -48866,7 +48835,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51635" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52860" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

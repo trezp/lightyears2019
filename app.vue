@@ -1,6 +1,3 @@
-
-//TO DO 
-// use player.hand instead of computed property for now
 <template>
   <div>
     <h1>Light Years</h1>
@@ -61,24 +58,12 @@ export default Vue.extend({
         this.dealCard();
       }
     },
-    // getRandomNumber(min, max) {
-    //   return Math.floor(Math.random() * (max - min + 1)) + min;
-    // },
     dealCard() {
-      // return this.deck[this.getRandomNumber(this.deck.length)];
       this.updateDeck();
       let card = this.deck.pop();
       card.inHand = true;
       this.player.hand.push(card);
     },
-    // dealCard() {
-    //   this.updateDeck();
-
-    //   let card = this.getRandomCard();
-
-    //   card.inHand = true;
-    //   this.player.hand.push(card);
-    // },
     playCard(card) {
       this.updateDeck();
       if (card.value) {
