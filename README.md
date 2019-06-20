@@ -1,1 +1,0 @@
-Light Years: Inspired by the French card game. 
