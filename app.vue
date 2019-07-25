@@ -1,31 +1,11 @@
 <template>
-  <div>
-    <h1>Light Years</h1>
+  <div id="app">
     <div>
-      <h2 v-if="!gameHasStarted">
-        <span>Hello, {{player.name}}! Let your journey begin!</span>
-      </h2>
-      <button v-if="!gameHasStarted" @click="startGame()">Start Game</button>
-      <div v-if="gameHasStarted">
-        <messageConsole :player="player" :message="message" />
-        <!-- <h3 class="title">Name: {{player.name}}</h3>
-        <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
-        <h2>{{message}}</h2>-->
-        <button @click="dealCard">Draw a card</button>
-
-        <ul class="hand">
-          <li :key="index" v-for="(card, index) in player.hand" class="card">
-            <div>
-              <strong>{{card.name}}</strong>
-            </div>
-            <span v-if="card.value">{{card.value}}</span>
-            <h5 v-if="card.special">{{card.special.description}}</h5>
-            <button @click="playCard(card)">Play</button>
-            <button @click="discard(card)">Discard</button>
-          </li>
-        </ul>
-      </div>
+      <h3 class="title">Name: {{player.name}}</h3>
+      <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
+      <h2>{{message}}</h2>
     </div>
+    <player-hand :hand="player.hand" />
   </div>
 </template>
 
@@ -34,13 +14,14 @@ import Vue from "vue";
 import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
-import MessageConsole from "./Game/MessageConsole";
-import Hand from "./Hand";
+import playerHand from "./components/playerHand";
+
 import _ from "lodash";
 
 export default Vue.extend({
+  name: "App",
   components: {
-    MessageConsole
+    playerHand
   },
   data() {
     return {
@@ -95,7 +76,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    //this.examineDeck();
+    this.startGame();
   }
 });
 </script>
