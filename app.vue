@@ -1,17 +1,18 @@
 <template>
   <div>
     <h1>Light Years</h1>
-
     <div>
       <h2 v-if="!gameHasStarted">
         <span>Hello, {{player.name}}! Let your journey begin!</span>
       </h2>
       <button v-if="!gameHasStarted" @click="startGame()">Start Game</button>
       <div v-if="gameHasStarted">
-        <h3 class="title">Name: {{player.name}}</h3>
+        <messageConsole :player="player" :message="message" />
+        <!-- <h3 class="title">Name: {{player.name}}</h3>
         <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
-        <h2>{{message}}</h2>
+        <h2>{{message}}</h2>-->
         <button @click="dealCard">Draw a card</button>
+
         <ul class="hand">
           <li :key="index" v-for="(card, index) in player.hand" class="card">
             <div>
@@ -33,15 +34,19 @@ import Vue from "vue";
 import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
+import MessageConsole from "./Game/MessageConsole";
+import Hand from "./Hand";
 import _ from "lodash";
 
 export default Vue.extend({
+  components: {
+    MessageConsole
+  },
   data() {
     return {
       gameHasStarted: false,
       player: player,
       deck: _.shuffle(deck.deck),
-      shuffledDeck: [],
       discardedDeck: [],
       message: null
     };
@@ -69,9 +74,7 @@ export default Vue.extend({
       if (card.value) {
         this.player.score += card.value;
 
-        this.message = `You just traveled ${
-          card.value
-        } light years. Keep going!`;
+        this.message = `You just traveled ${card.value} light years. Keep going!`;
       }
       this.player.hand.push(card);
       this.discard(card);
@@ -92,7 +95,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.examineDeck();
+    //this.examineDeck();
   }
 });
 </script>

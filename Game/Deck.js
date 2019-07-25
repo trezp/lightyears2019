@@ -1,56 +1,45 @@
-const uniqueID = require("unique-string");
-const cards = require("./Cards");
-const hazards = require("./hazards");
-const remedies = require("./remedies");
+import uniqueID from "unique-string";
+import cards from "./Cards";
+import remedies from "./remedies";
+
+import _ from "lodash";
+import { Decipher } from "crypto";
 
 class Deck {
   constructor() {
-    this.deck = {
-      deckId: uniqueID(),
-      deck: []
-    };
-    this.ly25 = 10;
-    this.ly50 = 10;
-    this.ly75 = 10;
-    this.ly100 = 7;
-    this.ly100 = 12;
-    this.ly200 = 4;
-    this.go = 14;
-    this.stop = 5;
-    this.hazardCards = 6;
-    this.remedyCards = 2;
+    this.deckId = uniqueID();
+    this.deck = [];
   }
-
   makeNewCard(type, quantity, value) {
     for (let i = 0; i < quantity; i++) {
       let card = new type(value);
-      this.deck.deck.push(card);
+      this.deck.push(card);
     }
   }
-
   makeSpecialCard(quantity, description) {
     description.forEach(des => {
       let card = new cards.SpecialCard(des, 0, des.name);
 
       for (let i = 0; i < quantity; i++) {
-        this.deck.deck.push(card);
+        this.deck.push(card);
       }
     });
-    this.deck.deck.forEach(card => {
+    this.deck.forEach(card => {
       card._id = uniqueID();
     });
   }
 
-  createDeck() {
-    this.makeNewCard(cards.Card, this.ly25, 25);
-    this.makeNewCard(cards.Card, this.ly50, 50);
-    this.makeNewCard(cards.Card, this.ly75, 75);
-    this.makeNewCard(cards.Card, this.ly100, 100);
-    this.makeNewCard(cards.Card, this.ly200, 200);
-    this.makeSpecialCard(this.hazardCards, hazards);
-    this.makeSpecialCard(this.remedyCards, remedies);
-    return this.deck;
+  fillDeck() {
+    this.makeNewCard(cards.Card, 10, 25);
+    this.makeNewCard(cards.Card, 10, 50);
+    this.makeNewCard(cards.Card, 10, 75);
+    this.makeNewCard(cards.Card, 7, 100);
+    this.makeNewCard(cards.Card, 4, 200);
+    this.makeSpecialCard(2, remedies);
   }
 }
 
-module.exports = new Deck().createDeck();
+const deck = new Deck();
+deck.fillDeck();
+
+export default deck;

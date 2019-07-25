@@ -1,22 +1,19 @@
-// const player = require("./Player");
-// const deck = require("./Deck");
-// const uniqueID = require("unique-string");
-// const helpers = require("./helpers");
+// import uniqueID from "unique-string";
+// import deck from "./Deck";
 
 // class Game {
 //   constructor() {
+//     //console.log(deck);
 //     this.game = {
 //       gameId: uniqueID(),
-//       players: [],
-//       active: true,
 //       deck: deck
 //     };
 //   }
-//   startGame() {
-//     this.game.players.push(player);
-//     //this.game.players.push(player);
-//     return this.game;
-//   }
+//   // startGame() {
+//   //   this.game.players.push(player);
+//   // }
 // }
 
-// module.exports = new Game().startGame();
+// const game = new Game();
+
+// export default game;
