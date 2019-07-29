@@ -1,11 +1,7 @@
 <template>
-  <div id="app">
-    <div>
-      <h3 class="title">Name: {{player.name}}</h3>
-      <h2 class="subtitle">Light Years Traveled: {{player.score}}</h2>
-      <h2>{{message}}</h2>
-    </div>
-    <player-hand :hand="player.hand" />
+  <div>
+    <dashboard :player="player" :message="message"></dashboard>
+    <player-hand :hand="player.hand"></player-hand>
   </div>
 </template>
 
@@ -15,13 +11,15 @@ import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
 import playerHand from "./components/playerHand";
+import dashboard from "./components/dashboard";
 
 import _ from "lodash";
 
 export default Vue.extend({
   name: "App",
   components: {
-    playerHand
+    playerHand,
+    dashboard
   },
   data() {
     return {
