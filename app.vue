@@ -1,12 +1,13 @@
 <template>
   <div>
     <dashboard :player="player" :message="message"></dashboard>
-    <player-hand :hand="player.hand"></player-hand>
+    <player-hand :hand="hand"></player-hand>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
+import store from "./store";
 import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
@@ -21,56 +22,30 @@ export default Vue.extend({
     playerHand,
     dashboard
   },
+  store: store,
   data() {
-    return {
-      gameHasStarted: false,
-      player: player,
-      deck: _.shuffle(deck.deck),
-      discardedDeck: [],
-      message: null
-    };
+    return {};
   },
   methods: {
     examineDeck() {
       this.deck.forEach(card => console.log(card.name, card.value));
     },
     startGame() {
-      this.message = message.startMessage;
-      this.gameHasStarted = true;
-
-      for (let i = 0; i < 6; i++) {
-        this.dealCard();
-      }
+      this.$store.commit("startGame");
     },
     dealCard() {
-      this.updateDeck();
-      let card = this.deck.pop();
-      card.inHand = true;
-      this.player.hand.push(card);
+      this.$store.commit("dealCard");
+    }
+  },
+  computed: {
+    player() {
+      return store.state.player;
     },
-    playCard(card) {
-      this.updateDeck();
-      if (card.value) {
-        this.player.score += card.value;
-
-        this.message = `You just traveled ${card.value} light years. Keep going!`;
-      }
-      this.player.hand.push(card);
-      this.discard(card);
+    message() {
+      return store.state.message;
     },
-    discard(card) {
-      card.inHand = false;
-      card.discarded = true;
-      this.discardedDeck.push(card);
-      this.player.hand = this.player.hand.filter(used => used._id !== card._id);
-    },
-    updateDeck() {
-      if (this.deck.length < 2) {
-        this.deck = _.shuffle(this.discardedDeck);
-        this.deck.forEach(card => (card.discarded = false));
-        this.discardedDeck = [];
-      }
-      this.deck = this.deck.filter(card => !card.inHand);
+    hand() {
+      return store.state.player.hand;
     }
   },
   mounted() {
