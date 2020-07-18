@@ -6,6 +6,7 @@ import _ from "lodash";
 import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
+import hazards from "./Game/hazards";
 
 Vue.use(Vuex);
 
@@ -16,22 +17,26 @@ const store = new Vuex.Store({
     player: player,
     deck: _.shuffle(deck.deck),
     discardedDeck: [],
-    message: null
+    message: null,
+    hazardMessage: null,
+    hazard: false
   },
   mutations: {
     startGame(state) {
       state.message = message.startMessage;
       state.gameHasStarted = true;
 
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
         store.commit("dealCard");
       }
     },
     dealCard(state) {
-      store.commit("updateDeck");
-      let card = state.deck.pop();
-      card.inHand = true;
-      state.player.hand.push(card);
+      if (state.player.hand.length != 6) {
+        store.commit("updateDeck");
+        let card = state.deck.pop();
+        card.inHand = true;
+        state.player.hand.push(card);
+      }
     },
     updateDeck(state) {
       if (state.deck.length < 2) {
@@ -46,9 +51,9 @@ const store = new Vuex.Store({
       if (card.value) {
         state.player.score += card.value;
 
-        this.message = `You just traveled ${
-          card.value
-        } light years. Keep going!`;
+        // state.message = `You just traveled ${
+        //   card.value
+        // } light years. Keep going!`;
       }
       state.player.hand.push(card);
       store.commit("discard", card);
@@ -60,6 +65,11 @@ const store = new Vuex.Store({
       state.player.hand = state.player.hand.filter(
         used => used._id !== card._id
       );
+    },
+    dealPeril(state) {
+      state.hazard = true;
+      console.log("HAZARD");
+      state.hazardMessage = hazards[_.random(0, hazards.length)];
     }
   }
 });

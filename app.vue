@@ -23,9 +23,6 @@ export default Vue.extend({
     dashboard
   },
   store: store,
-  data() {
-    return {};
-  },
   methods: {
     examineDeck() {
       this.deck.forEach(card => console.log(card.name, card.value));
@@ -63,6 +60,14 @@ ul {
   padding-left: 0;
 }
 
+button {
+  border: none;
+  border: 1px solid black;
+  margin-bottom: 0.5em;
+  width: 80%;
+  padding: 2%;
+}
+
 .hand {
   display: grid;
   grid-template-columns: repeat(6, 15%);
@@ -81,13 +86,6 @@ ul {
     span {
       font-weight: bold;
       font-size: 2em;
-    }
-    button {
-      border: none;
-      border: 1px solid black;
-      margin-bottom: 0.5em;
-      width: 80%;
-      padding: 2%;
     }
   }
 }

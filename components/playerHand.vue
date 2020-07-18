@@ -15,12 +15,20 @@
 <script>
 import store from "../store";
 
+import _ from "lodash";
+
 export default {
   props: ["hand"],
   name: "playerHand",
   methods: {
     playCard(card) {
-      store.commit("playCard", card);
+      let rand = _.random(0, 500);
+      console.log(rand);
+      if (rand % 4 === 0) {
+        store.commit("dealPeril");
+      } else {
+        store.commit("playCard", card);
+      }
     },
     discard(card) {
       store.commit("discard", card);
