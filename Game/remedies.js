@@ -1,13 +1,13 @@
 module.exports = [
   {
     name: "Refueling ship",
-    description: "Oops, you've run out of gas! You'll need a refueling ship",
+    description: "Hooray, a refueling ship has come to the rescue!",
     isHazard: false,
     group: "fuel"
   },
   {
     name: "Search Party!",
-    description: "You've been located by the  Global Lost Persons Federation",
+    description: "You've been located by the Global Lost Persons Federation",
     isHazard: false,
     group: "lost"
   },
@@ -29,6 +29,6 @@ module.exports = [
     name: "Heat resistant suit",
     description: "Ah, but your heat resistant suit saves your ass!",
     isHazard: false,
-    group: "head"
+    group: "heat"
   }
 ];

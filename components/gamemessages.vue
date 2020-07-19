@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-if="hazard">
-      <h2>{{ hazardMessage.name }}</h2>
-      <p>{{ hazardMessage.description }}</p>
+    <div v-if="inHazardMode">
+      <h2>{{ hazard.name }}</h2>
+      <p>{{ hazard.description }}</p>
     </div>
     <h2 v-else>{{ displayMessage }}</h2>
   </div>
@@ -17,11 +17,11 @@ export default {
   props: ["message"],
   name: "gamemessages",
   computed: {
+    inHazardMode() {
+      return store.state.inHazardMode;
+    },
     hazard() {
       return store.state.hazard;
-    },
-    hazardMessage() {
-      return store.state.hazardMessage;
     },
     displayMessage() {
       return store.state.message;

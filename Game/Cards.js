@@ -14,7 +14,6 @@ class SpecialCard extends Card {
     super(...args);
     this.special = {
       description: traits.description,
-      isHazard: traits.isHazard,
       group: traits.group
     };
   }

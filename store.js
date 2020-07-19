@@ -18,8 +18,10 @@ const store = new Vuex.Store({
     deck: _.shuffle(deck.deck),
     discardedDeck: [],
     message: null,
-    hazardMessage: null,
-    hazard: false
+    hazard: null,
+    inHazardMode: false,
+    hazardGroup: null,
+    currentHazardCard: null
   },
   mutations: {
     startGame(state) {
@@ -50,13 +52,16 @@ const store = new Vuex.Store({
       store.commit("updateDeck");
       if (card.value) {
         state.player.score += card.value;
-
-        // state.message = `You just traveled ${
-        //   card.value
-        // } light years. Keep going!`;
       }
+
       state.player.hand.push(card);
       store.commit("discard", card);
+    },
+    playHazardMode(state, card) {
+      // check if the hazard group of the card matches the current Hazard group
+      // If they do, turn off hazard mode
+      // Display a message
+      // If they don't, continue
     },
     discard(state, card) {
       card.inHand = false;
@@ -66,10 +71,11 @@ const store = new Vuex.Store({
         used => used._id !== card._id
       );
     },
-    dealPeril(state) {
-      state.hazard = true;
-      console.log("HAZARD");
-      state.hazardMessage = hazards[_.random(0, hazards.length)];
+    dealPeril(state, card) {
+      state.inHazardMode = true;
+      state.hazard = hazards[_.random(0, hazards.length)];
+      state.hazardGroup = state.hazard.group;
+      // Go through the player's hand and disabled all unplayable cards
     }
   }
 });
