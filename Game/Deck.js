@@ -1,6 +1,7 @@
 import uniqueID from "unique-string";
 import cards from "./Cards";
 import remedies from "./remedies";
+import hazards from "./hazards";
 
 import _ from "lodash";
 
