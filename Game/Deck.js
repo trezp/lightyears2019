@@ -35,7 +35,7 @@ class Deck {
     this.makeNewCard(cards.Card, 10, 75);
     this.makeNewCard(cards.Card, 7, 100);
     this.makeNewCard(cards.Card, 4, 200);
-    this.makeSpecialCard(2, remedies);
+    this.makeSpecialCard(4, remedies);
   }
 }
 

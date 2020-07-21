@@ -57,12 +57,6 @@ const store = new Vuex.Store({
       state.player.hand.push(card);
       store.commit("discard", card);
     },
-    playHazardMode(state, card) {
-      // check if the hazard group of the card matches the current Hazard group
-      // If they do, turn off hazard mode
-      // Display a message
-      // If they don't, continue
-    },
     discard(state, card) {
       card.inHand = false;
       card.discarded = true;
@@ -71,11 +65,25 @@ const store = new Vuex.Store({
         used => used._id !== card._id
       );
     },
-    dealPeril(state, card) {
+    enterHazardMode(state, card) {
       state.inHazardMode = true;
       state.hazard = hazards[_.random(0, hazards.length)];
       state.hazardGroup = state.hazard.group;
-      // Go through the player's hand and disabled all unplayable cards
+      state.player.hand.forEach(card => {
+        card.playable = false;
+
+        if (card.group === state.hazardGroup) {
+          card.playable = true;
+        }
+      });
+    },
+    playHazardMode(state, card) {
+      state.player.hand.forEach(card => (card.playable = false));
+      if (card.group === state.hazardGroup) {
+        card.playable = true;
+        state.inHazardMode = false;
+        state.hazardGroup = null;
+      }
     }
   }
 });

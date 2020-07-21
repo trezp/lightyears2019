@@ -6,16 +6,17 @@ class Card {
     this.inHand = false;
     this.discarded = false;
     this.value = value;
+    this.playable = true;
+    this.group = null;
   }
 }
 
 class SpecialCard extends Card {
   constructor(traits, ...args) {
     super(...args);
-    this.special = {
-      description: traits.description,
-      group: traits.group
-    };
+    this.group = traits.group;
+    this.playable = false;
+    this.description = traits.description;
   }
 }
 
