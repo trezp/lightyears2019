@@ -7,6 +7,7 @@ import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
 import hazards from "./Game/hazards";
+import remedies from "./Game/remedies";
 
 Vue.use(Vuex);
 
@@ -31,8 +32,6 @@ const store = new Vuex.Store({
       for (let i = 0; i < 5; i++) {
         store.commit("dealCard");
       }
-
-      store.commit("enterHazardMode");
     },
     dealCard(state) {
       if (state.player.hand.length != 6) {
@@ -61,7 +60,6 @@ const store = new Vuex.Store({
       }
 
       if (state.inHazardMode && card.group === state.hazardGroup) {
-        console.log("end hazardmode");
         store.commit("endHazardMode", card);
       }
 
@@ -76,7 +74,6 @@ const store = new Vuex.Store({
       );
     },
     enterHazardMode(state) {
-      console.log("hazard mode entered");
       state.inHazardMode = true;
       state.hazard = hazards[_.random(0, hazards.length)];
       state.hazardGroup = state.hazard.group;
@@ -91,7 +88,6 @@ const store = new Vuex.Store({
       state.player.hand.forEach(card => (card.playable = false));
 
       if (card.group === state.hazardGroup) {
-        console.log("played a hazard card");
         store.commit("endHazardMode", card);
         store.commit("discard", card);
       }
@@ -100,6 +96,12 @@ const store = new Vuex.Store({
       card.playable = true;
       state.inHazardMode = false;
       state.hazardGroup = null;
+      state.player.hand.forEach(card => {
+        if (card.group === null) {
+          card.playable = true;
+        }
+      });
+      state.message = "Remedy! You may continue.";
     }
   }
 });
