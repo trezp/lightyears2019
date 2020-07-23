@@ -7,6 +7,7 @@ import deck from "./Game/Deck";
 import player from "./Game/Player";
 import message from "./Game/gameMessages";
 import hazards from "./Game/hazards";
+import remedies from "./Game/remedies";
 
 Vue.use(Vuex);
 
@@ -38,6 +39,10 @@ const store = new Vuex.Store({
         let card = state.deck.pop();
         card.inHand = true;
         state.player.hand.push(card);
+
+        if (state.hazardMode && card.group === state.hazardGroup) {
+          card.playable = "true";
+        }
       }
     },
     updateDeck(state) {
@@ -54,14 +59,11 @@ const store = new Vuex.Store({
         state.player.score += card.value;
       }
 
-      state.player.hand.push(card);
+      if (state.inHazardMode && card.group === state.hazardGroup) {
+        store.commit("endHazardMode", card);
+      }
+
       store.commit("discard", card);
-    },
-    playHazardMode(state, card) {
-      // check if the hazard group of the card matches the current Hazard group
-      // If they do, turn off hazard mode
-      // Display a message
-      // If they don't, continue
     },
     discard(state, card) {
       card.inHand = false;
@@ -71,11 +73,35 @@ const store = new Vuex.Store({
         used => used._id !== card._id
       );
     },
-    dealPeril(state, card) {
+    enterHazardMode(state) {
       state.inHazardMode = true;
       state.hazard = hazards[_.random(0, hazards.length)];
       state.hazardGroup = state.hazard.group;
-      // Go through the player's hand and disabled all unplayable cards
+
+      state.player.hand.forEach(card => {
+        if (card.group === state.hazardGroup) {
+          card.playable = true;
+        }
+      });
+    },
+    playHazardMode(state, card) {
+      state.player.hand.forEach(card => (card.playable = false));
+
+      if (card.group === state.hazardGroup) {
+        store.commit("endHazardMode", card);
+        store.commit("discard", card);
+      }
+    },
+    endHazardMode(state, card) {
+      card.playable = true;
+      state.inHazardMode = false;
+      state.hazardGroup = null;
+      state.player.hand.forEach(card => {
+        if (card.group === null) {
+          card.playable = true;
+        }
+      });
+      state.message = "Remedy! You may continue.";
     }
   }
 });

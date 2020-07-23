@@ -6,7 +6,7 @@
       </div>
       <span v-if="card.value">{{ card.value }}</span>
       <h5 v-if="card.special">{{ card.special.description }}</h5>
-      <button @click="playCard(card)" :disabled="!isPlayableCard">
+      <button @click="playCard(card)" :disabled="!card.playable">
         Play
       </button>
       <button @click="discard(card)">Discard</button>
@@ -29,21 +29,15 @@ export default {
   },
   methods: {
     playCard(card) {
-      // decide whether to
-      // add to score
-      // enter hazard mode
-      // change name of dealPeril to Enter Hazard Mode
-      // if inHazardMode
-      // call function to compare cards and send appropriate messages
-      // else
-      // continue to play cards
-
-      let rand = _.random(0, 500);
-
-      if (rand % 4 === 0) {
-        store.commit("dealPeril", card);
+      if (store.state.inHazardMode === false) {
+        let rand = _.random(0, 500);
+        if (rand % 4 === 0) {
+          store.commit("enterHazardMode", card);
+        } else {
+          store.commit("playCard", card);
+        }
       } else {
-        store.commit("playCard", card);
+        store.commit("playHazardMode", card);
       }
     },
     discard(card) {
@@ -51,14 +45,8 @@ export default {
     }
   },
   computed: {
-    inHazardMode() {
-      return store.state.hazard;
-    },
     hazardGroup() {
       return store.state.hazardGroup;
-    },
-    isPlayableCard() {
-      // disable cards that aren't playable
     }
   }
 };
