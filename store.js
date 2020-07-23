@@ -59,16 +59,12 @@ const store = new Vuex.Store({
       if (card.value) {
         state.player.score += card.value;
       }
-      console.log(state.inHazardMode);
-      console.log(card.group);
-      console.log(state.hazardGroup);
+
       if (state.inHazardMode && card.group === state.hazardGroup) {
         console.log("end hazardmode");
         store.commit("endHazardMode", card);
-        store.commit("discard", card);
       }
 
-      //state.player.hand.push(card);
       store.commit("discard", card);
     },
     discard(state, card) {
@@ -98,9 +94,6 @@ const store = new Vuex.Store({
         console.log("played a hazard card");
         store.commit("endHazardMode", card);
         store.commit("discard", card);
-        //card.playable = true;
-        // state.inHazardMode = false;
-        // state.hazardGroup = null;
       }
     },
     endHazardMode(state, card) {
