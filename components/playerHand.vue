@@ -29,6 +29,8 @@ export default {
   },
   methods: {
     playCard(card) {
+      console.log("play cardddd");
+      console.log(store.state.inHazardMode);
       if (store.state.inHazardMode === false) {
         console.log("not in hazard mode");
         let rand = _.random(0, 500);

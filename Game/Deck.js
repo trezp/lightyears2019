@@ -31,11 +31,11 @@ class Deck {
 
   fillDeck() {
     this.makeNewCard(cards.Card, 10, 25);
-    this.makeNewCard(cards.Card, 10, 50);
-    this.makeNewCard(cards.Card, 10, 75);
-    this.makeNewCard(cards.Card, 7, 100);
-    this.makeNewCard(cards.Card, 4, 200);
-    this.makeSpecialCard(4, remedies);
+    // this.makeNewCard(cards.Card, 10, 50);
+    // this.makeNewCard(cards.Card, 10, 75);
+    // this.makeNewCard(cards.Card, 7, 100);
+    // this.makeNewCard(cards.Card, 4, 200);
+    this.makeSpecialCard(20, remedies);
   }
 }
 

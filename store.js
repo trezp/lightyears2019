@@ -31,6 +31,8 @@ const store = new Vuex.Store({
       for (let i = 0; i < 5; i++) {
         store.commit("dealCard");
       }
+
+      store.commit("enterHazardMode");
     },
     dealCard(state) {
       if (state.player.hand.length != 6) {
@@ -38,6 +40,10 @@ const store = new Vuex.Store({
         let card = state.deck.pop();
         card.inHand = true;
         state.player.hand.push(card);
+
+        if (state.hazardMode && card.group === state.hazardGroup) {
+          card.playable = "true";
+        }
       }
     },
     updateDeck(state) {
@@ -53,8 +59,16 @@ const store = new Vuex.Store({
       if (card.value) {
         state.player.score += card.value;
       }
+      console.log(state.inHazardMode);
+      console.log(card.group);
+      console.log(state.hazardGroup);
+      if (state.inHazardMode && card.group === state.hazardGroup) {
+        console.log("end hazardmode");
+        store.commit("endHazardMode", card);
+        store.commit("discard", card);
+      }
 
-      state.player.hand.push(card);
+      //state.player.hand.push(card);
       store.commit("discard", card);
     },
     discard(state, card) {
@@ -65,13 +79,13 @@ const store = new Vuex.Store({
         used => used._id !== card._id
       );
     },
-    enterHazardMode(state, card) {
+    enterHazardMode(state) {
+      console.log("hazard mode entered");
       state.inHazardMode = true;
       state.hazard = hazards[_.random(0, hazards.length)];
       state.hazardGroup = state.hazard.group;
-      state.player.hand.forEach(card => {
-        card.playable = false;
 
+      state.player.hand.forEach(card => {
         if (card.group === state.hazardGroup) {
           card.playable = true;
         }
@@ -79,11 +93,20 @@ const store = new Vuex.Store({
     },
     playHazardMode(state, card) {
       state.player.hand.forEach(card => (card.playable = false));
+
       if (card.group === state.hazardGroup) {
-        card.playable = true;
-        state.inHazardMode = false;
-        state.hazardGroup = null;
+        console.log("played a hazard card");
+        store.commit("endHazardMode", card);
+        store.commit("discard", card);
+        //card.playable = true;
+        // state.inHazardMode = false;
+        // state.hazardGroup = null;
       }
+    },
+    endHazardMode(state, card) {
+      card.playable = true;
+      state.inHazardMode = false;
+      state.hazardGroup = null;
     }
   }
 });
